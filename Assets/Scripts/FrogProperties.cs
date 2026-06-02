@@ -1,4 +1,3 @@
-/*
 using UnityEngine;
 
 public class FrogProperties : MonoBehaviour
@@ -62,4 +61,3 @@ public class FrogProperties : MonoBehaviour
             Debug.LogWarning($"Invalid hex color: {hex}");
     }
 }
-*/
