@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JumpBetweenSpots : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     [Header("Lily Pad Settings")]
     public float searchRadius = 10f;
     public LayerMask lilyPadLayer;
