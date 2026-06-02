@@ -16,9 +16,11 @@ public class ParabolicJump : MonoBehaviour
     public bool isJumping;
 
     public bool test = false;
-
+    public AnimateFrog frog; 
+    
     public void JumpTo(Vector3 target, float duration)
     {
+        frog.SetAnimationState("Jump");
         startPos = transform.position;
         targetPos = target;
 
@@ -48,12 +50,15 @@ public class ParabolicJump : MonoBehaviour
     {
         if (test)
         {
-            Vector3 targetTest = new Vector3(0, 0, 0);
-            JumpTo(targetTest, 500f);
+            Vector3 targetTest = new Vector3(10, 0, 10);
+            JumpTo(targetTest, 2f);
             test = false;
         }
         if (!isJumping)
+        {
             return;
+        }
+           
 
         elapsedTime += Time.deltaTime;
 
@@ -74,6 +79,7 @@ public class ParabolicJump : MonoBehaviour
         {
             transform.position = targetPos;
             isJumping = false;
+            frog.SetAnimationState("Idle");
         }
     }
 }
