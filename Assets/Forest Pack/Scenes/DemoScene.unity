@@ -734,6 +734,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+--- !u!1001 &150006690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_Name
+      value: JS Rock Escape 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.693
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+--- !u!1 &150006691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+  m_PrefabInstance: {fileID: 150006690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &168116204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1356,10 +1418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1 &361588029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de91c5cd650f46346abfd8b205d1a146, type: 3}
@@ -1398,10 +1461,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &363607636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3074,10 +3138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!65 &770849645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3659,10 +3724,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &956066797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4623,10 +4689,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &1117056337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4932,10 +4999,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &1141407522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5512,10 +5580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &1233885633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7362,6 +7431,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1001832768582568257, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: isTilted
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Name
       value: JS Rock Tilted
@@ -7770,10 +7843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &1811337626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7926,6 +8000,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1001832768582568257, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: nextPad
+      value: 
+      objectReference: {fileID: 150006691}
+    - target: {fileID: 1001832768582568257, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
+      propertyPath: isTilted
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Name
       value: JS Rock Wall
@@ -8158,10 +8240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!65 &1844475565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8287,10 +8370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &1887061526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8798,10 +8882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!1001 &2079922389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9199,10 +9284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
-  isOccupied: 0
   isReserved: 0
   sizeScaled: 1
   size: 1
+  isTilted: 0
+  nextPad: {fileID: 0}
 --- !u!65 &2114686004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9562,6 +9648,7 @@ SceneRoots:
   - {fileID: 1373981052}
   - {fileID: 1664875652}
   - {fileID: 816648981}
+  - {fileID: 150006690}
   - {fileID: 1824831036}
   - {fileID: 1060645378}
   - {fileID: 1683550060}

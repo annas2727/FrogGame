@@ -56,22 +56,12 @@ public class ParabolicJump : MonoBehaviour
     {
         startRotation = transform.rotation;
 
-        //Vector3 euler = transform.rotation.eulerAngles;
-        //Vector3 padEuler = pad.transform.rotation.eulerAngles;
-
         // Rotate so the frog's up matches the pad's up
         targetRotation = Quaternion.FromToRotation(
             transform.up,
             pad.transform.up
         ) * transform.rotation;
 
-        /*
-        targetRotation = Quaternion.Euler(
-            padEuler.x,
-            euler.y,
-            padEuler.z
-        );
-        */
         JumpTo(
             pad.transform.position + Vector3.up * statsConfig.BaseLilypadyOffset,
             jumpSpeed
@@ -107,14 +97,16 @@ public class ParabolicJump : MonoBehaviour
             targetRotation,
             rotationT
         );
-
+        if (elapsedTime >= jumpDuration / 2f)
+        {
+            frog.SetAnimationState("Idle");
+        }
         if (elapsedTime >= jumpDuration)
         {
             transform.position = targetPos;
             transform.rotation = targetRotation;
 
             isJumping = false;
-            frog.SetAnimationState("Idle");
         }
     }
 }

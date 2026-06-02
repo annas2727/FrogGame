@@ -27,7 +27,6 @@ public class JumpBetweenSpots : MonoBehaviour
         {
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
-
             GameObject targetPad = GetRandomNearbyPad();
 
             if (targetPad != null)
@@ -48,27 +47,41 @@ public class JumpBetweenSpots : MonoBehaviour
         List<GameObject> validPads = new List<GameObject>();
         int searchCount = 0;
 
+
+        //Tilted planes have smaller radius to jump from
+        float tiltedmultiplier = 1f;
+        if (currentPad != null && currentPad.GetComponent<JumpSpot>().isTilted)
+        {
+            tiltedmultiplier = 0.5f;
+        }
+
+
         while (validPads.Count == 0 && searchCount < statsConfig.JumpSpotSearchNumber)
         {
+            //sphere of pads to jump to, increases each search
             Collider[] hits = Physics.OverlapSphere(
                 transform.position,
-                statsConfig.JumpSpotSearchRadius + (statsConfig.JumpSpotSearchRadiusAddition * searchCount),
+                (statsConfig.JumpSpotSearchRadius + (statsConfig.JumpSpotSearchRadiusAddition * searchCount)  ) * tiltedmultiplier,
                 lilyPadLayer
             );
 
+
             foreach (Collider hit in hits)
             {
-
                 GameObject pad = hit.gameObject;
 
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
                 bool isLargeEnough = (pad.transform.localScale.x / statsConfig.BaseLilypadScale) >= (transform.localScale.x / statsConfig.MaxFrogScale);
 
-
                 if (isLargeEnough && !jumpSpotData.isReserved)
                 {
                     validPads.Add(pad);
+                    //Small frogs double chance to go onto small pads
+                    if(pad.transform.localScale.x / statsConfig.BaseLilypadScale < 0.95f)
+                    {
+                        validPads.Add(pad);
+                    }
                 }
             }
             searchCount += 1;
@@ -83,15 +96,21 @@ public class JumpBetweenSpots : MonoBehaviour
 
     IEnumerator TurnToPad(Transform target)
     {
-        Vector3 direction = target.position - transform.position;
-        direction.y = 0f;
+        Vector3 padNormal = currentPad != null
+            ? currentPad.transform.up
+            : transform.up;
 
-        if (direction == Vector3.zero)
+        Vector3 direction = Vector3.ProjectOnPlane(
+            target.position - transform.position,
+            padNormal
+        ).normalized;
+
+        if (direction.sqrMagnitude < 0.001f)
             yield break;
 
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        Quaternion targetRotation = Quaternion.LookRotation(direction, padNormal);
 
-        float turnSpeed = 8f; // adjust for faster/slower turning
+        float turnSpeed = 8f;
 
         while (Quaternion.Angle(transform.rotation, targetRotation) > 1f)
         {
@@ -104,7 +123,6 @@ public class JumpBetweenSpots : MonoBehaviour
             yield return null;
         }
 
-        // snap final alignment (prevents tiny drift)
         transform.rotation = targetRotation;
     }
 
