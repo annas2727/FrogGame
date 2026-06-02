@@ -46,6 +46,11 @@ public class ParabolicJump : MonoBehaviour
         isJumping = true;
     }
 
+    public void JumpToPad(GameObject Pad)
+    {
+        JumpTo(Pad.transform.position + Vector3.up, 2f);
+    }
+
     private void Update()
     {
         if (test)

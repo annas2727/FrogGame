@@ -10,13 +10,13 @@ public class JumpBetweenLilypad : MonoBehaviour
 
     [Header("Wait Time")]
     public float minWaitTime = 1f;
-    public float maxWaitTime = 5f;
+    public float maxWaitTime = 1f;
 
-    private FrogJump jumpScript;
+    private ParabolicJump jumpScript;
 
     private void Start()
     {
-        jumpScript = GetComponent<FrogJump>();
+        jumpScript = GetComponent<ParabolicJump>();
         StartCoroutine(ChoosePadsRoutine());
     }
 
