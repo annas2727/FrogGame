@@ -128,12 +128,12 @@ Material:
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Body: {r: 0.7212551, g: 0, b: 1, a: 1}
+    - _Body: {r: 0.15799591, g: 0, b: 0.21698111, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Spots: {r: 0.26970747, g: 0.18679237, b: 1, a: 1}
-    - _Stripes: {r: 0.08211166, g: 1, b: 0, a: 1}
+    - _Spots: {r: 0.5849056, g: 0.16278034, b: 0.16278034, a: 1}
+    - _Stripes: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7002349886698577344

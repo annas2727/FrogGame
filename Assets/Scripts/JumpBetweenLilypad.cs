@@ -53,12 +53,22 @@ public class JumpBetweenLilypad : MonoBehaviour
         {
             
             GameObject pad = hit.gameObject;
+
             // Don't choose the pad we're currently standing on
             bool isNotLastPad = currentPad == null || pad != currentPad;
+
             // Don't choose pads too small
             bool isLargeEnough = (pad.transform.localScale.x/0.8f) >= (transform.localScale.x/0.25f);
 
-            if (isNotLastPad && isLargeEnough)
+            // Don't choose 
+            Collider[] frogsOnPad = Physics.OverlapSphere(
+                pad.transform.position,
+                0.5f,
+                frogLayer
+            );
+            bool isOccupied = frogsOnPad.Length > 0;
+
+            if (isNotLastPad && isLargeEnough && !isOccupied)
             { 
                 validPads.Add(hit.gameObject);
             }
