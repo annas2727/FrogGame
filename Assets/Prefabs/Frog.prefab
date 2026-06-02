@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a9ded13c33efb47b918625768dd656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParabolicJump
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   frog: {fileID: 5981366570594574314}
   gravity: -5
   targetPos: {x: 3, y: 0, z: 0}
