@@ -20,7 +20,7 @@ public class ParabolicJump : MonoBehaviour
     public bool isJumping;
 
     [SerializeField] private float yOffset = 0.1f;
-    [SerializeField] private float jumpSpeed = 3f;
+    [SerializeField] private float jumpSpeed = 1f;
 
     public void JumpTo(Vector3 target, float duration)
     {
