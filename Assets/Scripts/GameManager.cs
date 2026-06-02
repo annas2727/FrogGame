@@ -23,14 +23,16 @@ public class GameManager : MonoBehaviour
     };
 
     public List<Material> patternMaterials;
+    public Material eyeMaterial;
 
     public Material GetPatternMaterial(string patternType)
     {
         int index = patternType switch
         {
-            "spots"   => 0,
-            "stripes" => 1,
-            _         => 2
+            "none"   => 0,
+            "spots"   => 1,
+            "stripes" => 2,
+            _         => 3
         };
 
         return patternMaterials.Count > index ? patternMaterials[index] : null;
