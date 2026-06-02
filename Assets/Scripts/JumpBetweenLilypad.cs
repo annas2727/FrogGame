@@ -7,6 +7,7 @@ public class JumpBetweenLilypad : MonoBehaviour
     [Header("Lily Pad Settings")]
     public float searchRadius = 10f;
     public LayerMask lilyPadLayer;
+    public LayerMask frogLayer;
 
     [Header("Wait Time")]
     public float minWaitTime = 1f;
