@@ -14,6 +14,8 @@ public class JumpBetweenLilypad : MonoBehaviour
 
     private ParabolicJump jumpScript;
 
+    private GameObject currentPad;
+
     private void Start()
     {
         jumpScript = GetComponent<ParabolicJump>();
@@ -32,6 +34,7 @@ public class JumpBetweenLilypad : MonoBehaviour
             if (targetPad != null)
             {
                 jumpScript.JumpToPad(targetPad);
+                currentPad = targetPad;
             }
         }
     }
@@ -49,10 +52,18 @@ public class JumpBetweenLilypad : MonoBehaviour
         foreach (Collider hit in hits)
         {
             // Don't choose the pad we're currently standing on
-            if (hit.gameObject != gameObject)
+            if (currentPad != null)
+            {
+                if (hit.gameObject != currentPad)
+                {
+                    validPads.Add(hit.gameObject);
+                }
+            }
+            else
             {
                 validPads.Add(hit.gameObject);
             }
+            
         }
 
         if (validPads.Count == 0)
