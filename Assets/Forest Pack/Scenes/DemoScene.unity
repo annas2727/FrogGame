@@ -2339,6 +2339,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8318858791286397574, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: currentBodyColor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318858791286397574, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: currentPatternType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
