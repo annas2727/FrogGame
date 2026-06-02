@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ParabolicJump : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     public AnimateFrog frog;
 
     [SerializeField] private float gravity = -20f;
@@ -52,7 +54,7 @@ public class ParabolicJump : MonoBehaviour
 
     public void JumpToPad(GameObject Pad)
     {
-        JumpTo(Pad.transform.position + (Vector3.up * yOffset), jumpSpeed); //* (transform.localScale.x / 0.25f))
+        JumpTo(Pad.transform.position + (Vector3.up * statsConfig.BaseLilypadyOffset), jumpSpeed); //* (transform.localScale.x / 0.25f))
     }
 
     private void Update()
