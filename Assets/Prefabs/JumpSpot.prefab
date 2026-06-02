@@ -68,3 +68,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 0
+  size: 1

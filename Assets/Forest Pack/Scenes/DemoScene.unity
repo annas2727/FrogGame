@@ -433,10 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4907958872362265647, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 469900481}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5717111076862129813, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
       insertIndex: -1
@@ -1222,6 +1219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1 &361588029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de91c5cd650f46346abfd8b205d1a146, type: 3}
@@ -1283,6 +1282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &363607636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1803,11 +1804,11 @@ Transform:
   m_GameObject: {fileID: 469900477}
   serializedVersion: 2
   m_LocalRotation: {x: 0.057506885, y: 0.93359387, z: -0.30763307, w: 0.1745207}
-  m_LocalPosition: {x: 0.08773654, y: 0.5425043, z: 0.5195905}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.10000002}
+  m_LocalPosition: {x: -1.4481812, y: 6.425043, z: 7.068905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 860841509}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &504834719
 PrefabInstance:
@@ -2666,6 +2667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!65 &770849645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3041,11 +3044,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5717111076862129813, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
   m_PrefabInstance: {fileID: 123047317}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &860841509 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4907958872362265647, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
-  m_PrefabInstance: {fileID: 123047317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &860841510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3254,6 +3252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &956066797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4216,6 +4216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &1117056337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4523,6 +4525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &1141407522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5101,6 +5105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &1233885633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7300,6 +7306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &1811337626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7629,6 +7637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!65 &1844475565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7756,6 +7766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &1887061526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8265,6 +8277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!1001 &2079922389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8664,6 +8678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isOccupied: 0
   isReserved: 0
+  sizeScaled: 1
+  size: 1
 --- !u!65 &2114686004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9012,3 +9028,4 @@ SceneRoots:
   - {fileID: 1664875652}
   - {fileID: 816648981}
   - {fileID: 1060645378}
+  - {fileID: 469900481}
