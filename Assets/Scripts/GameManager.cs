@@ -24,13 +24,16 @@ public class GameManager : MonoBehaviour
 
     public List<Material> patternMaterials;
 
-    void Start()
+    public Material GetPatternMaterial(string patternType)
     {
+        int index = patternType switch
+        {
+            "spots"   => 0,
+            "stripes" => 1,
+            _         => 2
+        };
+
+        return patternMaterials.Count > index ? patternMaterials[index] : null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

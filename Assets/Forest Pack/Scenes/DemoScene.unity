@@ -713,6 +713,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8318858791286397574, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: currentBodyColor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318858791286397574, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: currentPatternType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318858791286397574, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: currentPatternColor
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1805,10 +1817,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   patternTypes:
+  - none
   - spots
   - stripes
-  - none
-  patternMaterials: []
+  patternMaterials:
+  - {fileID: 2100000, guid: a627f60a42321474ea35525a0908c41e, type: 2}
+  - {fileID: 2100000, guid: 27bd33dbbc7645c46a2f82eaf31a2757, type: 2}
+  - {fileID: 2100000, guid: 15f752a28596dc84bba90458340f11e8, type: 2}
 --- !u!4 &450380319
 Transform:
   m_ObjectHideFlags: 0

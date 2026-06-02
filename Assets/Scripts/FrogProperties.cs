@@ -15,8 +15,7 @@ public class FrogProperties : MonoBehaviour
     private string patternType;
     private string bodyColorName; 
     private string patternColorName;
-
-    public Material frogMaterial;
+    private Material frogMaterial;
 
     private Renderer frogRenderer;
     GameManager gameManager;
@@ -31,7 +30,8 @@ public class FrogProperties : MonoBehaviour
 
         bodyColor = gameManager.colors.ContainsKey(bodyColorName) ? gameManager.colors[bodyColorName] : "#ffffff";
         patternColor = gameManager.colors.ContainsKey(patternColorName) ? gameManager.colors[patternColorName] : "#ffffff";
-
+    
+        frogMaterial = gameManager.GetPatternMaterial(patternType);
 
         frogRenderer = GetComponent<Renderer>();
 
