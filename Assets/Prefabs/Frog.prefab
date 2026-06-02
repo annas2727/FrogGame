@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
       propertyPath: m_Name
-      value: Frog 1
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
       propertyPath: m_Layer
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a9ded13c33efb47b918625768dd656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParabolicJump
-  frog: {fileID: 0}
+  frog: {fileID: 5981366570594574314}
   gravity: -5
   targetPos: {x: 3, y: 0, z: 0}
   isJumping: 0
@@ -309,10 +309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6649e9c2800e0ab4d985221088965c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpBetweenLilypad
-  searchRadius: 100
+  searchRadius: 25
   lilyPadLayer:
     serializedVersion: 2
     m_Bits: 64
+  frogLayer:
+    serializedVersion: 2
+    m_Bits: 0
   minWaitTime: 5
   maxWaitTime: 8
 --- !u!65 &8651171679703970538
