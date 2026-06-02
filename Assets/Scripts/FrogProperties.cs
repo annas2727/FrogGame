@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class FrogProperties : MonoBehaviour
 {
-    public enum bodyColorName { red, orange, yellow, green, blue, purple }
-    public enum patternColorName { red, orange, yellow, green, blue, purple }
-    public enum pattern { spots, stripes, none }
+    public enum BodyColorOption    { red, orange, yellow, green, blue, purple }
+    public enum PatternColorOption { red, orange, yellow, green, blue, purple }
+    public enum PatternType        { spots, stripes, none }
 
-    [SerializeField] bodyColorName currentBodyColorName;
-    [SerializeField] patternColorName currentPatternColorName;
-    [SerializeField] pattern currentPatternType;
+    [SerializeField] BodyColorOption currentBodyColor;
+    [SerializeField] PatternColorOption currentPatternColor;
+    [SerializeField] PatternType currentPatternType;
 
-    private string bodyColor; 
+    private string bodyColor;
     private string patternColor;
     private string patternType;
-
     private string bodyColorName; 
     private string patternColorName;
 
@@ -27,13 +26,13 @@ public class FrogProperties : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        bodyColorName = currentBodyColorName.ToString();
-        patternColorName = currentPatternColorName.ToString();
+        string bodyColorName = currentBodyColor.ToString();
+        string patternColorName = currentPatternColor.ToString();
         patternType = currentPatternType.ToString();
 
         bodyColor = gameManager.colors.ContainsKey(bodyColorName) ? gameManager.colors[bodyColorName] : "#ffffff";
         patternColor = gameManager.colors.ContainsKey(patternColorName) ? gameManager.colors[patternColorName] : "#ffffff";
-        patternType = gameManager.patternTypes.Contains(patternType) ? patternType : gameManager.patternTypes[0];
+
 
         frogRenderer = GetComponent<Renderer>();
 
