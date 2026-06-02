@@ -56,7 +56,7 @@ public class JumpBetweenLilypad : MonoBehaviour
             // Don't choose the pad we're currently standing on
             bool isNotLastPad = currentPad == null || pad != currentPad;
             // Don't choose pads too small
-            bool isLargeEnough = true; // (pad.transform.localScale.x/0.8f) >= (transform.localScale.x/0.25f);
+            bool isLargeEnough = (pad.transform.localScale.x/0.8f) >= (transform.localScale.x/0.25f);
 
             if (isNotLastPad && isLargeEnough)
             { 
