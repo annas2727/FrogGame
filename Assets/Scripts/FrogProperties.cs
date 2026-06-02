@@ -14,6 +14,9 @@ public class FrogProperties : MonoBehaviour
     private string patternColor;
     private string patternType;
 
+    private string bodyColorName; 
+    private string patternColorName;
+
     public Material frogMaterial;
 
     private Renderer frogRenderer;
@@ -23,12 +26,12 @@ public class FrogProperties : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        bodyColor = currentBodyColorName.ToString();
-        patternColor = currentPatternColorName.ToString();
+        bodyColorName = currentBodyColorName.ToString();
+        patternColorName = currentPatternColorName.ToString();
         patternType = currentPatternType.ToString();
 
-        bodyColor = gameManager.colors.ContainsKey(bodyColor) ? gameManager.colors[bodyColor] : "#ffffff";
-        patternColor = gameManager.colors.ContainsKey(patternColor) ? gameManager.colors[patternColor] : "#ffffff";
+        bodyColor = gameManager.colors.ContainsKey(bodyColorName) ? gameManager.colors[bodyColorName] : "#ffffff";
+        patternColor = gameManager.colors.ContainsKey(patternColorName) ? gameManager.colors[patternColorName] : "#ffffff";
         patternType = gameManager.patternTypes.Contains(patternType) ? patternType : gameManager.patternTypes[0];
 
         frogRenderer = GetComponent<Renderer>();
