@@ -63,7 +63,6 @@ public class JumpBetweenSpots : MonoBehaviour
 
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
-                Debug.Log(jumpSpotData != null);
                 bool isLargeEnough = (pad.transform.localScale.x / statsConfig.BaseLilypadScale) >= (transform.localScale.x / statsConfig.MaxFrogScale);
 
 

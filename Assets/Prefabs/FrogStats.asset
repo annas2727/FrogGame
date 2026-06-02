@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: FrogStats
   m_EditorClassIdentifier: Assembly-CSharp::Stats
   baseLilypadScale: 0.8
+  baseLilypadyOffset: 0.03
+  jumpSpotSearchRadius: 8
+  jumpSpotSearchRadiusAddition: 4
+  jumpSpotSearchNumber: 3
+  maxIdleJumpTime: 10
+  minIdleJumpTime: 4
   maxFrogScale: 0.25
   minFrogScale: 0.1
   maxTadpoleScale: 20

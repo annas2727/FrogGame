@@ -17,11 +17,11 @@ public class ParabolicJump : MonoBehaviour
     private float jumpDuration;
     private float elapsedTime;
 
-
+    private Quaternion startRotation;
+    private Quaternion targetRotation;
 
     public bool isJumping;
 
-    [SerializeField] private float yOffset = 0.03f;
     [SerializeField] private float jumpSpeed = 1f;
 
     public void JumpTo(Vector3 target, float duration)
@@ -52,9 +52,30 @@ public class ParabolicJump : MonoBehaviour
         isJumping = true;
     }
 
-    public void JumpToPad(GameObject Pad)
+    public void JumpToPad(GameObject pad)
     {
-        JumpTo(Pad.transform.position + (Vector3.up * statsConfig.BaseLilypadyOffset), jumpSpeed); //* (transform.localScale.x / 0.25f))
+        startRotation = transform.rotation;
+
+        //Vector3 euler = transform.rotation.eulerAngles;
+        //Vector3 padEuler = pad.transform.rotation.eulerAngles;
+
+        // Rotate so the frog's up matches the pad's up
+        targetRotation = Quaternion.FromToRotation(
+            transform.up,
+            pad.transform.up
+        ) * transform.rotation;
+
+        /*
+        targetRotation = Quaternion.Euler(
+            padEuler.x,
+            euler.y,
+            padEuler.z
+        );
+        */
+        JumpTo(
+            pad.transform.position + Vector3.up * statsConfig.BaseLilypadyOffset,
+            jumpSpeed
+        );
     }
 
     private void Update()
@@ -79,10 +100,19 @@ public class ParabolicJump : MonoBehaviour
             startPos +
             horizontalOffset +
             Vector3.up * verticalOffset;
+        float rotationT = Mathf.Clamp01(elapsedTime / jumpDuration);
+
+        transform.rotation = Quaternion.Slerp(
+            startRotation,
+            targetRotation,
+            rotationT
+        );
 
         if (elapsedTime >= jumpDuration)
         {
             transform.position = targetPos;
+            transform.rotation = targetRotation;
+
             isJumping = false;
             frog.SetAnimationState("Idle");
         }
