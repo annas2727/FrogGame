@@ -51,19 +51,17 @@ public class JumpBetweenLilypad : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
+            
+            GameObject pad = hit.gameObject;
             // Don't choose the pad we're currently standing on
-            if (currentPad != null)
-            {
-                if (hit.gameObject != currentPad)
-                {
-                    validPads.Add(hit.gameObject);
-                }
-            }
-            else
-            {
+            bool isNotLastPad = currentPad == null || pad != currentPad;
+            // Don't choose pads too small
+            bool isLargeEnough = true; // (pad.transform.localScale.x/0.8f) >= (transform.localScale.x/0.25f);
+
+            if (isNotLastPad && isLargeEnough)
+            { 
                 validPads.Add(hit.gameObject);
             }
-            
         }
 
         if (validPads.Count == 0)
