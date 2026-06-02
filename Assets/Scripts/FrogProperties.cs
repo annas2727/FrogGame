@@ -27,8 +27,8 @@ public class FrogProperties : MonoBehaviour
         string patternColorName = currentPatternColor.ToString();
         patternType = currentPatternType.ToString();
 
-        bodyColor = gameManager.colors.ContainsKey(bodyColorName) ? gameManager.colors[bodyColorName] : "#ffffff";
-        patternColor = gameManager.colors.ContainsKey(patternColorName) ? gameManager.colors[patternColorName] : "#ffffff";
+        bodyColor = gameManager.bodyColors.ContainsKey(bodyColorName) ? gameManager.bodyColors[bodyColorName] : "#ffffff";
+        patternColor = gameManager.patternColors.ContainsKey(patternColorName) ? gameManager.patternColors[patternColorName] : "#ffffff";
     
         frogRenderer = GetComponent<Renderer>();
         frogSkinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
