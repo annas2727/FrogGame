@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpBetweenLilypad : MonoBehaviour
+public class JumpBetweenSpots : MonoBehaviour
 {
     [Header("Lily Pad Settings")]
     public float searchRadius = 10f;
@@ -10,8 +10,8 @@ public class JumpBetweenLilypad : MonoBehaviour
     public LayerMask frogLayer;
 
     [Header("Wait Time")]
-    public float minWaitTime = 1f;
-    public float maxWaitTime = 1f;
+    public float minWaitTime = 4f;
+    public float maxWaitTime = 6f;
 
     private ParabolicJump jumpScript;
 
@@ -34,8 +34,11 @@ public class JumpBetweenLilypad : MonoBehaviour
 
             if (targetPad != null)
             {
+                if (currentPad != null)
+                    currentPad.GetComponent<JumpSpot>().Leave(); //Unreserve Current Pad
+                targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
                 jumpScript.JumpToPad(targetPad);
-                currentPad = targetPad;
+                currentPad = targetPad; //Save New Pad
             }
         }
     }
@@ -52,26 +55,16 @@ public class JumpBetweenLilypad : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            
+
             GameObject pad = hit.gameObject;
 
-            // Don't choose the pad we're currently standing on
-            bool isNotLastPad = currentPad == null || pad != currentPad;
-
             // Don't choose pads too small
-            bool isLargeEnough = (pad.transform.localScale.x/0.8f) >= (transform.localScale.x/0.25f);
+            bool isLargeEnough = (pad.transform.localScale.x / 0.8f) >= (transform.localScale.x / 0.25f);
+            JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
 
-            // Don't choose 
-            Collider[] frogsOnPad = Physics.OverlapSphere(
-                pad.transform.position,
-                0.5f,
-                frogLayer
-            );
-            bool isOccupied = frogsOnPad.Length > 0;
-
-            if (isNotLastPad && isLargeEnough && !isOccupied)
-            { 
-                validPads.Add(hit.gameObject);
+            if (isLargeEnough && !jumpSpotData.isReserved)
+            {
+                validPads.Add(pad);
             }
         }
 

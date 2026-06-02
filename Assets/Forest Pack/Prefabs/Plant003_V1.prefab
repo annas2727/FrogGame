@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1971860085132925911}
   - component: {fileID: 4375672571456024349}
   - component: {fileID: 4779465160488936206}
+  - component: {fileID: -8315485303104721965}
   m_Layer: 6
   m_Name: Plant003_V1
   m_TagString: Untagged
@@ -114,3 +115,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0535107, y: 0.11118315, z: 1.0252304}
   m_Center: {x: 0.005034685, y: 0.057931133, z: -0.0071166754}
+--- !u!114 &-8315485303104721965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862459178887270088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167828eba0b694347a6082ce051c1cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
+  isOccupied: 0
+  isReserved: 0
