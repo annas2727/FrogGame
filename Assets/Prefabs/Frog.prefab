@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6649e9c2800e0ab4d985221088965c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpBetweenLilypad
+  statsConfig: {fileID: 0}
   searchRadius: 20
   lilyPadLayer:
     serializedVersion: 2
@@ -354,3 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762fbf86b4f9f714a9e0000efb5d1072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogProperties
+  currentBodyColorName: 0
+  currentPatternColorName: 0
+  currentPatternType: 0
+  frogMaterial: {fileID: 0}
