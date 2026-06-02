@@ -22,9 +22,10 @@ public class GameManager : MonoBehaviour
         "none"
     };
 
+    public List<Material> patternMaterials;
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
