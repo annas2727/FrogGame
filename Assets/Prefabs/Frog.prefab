@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
       propertyPath: m_Name
-      value: Frog 1
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
       propertyPath: m_Layer
@@ -239,6 +239,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8651171679703970538}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8318858791286397574}
   m_SourcePrefab: {fileID: 100100000, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
 --- !u!1 &5619548745929289185 stripped
 GameObject:
@@ -313,6 +316,9 @@ MonoBehaviour:
   lilyPadLayer:
     serializedVersion: 2
     m_Bits: 64
+  frogLayer:
+    serializedVersion: 2
+    m_Bits: 0
   minWaitTime: 5
   maxWaitTime: 8
 --- !u!65 &8651171679703970538
@@ -336,3 +342,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8318858791286397574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619548745929289185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762fbf86b4f9f714a9e0000efb5d1072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogProperties
