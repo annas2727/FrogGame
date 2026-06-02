@@ -283,7 +283,7 @@ MonoBehaviour:
   gravity: -5
   targetPos: {x: 3, y: 0, z: 0}
   isJumping: 0
-  yOffset: 0.1
+  yOffset: 0.03
   jumpSpeed: 1
 --- !u!114 &5981366570594574314
 MonoBehaviour:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6649e9c2800e0ab4d985221088965c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpBetweenLilypad
-  searchRadius: 25
+  searchRadius: 20
   lilyPadLayer:
     serializedVersion: 2
     m_Bits: 64

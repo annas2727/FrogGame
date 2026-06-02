@@ -19,7 +19,7 @@ public class ParabolicJump : MonoBehaviour
 
     public bool isJumping;
 
-    [SerializeField] private float yOffset = 0.1f;
+    [SerializeField] private float yOffset = 0.03f;
     [SerializeField] private float jumpSpeed = 1f;
 
     public void JumpTo(Vector3 target, float duration)
@@ -52,7 +52,7 @@ public class ParabolicJump : MonoBehaviour
 
     public void JumpToPad(GameObject Pad)
     {
-        JumpTo(Pad.transform.position + (Vector3.up * yOffset), jumpSpeed);
+        JumpTo(Pad.transform.position + (Vector3.up * yOffset), jumpSpeed); //* (transform.localScale.x / 0.25f))
     }
 
     private void Update()
