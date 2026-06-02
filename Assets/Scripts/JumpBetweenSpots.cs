@@ -34,10 +34,12 @@ public class JumpBetweenSpots : MonoBehaviour
 
             if (targetPad != null)
             {
+                targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
+                yield return StartCoroutine(TurnToPad(targetPad.transform));
+                yield return new WaitForSeconds(1.5f);
+                jumpScript.JumpToPad(targetPad);
                 if (currentPad != null)
                     currentPad.GetComponent<JumpSpot>().Leave(); //Unreserve Current Pad
-                targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
-                jumpScript.JumpToPad(targetPad);
                 currentPad = targetPad; //Save New Pad
             }
         }
@@ -73,6 +75,33 @@ public class JumpBetweenSpots : MonoBehaviour
 
         int randomIndex = Random.Range(0, validPads.Count);
         return validPads[randomIndex];
+    }
+
+    IEnumerator TurnToPad(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        direction.y = 0f;
+
+        if (direction == Vector3.zero)
+            yield break;
+
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        float turnSpeed = 8f; // adjust for faster/slower turning
+
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 1f)
+        {
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                Time.deltaTime * turnSpeed
+            );
+
+            yield return null;
+        }
+
+        // snap final alignment (prevents tiny drift)
+        transform.rotation = targetRotation;
     }
 
     private void OnDrawGizmosSelected()
