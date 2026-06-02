@@ -10,13 +10,15 @@ public class JumpBetweenLilypad : MonoBehaviour
 
     [Header("Wait Time")]
     public float minWaitTime = 1f;
-    public float maxWaitTime = 5f;
+    public float maxWaitTime = 1f;
 
-    private FrogJump jumpScript;
+    private ParabolicJump jumpScript;
+
+    private GameObject currentPad;
 
     private void Start()
     {
-        jumpScript = GetComponent<FrogJump>();
+        jumpScript = GetComponent<ParabolicJump>();
         StartCoroutine(ChoosePadsRoutine());
     }
 
@@ -32,6 +34,7 @@ public class JumpBetweenLilypad : MonoBehaviour
             if (targetPad != null)
             {
                 jumpScript.JumpToPad(targetPad);
+                currentPad = targetPad;
             }
         }
     }
@@ -49,10 +52,18 @@ public class JumpBetweenLilypad : MonoBehaviour
         foreach (Collider hit in hits)
         {
             // Don't choose the pad we're currently standing on
-            if (hit.gameObject != gameObject)
+            if (currentPad != null)
+            {
+                if (hit.gameObject != currentPad)
+                {
+                    validPads.Add(hit.gameObject);
+                }
+            }
+            else
             {
                 validPads.Add(hit.gameObject);
             }
+            
         }
 
         if (validPads.Count == 0)

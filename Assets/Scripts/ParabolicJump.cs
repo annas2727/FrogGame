@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ParabolicJump : MonoBehaviour
 {
+    public AnimateFrog frog;
+
     [SerializeField] private float gravity = -20f;
 
     private Vector3 startPos;
@@ -13,11 +15,13 @@ public class ParabolicJump : MonoBehaviour
     private float jumpDuration;
     private float elapsedTime;
 
+
+
     public bool isJumping;
 
-    public bool test = false;
-    public AnimateFrog frog; 
-    
+    [SerializeField] private float yOffset = 0.1f;
+    [SerializeField] private float jumpSpeed = 3f;
+
     public void JumpTo(Vector3 target, float duration)
     {
         frog.SetAnimationState("Jump");
@@ -46,14 +50,13 @@ public class ParabolicJump : MonoBehaviour
         isJumping = true;
     }
 
+    public void JumpToPad(GameObject Pad)
+    {
+        JumpTo(Pad.transform.position + (Vector3.up * yOffset), jumpSpeed);
+    }
+
     private void Update()
     {
-        if (test)
-        {
-            Vector3 targetTest = new Vector3(10, 0, 10);
-            JumpTo(targetTest, 2f);
-            test = false;
-        }
         if (!isJumping)
         {
             return;
