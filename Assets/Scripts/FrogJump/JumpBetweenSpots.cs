@@ -11,10 +11,6 @@ public class JumpBetweenSpots : MonoBehaviour
     public LayerMask lilyPadLayer;
     public LayerMask frogLayer;
 
-    [Header("Wait Time")]
-    public float minWaitTime = 4f;
-    public float maxWaitTime = 6f;
-
     private ParabolicJump jumpScript;
 
     private GameObject currentPad;
@@ -29,7 +25,7 @@ public class JumpBetweenSpots : MonoBehaviour
     {
         while (true)
         {
-            float waitTime = Random.Range(minWaitTime, maxWaitTime);
+            float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
 
             GameObject targetPad = GetRandomNearbyPad();
@@ -49,28 +45,34 @@ public class JumpBetweenSpots : MonoBehaviour
 
     GameObject GetRandomNearbyPad()
     {
-        Collider[] hits = Physics.OverlapSphere(
-            transform.position,
-            searchRadius,
-            lilyPadLayer
-        );
-
         List<GameObject> validPads = new List<GameObject>();
+        int searchCount = 0;
 
-        foreach (Collider hit in hits)
+        while (validPads.Count == 0 && searchCount < statsConfig.JumpSpotSearchNumber)
         {
+            Collider[] hits = Physics.OverlapSphere(
+                transform.position,
+                statsConfig.JumpSpotSearchRadius + (statsConfig.JumpSpotSearchRadiusAddition * searchCount),
+                lilyPadLayer
+            );
 
-            GameObject pad = hit.gameObject;
-
-            // Don't choose pads too small
-            JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
-            bool isLargeEnough = (pad.transform.localScale.x / statsConfig.BaseLilypadScale) >= (transform.localScale.x / statsConfig.MaxFrogScale);
-            
-
-            if (isLargeEnough && !jumpSpotData.isReserved)
+            foreach (Collider hit in hits)
             {
-                validPads.Add(pad);
+
+                GameObject pad = hit.gameObject;
+
+                // Don't choose pads too small
+                JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
+                Debug.Log(jumpSpotData != null);
+                bool isLargeEnough = (pad.transform.localScale.x / statsConfig.BaseLilypadScale) >= (transform.localScale.x / statsConfig.MaxFrogScale);
+
+
+                if (isLargeEnough && !jumpSpotData.isReserved)
+                {
+                    validPads.Add(pad);
+                }
             }
+            searchCount += 1;
         }
 
         if (validPads.Count == 0)
