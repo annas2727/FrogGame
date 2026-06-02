@@ -8939,6 +8939,10 @@ PrefabInstance:
       propertyPath: searchRadius
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2457407798761743262, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 15f752a28596dc84bba90458340f11e8, type: 2}
     - target: {fileID: 5095670571818760027, guid: 56299fbba853e6c4ea068b683ebab2bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.576
