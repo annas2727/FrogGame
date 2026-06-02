@@ -8,7 +8,7 @@ public class FrogProperties : MonoBehaviour
 
     [SerializeField] BodyColorOption currentBodyColor;
     [SerializeField] PatternColorOption currentPatternColor;
-    [SerializeField] PatternType currentPatternType;
+    [SerializeField] PatternType        currentPatternType;
 
     private string bodyColor;
     private string patternColor;
