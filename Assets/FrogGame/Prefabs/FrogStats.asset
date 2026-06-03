@@ -19,8 +19,8 @@ MonoBehaviour:
   jumpSpotSearchNumber: 3
   maxIdleJumpTime: 10
   minIdleJumpTime: 4
-  maxFrogScale: 0.25
-  minFrogScale: 0.1
+  maxFrogScale: 0.0025
+  minFrogScale: 0.001
   maxTadpoleScale: 20
   minTadpoleScale: 10
   maxEggScale: 0.25
