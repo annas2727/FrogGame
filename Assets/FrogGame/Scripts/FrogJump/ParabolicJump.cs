@@ -100,7 +100,7 @@ public class ParabolicJump : MonoBehaviour
         );
         if (elapsedTime >= jumpDuration / 2f)
         {
-            GetComponent<AnimateFrog>().Idle();
+            GetComponent<AnimateFrog>().LandJump();
         }
         if (elapsedTime >= jumpDuration)
         {

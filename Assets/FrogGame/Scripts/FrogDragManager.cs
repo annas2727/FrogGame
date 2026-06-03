@@ -48,6 +48,7 @@ public class FrogDragManager : MonoBehaviour
         if (!Physics.Raycast(ray, out RaycastHit frogHit, 1000f, frogLayer))
             return;
 
+
         DraggableFrog frog = frogHit.collider.GetComponentInParent<DraggableFrog>();
 
         if (frog == null)
@@ -83,7 +84,7 @@ public class FrogDragManager : MonoBehaviour
             return;
 
         draggedFrog.EndDrag();
-
+        draggedFrog.GetComponent<AnimateFrog>().LandPickup();
         StartCoroutine(DropToFloor(draggedFrog.transform));
 
         draggedFrog = null;
