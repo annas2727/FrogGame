@@ -27,6 +27,10 @@ public class AnimateFrog : MonoBehaviour
     {
         animator.SetTrigger("Pickup");
     }
+    public void PickupMidair()
+    {
+        animator.SetTrigger("P_Midair");
+    }
 
     public void LandPickup()
     {

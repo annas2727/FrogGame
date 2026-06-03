@@ -71,6 +71,7 @@ public class ParabolicJump : MonoBehaviour
     {
         if (GetComponent<DraggableFrog>().IsBeingDragged)
         {
+            GetComponent<AnimateFrog>().PickupMidair();
             isJumping = false;
             startRotation = transform.rotation;
         }
