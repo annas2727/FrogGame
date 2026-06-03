@@ -97,10 +97,10 @@ public class FrogDragManager : MonoBehaviour
         if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, 20f, floorLayer))
             yield break;
 
-        Vector3 target = hit.point;
+        Vector3 target = hit.point + Vector3.down * 0.05f;
 
         float t = 0f;
-        float duration = 0.15f;
+        float duration = 0.25f;
 
         while (t < 1f)
         {
