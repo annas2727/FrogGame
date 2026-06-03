@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-8050268713739036575
+--- !u!1102 &-8577036827457051318
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PickupLanding
+  m_Name: FrogArmature|J_Landing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,20 +20,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7286076993551767082, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: 8390486658784925400, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-7878343943503137292
+--- !u!1102 &-7920753065306854617
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpLanding
+  m_Name: FrogArmature|S_Long
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -46,26 +46,38 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 8390486658784925400, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: 3746456971233829434, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1109 &-6781233706353330722
-AnimatorTransition:
+--- !u!1102 &-7456488528195619601
+AnimatorState:
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -4380507729045346945}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 1
+  m_Name: FrogArmature|J_Midair
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 6727608635007810096, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1107 &-6706111964571441145
 AnimatorStateMachine:
   serializedVersion: 7
@@ -76,57 +88,56 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -5236455467183035902}
-    m_Position: {x: 580, y: -100, z: 0}
+    m_State: {fileID: 7838261564540829172}
+    m_Position: {x: 510, y: -160, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4380507729045346945}
-    m_Position: {x: 340, y: 110, z: 0}
+    m_State: {fileID: -919685302931387789}
+    m_Position: {x: 330, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -7878343943503137292}
-    m_Position: {x: 920, y: -60, z: 0}
+    m_State: {fileID: -8577036827457051318}
+    m_Position: {x: 538.6117, y: -13.06781, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8826307341405600891}
-    m_Position: {x: 690, y: -50, z: 0}
+    m_State: {fileID: -7456488528195619601}
+    m_Position: {x: 548.6117, y: -3.06781, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5012899934898284151}
-    m_Position: {x: 1010, y: -110, z: 0}
+    m_State: {fileID: 8819834925732941753}
+    m_Position: {x: 558.6117, y: 6.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -8050268713739036575}
-    m_Position: {x: 1000, y: 30, z: 0}
+    m_State: {fileID: -4697563374719521540}
+    m_Position: {x: 568.6117, y: 16.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3399253498690621565}
-    m_Position: {x: 960, y: 0, z: 0}
+    m_State: {fileID: -5451149489327797158}
+    m_Position: {x: 578.6117, y: 26.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1886397885117903709}
-    m_Position: {x: 980, y: 50, z: 0}
+    m_State: {fileID: 998295313824248537}
+    m_Position: {x: 588.6117, y: 36.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -6476480706769780210}
-    m_Position: {x: 1120, y: 70, z: 0}
+    m_State: {fileID: 3572037693637951698}
+    m_Position: {x: 598.6117, y: 46.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2035998889337251677}
-    m_Position: {x: 820, y: 10, z: 0}
+    m_State: {fileID: -7920753065306854617}
+    m_Position: {x: 608.6117, y: 56.93219, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5809342316216196825}
-    m_Position: {x: 820, y: 80, z: 0}
+    m_State: {fileID: 4400098196676209086}
+    m_Position: {x: 618.6117, y: 66.93219, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
-  m_EntryTransitions:
-  - {fileID: -6781233706353330722}
+  m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 70, y: 40, z: 0}
   m_EntryPosition: {x: 60, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 840, y: 80, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -4380507729045346945}
---- !u!1102 &-6476480706769780210
+  m_DefaultState: {fileID: -919685302931387789}
+--- !u!1102 &-5451149489327797158
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwimmingLegKick
+  m_Name: FrogArmature|P_Midair
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -139,20 +150,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8434300569667037449, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: 8868295546715187722, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-5236455467183035902
+--- !u!1102 &-4697563374719521540
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Croak
+  m_Name: FrogArmature|P_Landing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -165,13 +176,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 879924734671314513, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: -7286076993551767082, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-4380507729045346945
+--- !u!1102 &-919685302931387789
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -191,59 +202,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5919020001947705563, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-3399253498690621565
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PickupMidair
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 8868295546715187722, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-1886397885117903709
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PickupTakeoff
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 3539676866876323430, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: -5919020001947705563, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -284,14 +243,14 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   m_EvaluateTransitionsOnStart: 1
---- !u!1102 &2035998889337251677
+--- !u!1102 &998295313824248537
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwimmingLong
+  m_Name: FrogArmature|P_Takeoff
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -304,20 +263,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 3746456971233829434, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: 3539676866876323430, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5012899934898284151
+--- !u!1102 &3572037693637951698
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpTakeoff
+  m_Name: FrogArmature|S_LegKick
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -330,20 +289,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7999809787646186808, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: -8434300569667037449, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5809342316216196825
+--- !u!1102 &4400098196676209086
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwimmingSym
+  m_Name: FrogArmature|S_Sym
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -356,20 +315,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8771342172536600156, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: -8771342172536600156, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &8826307341405600891
+--- !u!1102 &7838261564540829172
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpMidair
+  m_Name: FrogArmature|Croak
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -382,7 +341,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6727608635007810096, guid: e78ab89214223a245b0c9d5534751f34, type: 3}
+  m_Motion: {fileID: 879924734671314513, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &8819834925732941753
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FrogArmature|J_Takeoff
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7999809787646186808, guid: a335cea8aa26cdd498a81aa7f2b0010c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
