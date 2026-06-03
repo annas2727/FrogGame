@@ -73,13 +73,13 @@ public class JumpBetweenSpots : MonoBehaviour
 
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
-                bool isLargeEnough = (pad.transform.localScale.x / statsConfig.BaseLilypadScale) >= (transform.localScale.x / statsConfig.MaxFrogScale);
+                bool isLargeEnough = (pad.transform.lossyScale.x / statsConfig.BaseLilypadScale) >= (transform.lossyScale.x / statsConfig.MaxFrogScale);
 
                 if (isLargeEnough && !jumpSpotData.isReserved)
                 {
                     validPads.Add(pad);
                     //Small frogs double chance to go onto small pads
-                    if(pad.transform.localScale.x / statsConfig.BaseLilypadScale < 0.95f)
+                    if(pad.transform.lossyScale.x / statsConfig.BaseLilypadScale < 0.95f)
                     {
                         validPads.Add(pad);
                     }
