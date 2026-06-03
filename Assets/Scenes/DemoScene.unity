@@ -4254,6 +4254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone012 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b875c14400ffb348bcf3069d2e6beda, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6363,11 +6367,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767400413853537203, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -1063203228461421988, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4767400413853537203, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1198251637}
   m_SourcePrefab: {fileID: 100100000, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
 --- !u!4 &1065259569 stripped
 Transform:
@@ -7803,6 +7818,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76a169d7c4f213345b18708c066a9897, type: 3}
   m_PrefabInstance: {fileID: 1196799075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1198251633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4767400413853537203, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
+  m_PrefabInstance: {fileID: 1065259568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1198251637
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198251633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6894428203817054813, guid: b1fe58f628853d141a30dcba7785d9c8, type: 3}
 --- !u!1 &1217614836 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de91c5cd650f46346abfd8b205d1a146, type: 3}
@@ -9690,6 +9732,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 391fb19edefced6488c69ad4ab602749, type: 3}
       propertyPath: m_Name
       value: Stone09 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 391fb19edefced6488c69ad4ab602749, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13287,6 +13333,14 @@ PrefabInstance:
     - target: {fileID: 566935201703380335, guid: 8754a309c0d3fcc43954d70582db58fe, type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 566935201703380335, guid: 8754a309c0d3fcc43954d70582db58fe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528658838305803971, guid: 8754a309c0d3fcc43954d70582db58fe, type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7963690179886695065, guid: 8754a309c0d3fcc43954d70582db58fe, type: 3}
       propertyPath: m_LocalScale.x
