@@ -16,6 +16,14 @@ public class AnimateFrog : MonoBehaviour
     public void SetAnimationState(string state)
     {
         animator.SetBool("Idle", state == "Idle");
-        animator.SetBool("Jump", state == "Jump");
+        animator.SetBool("J_Takeoff", state == "J_Takeoff");
+        animator.SetBool("J_Mid", state == "J_Mid");
+        animator.SetBool("J_Land", state == "J_Land");
+        animator.SetBool("P_Takeoff", state == "P_Takeoff");
+        animator.SetBool("P_Mid", state == "P_Mid");
+        animator.SetBool("P_Land", state == "P_Land");
+        animator.SetBool("Swim", state == "Swim");
+        animator.SetBool("Croak", state == "Croak");
+
     }
 }
