@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -81,6 +83,32 @@ public class FrogDragManager : MonoBehaviour
             return;
 
         draggedFrog.EndDrag();
+
+        StartCoroutine(DropToFloor(draggedFrog.transform));
+
         draggedFrog = null;
+    }
+
+    private IEnumerator DropToFloor(Transform frog)
+    {
+        Vector3 start = frog.position;
+        Vector3 origin = frog.position + Vector3.up * 5f;
+
+        if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, 20f, floorLayer))
+            yield break;
+
+        Vector3 target = hit.point;
+
+        float t = 0f;
+        float duration = 0.15f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            frog.position = Vector3.Lerp(start, target, t);
+            yield return null;
+        }
+
+        frog.position = target;
     }
 }
