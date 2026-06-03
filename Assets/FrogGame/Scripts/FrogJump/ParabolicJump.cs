@@ -70,11 +70,13 @@ public class ParabolicJump : MonoBehaviour
 
     private void Update()
     {
-        if (!isJumping)
+        if (GetComponent<DraggableFrog>().IsBeingDragged)
         {
-            return;
+            isJumping = false;
+            startRotation = transform.rotation;
         }
-           
+        if (!isJumping)
+            return;
 
         elapsedTime += Time.deltaTime;
 
@@ -107,6 +109,7 @@ public class ParabolicJump : MonoBehaviour
             transform.rotation = targetRotation;
 
             isJumping = false;
+            GetComponent<DraggableFrog>().HasBeenDragged = false;
         }
     }
 }

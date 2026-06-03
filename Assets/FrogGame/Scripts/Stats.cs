@@ -4,7 +4,9 @@ using UnityEngine;
 public class Stats : ScriptableObject
 {
     [Header("Lilypad Settings")]
+    [Tooltip("Min scale of lilypad that a grown frog can jump on")]
     [SerializeField] private float baseLilypadScale = 0.8f; //Min scale of lilypad that a grown frog can jump on
+    [Tooltip("y-offset of frog above lilypad (so that frog doesn't clip into lilypad")]
     [SerializeField] private float baseLilypadyOffset = 0.05f; //y-offset of frog above lilypad (so that frog doesn't clip into lilypad
 
     [Header("Search Settings")]

@@ -27,13 +27,14 @@ public class JumpBetweenSpots : MonoBehaviour
         {
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
+            yield return new WaitUntil(() => !GetComponent<DraggableFrog>().IsBeingDragged); //Wait until not being dragged
             GameObject targetPad = GetRandomNearbyPad();
 
             if (targetPad != null)
             {
                 targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
                 yield return StartCoroutine(TurnToPad(targetPad.transform));
-                yield return new WaitForSeconds(1.5f);
+                //yield return new WaitForSeconds(0.5f);
                 jumpScript.JumpToPad(targetPad);
                 if (currentPad != null)
                     currentPad.GetComponent<JumpSpot>().Leave(); //Unreserve Current Pad
@@ -96,9 +97,11 @@ public class JumpBetweenSpots : MonoBehaviour
 
     IEnumerator TurnToPad(Transform target)
     {
-        Vector3 padNormal = currentPad != null
-            ? currentPad.transform.up
-            : transform.up;
+        Vector3 padNormal = currentPad != null ? currentPad.transform.up : transform.up;
+        if (GetComponent<DraggableFrog>().HasBeenDragged)
+        {
+            padNormal = transform.up;
+        }
 
         Vector3 direction = Vector3.ProjectOnPlane(
             target.position - transform.position,
