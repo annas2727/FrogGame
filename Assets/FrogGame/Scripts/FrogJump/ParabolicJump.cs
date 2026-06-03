@@ -4,8 +4,6 @@ public class ParabolicJump : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
 
-    public AnimateFrog frog;
-
     [SerializeField] private float gravity = -20f;
 
     private Vector3 startPos;
@@ -26,7 +24,8 @@ public class ParabolicJump : MonoBehaviour
 
     public void JumpTo(Vector3 target, float duration)
     {
-        frog.SetAnimationState("Jump");
+        GetComponent<AnimateFrog>().Jump();
+
         startPos = transform.position;
         targetPos = target;
 
@@ -101,7 +100,7 @@ public class ParabolicJump : MonoBehaviour
         );
         if (elapsedTime >= jumpDuration / 2f)
         {
-            frog.SetAnimationState("Idle");
+            GetComponent<AnimateFrog>().Idle();
         }
         if (elapsedTime >= jumpDuration)
         {

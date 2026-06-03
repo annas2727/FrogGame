@@ -15,6 +15,8 @@ public class DraggableFrog : MonoBehaviour
 
         Vector3 euler = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);
+
+        GetComponent<AnimateFrog>().Pickup();
     }
 
     public void EndDrag()
