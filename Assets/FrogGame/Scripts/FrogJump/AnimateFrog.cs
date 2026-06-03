@@ -15,9 +15,19 @@ public class AnimateFrog : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 
+    public void LandJump()
+    {
+        animator.SetTrigger("J_Land");
+    }
+
     public void Pickup()
     {
         animator.SetTrigger("Pickup");
+    }
+
+    public void LandPickup()
+    {
+        animator.SetTrigger("P_Land");
     }
 
     public void Idle()
