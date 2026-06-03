@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 9201218017685433863}
   - component: {fileID: 5196750020579123618}
   - component: {fileID: 8068875850555037032}
-  m_Layer: 0
+  - component: {fileID: 1830032910548999586}
+  m_Layer: 8
   m_Name: LilypadFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +71,8 @@ MeshRenderer:
   - {fileID: -1812103721715802958, guid: e6e3d509d81af414ba31dbf9d8898674, type: 3}
   - {fileID: 1859426020009997765, guid: e6e3d509d81af414ba31dbf9d8898674, type: 3}
   - {fileID: 2100000, guid: 2f7ac34b80241f4408cda3b5c4173a84, type: 2}
-  - {fileID: 1840035539215654679, guid: e6e3d509d81af414ba31dbf9d8898674, type: 3}
-  - {fileID: 8736603183003784053, guid: e6e3d509d81af414ba31dbf9d8898674, type: 3}
+  - {fileID: 2100000, guid: ddef6e679f543584b80109eabf321fff, type: 2}
+  - {fileID: 2100000, guid: 8605aa47708221b4ea35460302d13a6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,3 +96,25 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1830032910548999586
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429220789569467581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4597715634354972445, guid: e6e3d509d81af414ba31dbf9d8898674, type: 3}
