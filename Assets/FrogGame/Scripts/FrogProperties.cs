@@ -51,8 +51,8 @@ public class FrogProperties : MonoBehaviour
 
         //Replace the original skin with the one that has the pattern shader
         Material[] mats = frogSkinnedRenderer.materials;
-        mats[0] = gameManager.eyeMaterial;
-        mats[1] = frogMaterial; 
+        mats[1] = gameManager.eyeMaterial;
+        mats[0] = frogMaterial; 
         frogSkinnedRenderer.materials = mats;
 
         ApplyProperties();
