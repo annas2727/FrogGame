@@ -30,7 +30,7 @@ public class FrogSwim : MonoBehaviour
         Vector3 target = FindClosestShorePoint();
 
         Vector3 dir = (target - transform.position);
-        dir.y = 0f;
+        //dir.y = 0f;
 
         if (dir.sqrMagnitude < 0.1f)
         {
