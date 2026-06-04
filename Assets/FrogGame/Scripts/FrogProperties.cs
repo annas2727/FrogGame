@@ -21,7 +21,7 @@ public class FrogProperties : MonoBehaviour
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
         string bodyColorName = currentBodyColor.ToString();
         string patternColorName = currentPatternColor.ToString();
