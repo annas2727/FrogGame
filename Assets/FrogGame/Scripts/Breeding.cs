@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ public class Breeding : MonoBehaviour
     string patternType;
 
     public GameObject egg;
-
+    
         public Dictionary<string, string> colorID = new Dictionary<string, string>
         {
             { "red", "primary" },
@@ -24,7 +25,7 @@ public class Breeding : MonoBehaviour
             { "white", "other" },
             { "black", "other" }
         };
-
+    
     public void Breed()
     {
         bodyColor1 = Frog1.GetComponent<FrogProperties>().bodyColor;
