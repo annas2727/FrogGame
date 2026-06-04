@@ -12,12 +12,12 @@ public class Breeding : MonoBehaviour
     private Dictionary<(FrogColor, FrogColor), FrogColor> Recipes = new()
     {
         // Primary -> Secondary
-        { (FrogColor.red, FrogColor.yellow), Col.orange },
-        { (FrogColor.red, FrogColor.blue), Col.blue },
-        { (FrogColor.yellow, FrogColor.blue), Col.green },
+        { (FrogColor.red, FrogColor.yellow), FrogColor.orange },
+        { (FrogColor.red, FrogColor.blue), FrogColor.purple },
+        { (FrogColor.yellow, FrogColor.blue), FrogColor.green },
     };
 
-    public string Mix(Colour a, Colour b)
+    public string Mix(FrogColor a, FrogColor b)
     {
         // Same color
         if (a == b)
@@ -29,10 +29,16 @@ public class Breeding : MonoBehaviour
 
         // The Rare Grey Frog
         if (a == FrogColor.white && b == FrogColor.black)
-            return b.ToString();
+            return FrogColor.grey.ToString();
+
+        //Grey rules
+        if (a == FrogColor.white && b == FrogColor.grey)
+            return FrogColor.white.ToString();
+        if (a == FrogColor.black && b == FrogColor.grey)
+            return FrogColor.black.ToString();
 
         // White or Black are recessive
-        if (a == FrogColor.white || a == FrogColor.black)
+        if (b == FrogColor.white || b == FrogColor.black || b == FrogColor.grey)
             return a.ToString();
 
         // Brown contamination
@@ -51,27 +57,14 @@ public class Breeding : MonoBehaviour
         return FrogColor.brown.ToString();
     }
 
-    private static bool IsAdjacent(Col a, Col b)
+    private static bool IsAdjacent(FrogColor a, FrogColor b)
     {
         return
-            (a == FrogColor.Red && b == FrogColor.Ora) ||
-            (a == FrogColor.Ora && b == FrogColor.Yel) ||
-            (a == FrogColor.Yel && b == FrogColor.Gre) ||
-            (a == FrogColor.Gre && b == FrogColor.Blu) ||
-            (a == FrogColor.Blu && b == FrogColor.Pur) ||
-            (a == FrogColor.Pur && b == FrogColor.Red);
-    }
-    
-    public void Breed()
-    {
-        bodyColor1 = Frog1.GetComponent<FrogProperties>().bodyColor;
-        bodyColor2 = Frog2.GetComponent<FrogProperties>().bodyColor;
-        patternColor1 = Frog1.GetComponent<FrogProperties>().patternColor;
-        patternColor2 = Frog2.GetComponent<FrogProperties>().patternColor;
-        patternType1 = Frog1.GetComponent<FrogProperties>().patternType;
-        patternType2 = Frog2.GetComponent<FrogProperties>().patternType;
-
-        GameObject NewFrog = Instantiate(Frog1, new Vector3(0, 0, 0), Quaternion.identity);
-        NewFrog.GetComponent<FrogProperties>().DNA(bodyColor1, bodyColor2, patternColor1, patternColor2, patternType1, patternType2);
+            (a == FrogColor.red && b == FrogColor.orange) ||
+            (a == FrogColor.orange && b == FrogColor.yellow) ||
+            (a == FrogColor.yellow && b == FrogColor.green) ||
+            (a == FrogColor.green && b == FrogColor.blue) ||
+            (a == FrogColor.blue && b == FrogColor.purple) ||
+            (a == FrogColor.purple && b == FrogColor.red);
     }
 }
