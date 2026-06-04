@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FrogProperties : MonoBehaviour
 {
-    public enum BodyColorOption { red, orange, yellow, green, blue, purple }
-    public enum PatternColorOption { red, orange, yellow, green, blue, purple }
+    public enum BodyColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
+    public enum PatternColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
     public enum PatternType { spots, stripes, none }
 
     [SerializeField] BodyColorOption currentBodyColor;
