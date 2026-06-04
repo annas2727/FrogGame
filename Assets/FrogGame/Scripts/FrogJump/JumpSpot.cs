@@ -5,14 +5,8 @@ using System.Collections.Generic;
 public class JumpSpot : MonoBehaviour
 {
     public bool isReserved = false; //Has a frog on it or jumping to it
+    public bool isTilted = false; //Is a pad on a wall
 
-    public bool isTilted = false; //Is a pad on a wall, needs to jump to "nextPad"
-    [SerializeField] private GameObject nextPad; //The next pad to jump to
-    
-    public GameObject getNextPad()
-    {
-        return nextPad;
-    }
     public void Reserve()
     {
         isReserved = true;
