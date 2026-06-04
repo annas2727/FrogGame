@@ -14,38 +14,36 @@ public class AnimateFrog : MonoBehaviour
     }
 
 
-    public void Jump()
+    public void Jump() => animator.SetTrigger("Jump");
+    public void LandJump() => animator.SetTrigger("J_Land");
+    public void Pickup() => animator.SetTrigger("Pickup");
+    public void PickupMidair() => animator.SetTrigger("P_Midair");
+    public void LandPickup() => animator.SetTrigger("P_Land");
+    public void Idle() => animator.SetTrigger("Idle");
+    public void Croak() => animator.SetTrigger("Croak");
+    public void Swim() => animator.SetTrigger("Swim");
+    public void SwimLegKick() => animator.SetTrigger("S_LegKick");
+    public void SwimSym() => animator.SetTrigger("S_Sym");
+
+    public void StartSwimming()
     {
-        animator.SetTrigger("Jump");
+        swimCoroutine = StartCoroutine(SwimLoop());
     }
 
-    public void LandJump()
+    IEnumerator SwimLoop()
     {
-        animator.SetTrigger("J_Land");
-    }
+        Swim();
 
-    public void Pickup()
-    {
-        animator.SetTrigger("Pickup");
-    }
-    public void PickupMidair()
-    {
-        animator.SetTrigger("P_Midair");
-    }
+        while (true)
+        {
+            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+        }
 
-    public void LandPickup()
-    {
-        animator.SetTrigger("P_Land");
-    }
+        yield return new WaitForSeconds(0.05f);
 
-    public void Idle()
-    {
-        animator.SetTrigger("Idle");
+        if (Random.value < 0.5f)
+            SwimLegKick();
+        else
+            SwimSym();
     }
-
-    public void Croak()
-    {
-        animator.SetTrigger("Croak");
-    }
-
 }

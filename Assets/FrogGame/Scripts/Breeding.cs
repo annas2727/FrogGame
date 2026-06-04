@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
+/*
 public class Breeding : MonoBehaviour
 {
     GameObject Frog1; 
@@ -68,3 +70,4 @@ public class Breeding : MonoBehaviour
     }
     
 }
+*/
