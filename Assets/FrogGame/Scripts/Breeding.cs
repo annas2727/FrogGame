@@ -65,6 +65,6 @@ public class Breeding : MonoBehaviour
         else if (random < 2) bodyColor = "black";
         else if (random < 17) bodyColor = bc1;
         else if (random < 33) bodyColor = bc2;
-        }
     }
+    
 }
