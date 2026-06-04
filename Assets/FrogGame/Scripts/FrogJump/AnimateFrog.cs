@@ -5,7 +5,7 @@ public class AnimateFrog : MonoBehaviour
 {
     private Animator animator;
     private Transform armature;
-
+    private Coroutine swimCoroutine;
 
     void Start()
     {
@@ -37,13 +37,13 @@ public class AnimateFrog : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
-        }
 
-        yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.05f);
 
-        if (Random.value < 0.5f)
-            SwimLegKick();
-        else
-            SwimSym();
+            if (Random.value < 0.5f)
+                SwimLegKick();
+            else
+                SwimSym();
+            }
     }
 }
