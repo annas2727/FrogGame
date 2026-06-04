@@ -41,6 +41,7 @@ public class FrogSwim : MonoBehaviour
         if (dir.sqrMagnitude < 0.1f)
         {
             isSwimming = false;
+            GetComponent<AnimateFrog>().StopSwimming();
             return;
         }
 

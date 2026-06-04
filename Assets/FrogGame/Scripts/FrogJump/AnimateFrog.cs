@@ -30,6 +30,16 @@ public class AnimateFrog : MonoBehaviour
         swimCoroutine = StartCoroutine(SwimLoop());
         Debug.Log("Started swimming");
     }
+    public void StopSwimming()
+    {
+        if (swimCoroutine != null)
+        {
+            StopCoroutine(swimCoroutine);
+            swimCoroutine = null;
+            Debug.Log("Stopped swimming");
+            Idle();
+        }
+    }
 
     IEnumerator SwimLoop()
     {
@@ -41,10 +51,27 @@ public class AnimateFrog : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
 
-            if (Random.value < 0.5f)
+            float random = Random.value;
+            if (random < 0.5f)
+            {
+                Debug.Log("LegKick");
                 SwimLegKick();
+            }
             else
+            {
+                Debug.Log("Sym");
                 SwimSym();
             }
-    }
+        }
+    }void Update()
+{
+    AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+
+    Debug.Log(
+        state.IsName("Idle") ? "Idle" :
+        state.IsName("S_Sym") ? "S_Sym" :
+        state.IsName("S_LegKick") ? "S_LegKick" :
+        "Other"
+    );
+}
 }
