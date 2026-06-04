@@ -117,7 +117,7 @@ public class FrogDragManager : MonoBehaviour
         switch (floorTag)
         {
             case "Water":
-                frog.GetComponent<FrogSwim>().isSwimming = true;
+                frog.GetComponent<FrogSwim>().StartSwimming();
                 break;
 
             case "LoveRock":

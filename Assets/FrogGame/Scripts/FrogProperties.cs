@@ -32,10 +32,7 @@ public class FrogProperties : MonoBehaviour
     
         frogRenderer = GetComponent<Renderer>();
         frogSkinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        
-        Debug.Log($"Renderer found: {frogRenderer}, material count: {frogRenderer?.materials.Length}");
-        Debug.Log($"Skinned Renderer found: {frogSkinnedRenderer}, material count: {frogSkinnedRenderer?.materials.Length}");
-
+    
         Material sharedMaterial = gameManager.GetPatternMaterial(patternType);
         if (sharedMaterial != null)
         {
@@ -70,7 +67,6 @@ public class FrogProperties : MonoBehaviour
 
     private void SetColor(string propertyName, string hex)
     {
-        Debug.Log($"Setting {propertyName} to {hex}");
         if (ColorUtility.TryParseHtmlString(hex, out Color color))
             frogMaterial.SetColor(propertyName, color);
         else

@@ -25,6 +25,12 @@ public class FrogSwim : MonoBehaviour
         }
     }
 
+    public void StartSwimming()
+    {
+        isSwimming = true;
+        GetComponent<AnimateFrog>().StartSwimming();
+    }
+
     void SwimToShore()
     {
         Vector3 target = FindClosestShorePoint();

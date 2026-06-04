@@ -28,6 +28,7 @@ public class AnimateFrog : MonoBehaviour
     public void StartSwimming()
     {
         swimCoroutine = StartCoroutine(SwimLoop());
+        Debug.Log("Started swimming");
     }
 
     IEnumerator SwimLoop()
