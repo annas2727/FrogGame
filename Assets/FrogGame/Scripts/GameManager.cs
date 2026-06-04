@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
         { "purple", "#6f00ff" }, 
         { "brown", "#72360b" },
         { "white", "#ffffff" },
-        { "black", "#000000" }
+        { "black", "#000000" }, 
+        { "grey", "#808080" }
     };
 
     public Dictionary<string, string> patternColors = new Dictionary<string, string>
@@ -28,7 +29,8 @@ public class GameManager : MonoBehaviour
         { "purple", "#5900ce" },
         { "brown", "#5a2907" },
         { "white", "#ffffff" },
-        { "black", "#000000" }
+        { "black", "#000000" },
+        { "grey", "#5d5d5d" }
     };
 
     public List<string> patternTypes = new List<string>
