@@ -1,30 +1,66 @@
-/*
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-/*
+
 public class Breeding : MonoBehaviour
 {
     GameObject Frog1; 
     GameObject Frog2;
-    string bodyColor; 
-    string patternColor;
-    string patternType;
+    public enum FrogColor { red, orange, yellow, green, blue, purple, brown, white, black, grey }
 
-    public GameObject egg;
-    
-        public Dictionary<string, string> colorID = new Dictionary<string, string>
-        {
-            { "red", "primary" },
-            { "orange", "secondary" },
-            { "yellow", "primary" },
-            { "green", "secondary" },
-            { "blue", "primary" },
-            { "purple", "secondary" }, 
-            { "brown", "other" },
-            { "white", "other" },
-            { "black", "other" }
-        };
+    private Dictionary<(FrogColor, FrogColor), FrogColor> Recipes = new()
+    {
+        // Primary -> Secondary
+        { (FrogColor.red, FrogColor.yellow), Col.orange },
+        { (FrogColor.red, FrogColor.blue), Col.blue },
+        { (FrogColor.yellow, FrogColor.blue), Col.green },
+    };
+
+    public string Mix(Colour a, Colour b)
+    {
+        // Same color
+        if (a == b)
+            return a.ToString();
+
+        // Sort so I don't have to define all this shit twice
+        if ((int)a > (int)b)
+            (a, b) = (b, a);
+
+        // The Rare Grey Frog
+        if (a == FrogColor.white && b == FrogColor.black)
+            return b.ToString();
+
+        // White or Black are recessive
+        if (a == FrogColor.white || a == FrogColor.black)
+            return a.ToString();
+
+        // Brown contamination
+        if (a == FrogColor.brown || b == FrogColor.brown)
+            return FrogColor.brown.ToString();
+
+        // Primary combinations
+        if (Recipes.TryGetValue((a, b), out FrogColor result))
+            return result.ToString();
+
+        // Adjacent on color wheel = 50/50
+        if (IsAdjacent(a, b))
+            return "5050";
+
+        // Everything else = Brown
+        return FrogColor.brown.ToString();
+    }
+
+    private static bool IsAdjacent(Col a, Col b)
+    {
+        return
+            (a == FrogColor.Red && b == FrogColor.Ora) ||
+            (a == FrogColor.Ora && b == FrogColor.Yel) ||
+            (a == FrogColor.Yel && b == FrogColor.Gre) ||
+            (a == FrogColor.Gre && b == FrogColor.Blu) ||
+            (a == FrogColor.Blu && b == FrogColor.Pur) ||
+            (a == FrogColor.Pur && b == FrogColor.Red);
+    }
     
     public void Breed()
     {
@@ -38,37 +74,4 @@ public class Breeding : MonoBehaviour
         GameObject NewFrog = Instantiate(Frog1, new Vector3(0, 0, 0), Quaternion.identity);
         NewFrog.GetComponent<FrogProperties>().DNA(bodyColor1, bodyColor2, patternColor1, patternColor2, patternType1, patternType2);
     }
-    
-    string ColorMix(string c1, string c2)
-    {
-        //Case 1: Same color x same color
-        if (c1 == c2) return c1;
-
-        //Case 2: Primary color x Primary color
-        if (colors.Contains("red") && colors.Contains("yellow")) return "orange";
-        else if (colors.Contains("red") && colors.Contains("blue")) return "purple";
-        else if (colors.Contains("yellow") && colors.Contains("blue")) return "green";
-        else if (colors.Contains("red") && colors.Contains("green")) return "brown";
-        else if (colors.Contains("yellow") && colors.Contains("purple")) return "brown";
-        else if (colors.Contains("blue") && colors.Contains("orange")) return "brown";
-        
-        //basic secondary color mixing
-        else if (colors.Contains("orange") && colors.Contains("green")) return "brown";
-        else if (colors.Contains("orange") && colors.Contains("purple")) return "brown";
-        else if (colors.Contains("green") && colors.Contains("purple")) return "brown";
-
-        else return "random"; 
-    }
-
-    void DNA(string bc1, string bc2, string pc1, string pc2, string pt1, string pt2)
-    {
-        random = Random.Range(0, 99);
-
-        if (random < 1) bodyColor = "white";
-        else if (random < 2) bodyColor = "black";
-        else if (random < 17) bodyColor = bc1;
-        else if (random < 33) bodyColor = bc2;
-    }
-    
 }
-*/
