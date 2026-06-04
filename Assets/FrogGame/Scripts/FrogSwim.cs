@@ -25,24 +25,6 @@ public class FrogSwim : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Collision Enter");
-        if (other.CompareTag("Water"))
-        {
-            Debug.Log("We are swimming now boys");
-            isSwimming = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            isSwimming = false;
-        }
-    }
-
     void SwimToShore()
     {
         Vector3 target = FindClosestShorePoint();
@@ -52,7 +34,7 @@ public class FrogSwim : MonoBehaviour
 
         if (dir.sqrMagnitude < 0.1f)
         {
-            //ExitWater();
+            isSwimming = false;
             return;
         }
 

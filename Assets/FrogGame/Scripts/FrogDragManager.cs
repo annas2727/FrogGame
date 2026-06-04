@@ -97,6 +97,7 @@ public class FrogDragManager : MonoBehaviour
 
         if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, 20f, floorLayer))
             yield break;
+        string floorTag = hit.collider.tag;
 
         Vector3 target = hit.point + Vector3.down * 0.05f;
 
@@ -111,5 +112,20 @@ public class FrogDragManager : MonoBehaviour
         }
 
         frog.position = target;
+
+        // Handle special floor types
+        switch (floorTag)
+        {
+            case "Water":
+                frog.GetComponent<FrogSwim>().isSwimming = true;
+                break;
+
+            case "LoveRock":
+                // Make em stay there
+                break;
+
+            default:
+                break;
+        }
     }
 }
