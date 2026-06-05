@@ -11,6 +11,7 @@ public class DraggableFrog : MonoBehaviour
     {
         IsBeingDragged = true;
         HasBeenDragged = true;
+        GetComponent<JumpBetweenSpots>().isOccupied = true;
         GetComponent<ParabolicJump>().isJumping = false;
 
         Vector3 euler = transform.rotation.eulerAngles;
@@ -22,5 +23,6 @@ public class DraggableFrog : MonoBehaviour
     public void EndDrag()
     {
         IsBeingDragged = false;
+        GetComponent<JumpBetweenSpots>().isOccupied = false;
     }
 }

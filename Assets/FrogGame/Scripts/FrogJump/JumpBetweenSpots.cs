@@ -15,6 +15,8 @@ public class JumpBetweenSpots : MonoBehaviour
 
     private GameObject currentPad;
 
+    public bool isOccupied = false;
+
     private void Start()
     {
         jumpScript = GetComponent<ParabolicJump>();
@@ -27,7 +29,7 @@ public class JumpBetweenSpots : MonoBehaviour
         {
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
-            yield return new WaitUntil(() => !GetComponent<DraggableFrog>().IsBeingDragged); //Wait until not being dragged
+            yield return new WaitUntil(() => !isOccupied); //Wait until not being dragged or not stuck somewhere
             GameObject targetPad = GetRandomNearbyPad();
 
             if (targetPad != null)

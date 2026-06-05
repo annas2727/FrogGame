@@ -120,7 +120,7 @@ public class FrogDragManager : MonoBehaviour
                 frog.GetComponent<FrogSwim>().StartSwimming();
                 break;
 
-            case "LoveRock":
+            case "SpecialZone":
                 // Make em stay there
                 break;
 
