@@ -19,6 +19,11 @@ public class FrogSwim : MonoBehaviour
 
     void Update()
     {
+        if (GetComponent<DraggableFrog>().IsBeingDragged)
+        {
+            GetComponent<AnimateFrog>().PickupMidair();
+            isSwimming = false;
+        }
         if (isSwimming)
         {
             GetComponent<JumpBetweenSpots>().isOccupied = true;
