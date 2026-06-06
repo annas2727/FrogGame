@@ -100,7 +100,7 @@ public class JumpBetweenSpots : MonoBehaviour
     IEnumerator TurnToPad(Transform target)
     {
         Vector3 padNormal = currentPad != null ? currentPad.transform.up : transform.up;
-        if (GetComponent<DraggableFrog>().HasBeenDragged)
+        if (GetComponent<DraggableFrog>().HasBeenDragged) //Reset Normal when frog has been dragged off a tilted pad
         {
             padNormal = transform.up;
         }

@@ -37,6 +37,5 @@ public class DraggableFrog : MonoBehaviour
     public void EndDrag()
     {
         IsBeingDragged = false;
-        GetComponent<JumpBetweenSpots>().isOccupied = false;
     }
 }

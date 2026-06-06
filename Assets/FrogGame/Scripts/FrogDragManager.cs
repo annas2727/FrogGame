@@ -117,7 +117,7 @@ public class FrogDragManager : MonoBehaviour
         switch (floorTag)
         {
             case "Water":
-                frog.GetComponent<FrogSwim>().StartSwimming();
+                frog.GetComponent<FrogSwim>().StartSwimming(); //Start swimming in water
                 break;
 
             case "SpecialZone":
@@ -125,6 +125,7 @@ public class FrogDragManager : MonoBehaviour
                 break;
 
             default:
+                frog.GetComponent<JumpBetweenSpots>().isOccupied = false; //Let them get back to jumping
                 break;
         }
     }
