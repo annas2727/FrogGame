@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpBetweenSpots : MonoBehaviour
+public class FrogChooseJump : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
 
@@ -76,6 +76,13 @@ public class JumpBetweenSpots : MonoBehaviour
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
                 bool isLargeEnough = (pad.transform.lossyScale.x / statsConfig.BaseLilypadScale) >= (transform.lossyScale.x / statsConfig.MaxFrogScale);
+                if (jumpSpotData == null)
+                {
+                    Debug.Log("is big enough?");
+                    Debug.Log(isLargeEnough);
+                    Debug.Log("jumpSpotData is null?");
+                    Debug.Log(jumpSpotData == null);
+                }
 
                 if (isLargeEnough && !jumpSpotData.isReserved)
                 {
@@ -100,7 +107,7 @@ public class JumpBetweenSpots : MonoBehaviour
     IEnumerator TurnToPad(Transform target)
     {
         Vector3 padNormal = currentPad != null ? currentPad.transform.up : transform.up;
-        if (GetComponent<DraggableFrog>().HasBeenDragged) //Reset Normal when frog has been dragged off a tilted pad
+        if (GetComponent<FrogDrag>().HasBeenDragged) //Reset Normal when frog has been dragged off a tilted pad
         {
             padNormal = transform.up;
         }

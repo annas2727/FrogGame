@@ -1455,6 +1455,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1182391827372575268, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: frogLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 1624623581553197864, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -5173,6 +5177,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645843852202946946, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556556795795398790, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.3

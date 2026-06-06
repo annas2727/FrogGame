@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DraggableFrog : MonoBehaviour
+public class FrogDrag : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
 
@@ -23,7 +23,7 @@ public class DraggableFrog : MonoBehaviour
         HasBeenDragged = true; //purely to fix rotation issue when dragging a tilted frog
         CanBeDragged = false; //for the cooldown
         StartCoroutine(PickupCooldown());
-        GetComponent<JumpBetweenSpots>().isOccupied = true; //to not activate the jump away script
+        GetComponent<FrogChooseJump>().isOccupied = true; //to not activate the jump away script
         GetComponent<ParabolicJump>().isJumping = false; //To catch midair (Stop midair jump)
         GetComponent<FrogSwim>().isSwimming = false; //To catch midswim (Stop midwater swim)
 

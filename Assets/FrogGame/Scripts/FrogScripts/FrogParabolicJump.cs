@@ -69,7 +69,7 @@ public class ParabolicJump : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<DraggableFrog>().IsBeingDragged)
+        if (GetComponent<FrogDrag>().IsBeingDragged)
         {
             GetComponent<AnimateFrog>().PickupMidair();
             isJumping = false;
@@ -109,7 +109,7 @@ public class ParabolicJump : MonoBehaviour
             transform.rotation = targetRotation;
 
             isJumping = false;
-            GetComponent<DraggableFrog>().HasBeenDragged = false;
+            GetComponent<FrogDrag>().HasBeenDragged = false;
         }
     }
 }

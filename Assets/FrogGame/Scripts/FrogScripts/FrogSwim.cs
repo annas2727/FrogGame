@@ -13,6 +13,7 @@ public class FrogSwim : MonoBehaviour
 
     void Start()
     {
+        shorePointsContainer = GameObject.Find("ShoreSpots").transform;
         foreach (Transform child in shorePointsContainer)
         {
             shorePoints.Add(child);
@@ -23,7 +24,7 @@ public class FrogSwim : MonoBehaviour
     {
         if (isSwimming)
         {
-            GetComponent<JumpBetweenSpots>().isOccupied = true;
+            GetComponent<FrogChooseJump>().isOccupied = true;
             SwimToShore();
         }
     }
@@ -45,7 +46,7 @@ public class FrogSwim : MonoBehaviour
         {
             isSwimming = false;
             GetComponent<AnimateFrog>().StopSwimming();
-            GetComponent<JumpBetweenSpots>().isOccupied = false;
+            GetComponent<FrogChooseJump>().isOccupied = false;
             return;
         }
 

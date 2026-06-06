@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FrogDragManager : MonoBehaviour
+public class DragFrogManager : MonoBehaviour
 {
     [SerializeField] private LayerMask frogLayer;
     [SerializeField] private LayerMask floorLayer;
 
     private Camera mainCamera;
 
-    private DraggableFrog draggedFrog;
+    private FrogDrag draggedFrog;
     private Vector3 dragOffset;
 
     private void Awake()
@@ -49,7 +49,7 @@ public class FrogDragManager : MonoBehaviour
             return;
 
 
-        DraggableFrog frog = frogHit.collider.GetComponentInParent<DraggableFrog>();
+        FrogDrag frog = frogHit.collider.GetComponentInParent<FrogDrag>();
 
         if (frog == null || !frog.CanBeDragged)
             return;
@@ -125,7 +125,7 @@ public class FrogDragManager : MonoBehaviour
                 break;
 
             default:
-                frog.GetComponent<JumpBetweenSpots>().isOccupied = false; //Let them get back to jumping
+                frog.GetComponent<FrogChooseJump>().isOccupied = false; //Let them get back to jumping
                 break;
         }
     }

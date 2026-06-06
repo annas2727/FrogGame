@@ -256,6 +256,9 @@ PrefabInstance:
       addedObject: {fileID: 7278061458565696404}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d7fb9b858d01f4784387488612c1f4, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 239154424023363801}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d7fb9b858d01f4784387488612c1f4, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 9205237598197972018}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40d7fb9b858d01f4784387488612c1f4, type: 3}
       insertIndex: -1
@@ -351,7 +354,7 @@ MonoBehaviour:
     m_Bits: 64
   frogLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   isOccupied: 0
 --- !u!114 &7278061458565696404
 MonoBehaviour:
@@ -368,6 +371,23 @@ MonoBehaviour:
   currentBodyColor: 0
   currentPatternColor: 0
   currentPatternType: 0
+--- !u!114 &239154424023363801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097034394256777641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
+  isSwimming: 0
+  swimSpeed: 2
+  shorePointsContainer: {fileID: 0}
+  shorePoints: []
 --- !u!23 &9205237598197972018
 MeshRenderer:
   m_ObjectHideFlags: 0
