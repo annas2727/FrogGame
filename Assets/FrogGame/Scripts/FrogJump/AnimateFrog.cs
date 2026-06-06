@@ -40,38 +40,34 @@ public class AnimateFrog : MonoBehaviour
             Idle();
         }
     }
-
     IEnumerator SwimLoop()
     {
-        Swim();
+        Swim(); // triggers Idle → S_Sym via your existing transition
+        yield return null;
+        yield return new WaitUntil(() =>
+            animator.GetCurrentAnimatorStateInfo(0).IsName("S_Sym"));
 
         while (true)
         {
-            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+            // wait for S_Sym to nearly finish, then kick
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.85f);
+            SwimLegKick();
+            yield return null;
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).IsName("S_LegKick"));
 
-            yield return new WaitForSeconds(0.05f);
-
-            float random = Random.value;
-            if (random < 0.5f)
-            {
-                Debug.Log("LegKick");
-                SwimLegKick();
-            }
-            else
-            {
-                Debug.Log("Sym");
-                SwimSym();
-            }
+            // wait for S_LegKick to nearly finish, then sym
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.85f);
+            SwimSym();
+            yield return null;
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).IsName("S_Sym"));
         }
-    }void Update()
-{
-    AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
-
-    Debug.Log(
-        state.IsName("Idle") ? "Idle" :
-        state.IsName("S_Sym") ? "S_Sym" :
-        state.IsName("S_LegKick") ? "S_LegKick" :
-        "Other"
-    );
-}
+    }
+    void Update()
+    {
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+    }
 }
