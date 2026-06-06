@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class FrogSwim : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     public bool isSwimming;
 
     public float swimSpeed = 2f;
@@ -19,11 +21,6 @@ public class FrogSwim : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<DraggableFrog>().IsBeingDragged)
-        {
-            GetComponent<AnimateFrog>().PickupMidair();
-            isSwimming = false;
-        }
         if (isSwimming)
         {
             GetComponent<JumpBetweenSpots>().isOccupied = true;
