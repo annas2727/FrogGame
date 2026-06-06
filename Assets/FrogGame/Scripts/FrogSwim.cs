@@ -21,6 +21,7 @@ public class FrogSwim : MonoBehaviour
     {
         if (isSwimming)
         {
+            GetComponent<JumpBetweenSpots>().isOccupied = true;
             SwimToShore();
         }
     }
@@ -42,6 +43,7 @@ public class FrogSwim : MonoBehaviour
         {
             isSwimming = false;
             GetComponent<AnimateFrog>().StopSwimming();
+            GetComponent<JumpBetweenSpots>().isOccupied = false;
             return;
         }
 
