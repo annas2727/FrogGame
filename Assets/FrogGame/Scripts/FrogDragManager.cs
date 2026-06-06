@@ -51,7 +51,7 @@ public class FrogDragManager : MonoBehaviour
 
         DraggableFrog frog = frogHit.collider.GetComponentInParent<DraggableFrog>();
 
-        if (frog == null || frog.CanBeDragged)
+        if (frog == null || !frog.CanBeDragged)
             return;
 
         draggedFrog = frog;
