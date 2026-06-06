@@ -300,7 +300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbde5ffa70efca843a9f31ee8dd17f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableFrog
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   HasBeenDragged: 0
+  CanBeDragged: 1
 --- !u!114 &3603516888355041929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +352,7 @@ MonoBehaviour:
   frogLayer:
     serializedVersion: 2
     m_Bits: 0
+  isOccupied: 0
 --- !u!114 &7278061458565696404
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class Stats : ScriptableObject
     [Header("Jump Timing Settings")]
     [SerializeField] private float maxIdleJumpTime = 10f; //Max time frog idles before jumping
     [SerializeField] private float minIdleJumpTime = 4f; //Min time frog idles before jumping
+    [SerializeField] private float pickUpCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
 
     [Header("Frog Scale Settings")]
     [SerializeField] private float maxFrogScale = 0.25f; //Max scale of frog
@@ -29,6 +30,8 @@ public class Stats : ScriptableObject
     [SerializeField] private float maxEggScale = 0.25f; //Max scale of egg
     [SerializeField] private float minEggScale = 0.1f; //Min scale of egg
 
+
+
     public float BaseLilypadScale => baseLilypadScale;
     public float BaseLilypadyOffset => baseLilypadyOffset;
 
@@ -38,6 +41,7 @@ public class Stats : ScriptableObject
 
     public float MaxIdleJumpTime => maxIdleJumpTime;
     public float MinIdleJumpTime => minIdleJumpTime;
+    public float PickUpCooldown => pickUpCooldown;
 
     public float MaxFrogScale => maxFrogScale;
     public float MinFrogScale => minFrogScale;
