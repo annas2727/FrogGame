@@ -1385,6 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
+  statsConfig: {fileID: 0}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -2182,63 +2183,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 776500409}
   m_SourcePrefab: {fileID: 100100000, guid: 8754a309c0d3fcc43954d70582db58fe, type: 3}
---- !u!1001 &1017144562
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.17
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6938676
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.69386774
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.13618991
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.1361899
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 22.209
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
-      propertyPath: m_Name
-      value: HeartRock
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c229956aa68db864cbf4470c0e7ac1f1, type: 3}
 --- !u!1001 &1042914634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3096,6 +3040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
+  statsConfig: {fileID: 0}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -4251,6 +4196,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eac48c56496b784ea870085e19576c6, type: 3}
+--- !u!1001 &4259040742508516634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6938676
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69386774
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.13618991
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.1361899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673433956717456, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 22.209
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877031235532474666, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
+      propertyPath: m_Name
+      value: HeartRock
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7e4ba5048a54db48b8cf8189f1c7475, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4269,4 +4271,4 @@ SceneRoots:
   - {fileID: 1287480446625277647}
   - {fileID: 978902128}
   - {fileID: 186733864}
-  - {fileID: 1017144562}
+  - {fileID: 4259040742508516634}
