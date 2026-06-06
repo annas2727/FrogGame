@@ -149,7 +149,7 @@ Material:
     - _WindMagnitude: {r: 0, g: 0, b: 0.1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3537784638005156833
+--- !u!114 &1619930249081230320
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
