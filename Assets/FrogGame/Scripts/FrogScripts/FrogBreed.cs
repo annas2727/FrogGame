@@ -16,4 +16,13 @@ public class FrogBreed : MonoBehaviour
         yield return new WaitForSeconds(statsConfig.BreedCooldown);
         CanBeDragged = true;
     }
+
+    public void FallOnPad()
+    {
+        frog.rotation =
+        Quaternion.FromToRotation(
+            frog.up,
+            hit.transform.up
+        ) * frog.rotation;
+    }
 }
