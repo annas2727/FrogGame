@@ -122,7 +122,8 @@ public class DragFrogManager : MonoBehaviour
                 break;
 
             case "SpecialZone":
-                // Make em stay there
+                Debug.Log("Frog entered breeding rock");
+                frog.GetComponent<FrogBreed>().StartTryBreeding(hit.collider.gameObject);
                 break;
 
             default:
