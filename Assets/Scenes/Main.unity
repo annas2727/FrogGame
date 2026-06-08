@@ -415,6 +415,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FROGG (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentBodyColor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternColor
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -445,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -908,6 +916,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FROGG (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentBodyColor
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternColor
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -938,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -1527,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternColor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7528041225367052474, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1601,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -1905,6 +1929,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FROGG (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentBodyColor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1935,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -3550,6 +3582,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FROGG (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentBodyColor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternColor
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3575,7 +3619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}
@@ -4852,6 +4896,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FROGG (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentBodyColor
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278061458565696404, guid: f0e0ef9a79c99624c8b3502719b43d36, type: 3}
+      propertyPath: currentPatternType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4882,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730667f673f0ec548aa1aee0d5214fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogSwim
-  statsConfig: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
   isSwimming: 0
   swimSpeed: 2
   shorePointsContainer: {fileID: 33938178}

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         { "green", "#00ff00" },
         { "blue", "#0000ff" },
         { "purple", "#6f00ff" }, 
-        { "brown", "#72360b" },
+        { "brown", "#93430a" },
         { "white", "#ffffff" },
         { "black", "#000000" }, 
         { "grey", "#808080" }
