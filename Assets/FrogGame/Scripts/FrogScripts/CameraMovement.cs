@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     public float moveSpeed = 5f; 
     public float rotationSpeed = 50f;
     public float mouseSensitivity = 100f;
-    public float scrollSensitivity = 10f;
+    public float scrollSensitivity = 20f;
 
     private float horizontalAxis;
     private float verticalAxis;
@@ -33,11 +33,12 @@ public class CameraMovement : MonoBehaviour
 
         Vector3 direction = Vector3.zero;
 
-        if (keyboard.wKey.isPressed) direction += Vector3.up;
-        if (keyboard.sKey.isPressed) direction += Vector3.down;
+        if (keyboard.wKey.isPressed) direction += Vector3.forward;
+        if (keyboard.sKey.isPressed) direction -= Vector3.back;
         if (keyboard.aKey.isPressed) direction += Vector3.left;
         if (keyboard.dKey.isPressed) direction += Vector3.right;
-        
+        if (keyboard.spaceKey.isPressed) direction += Vector3.up;
+        if (keyboard.leftShiftKey.isPressed) direction += Vector3.down;
 
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
