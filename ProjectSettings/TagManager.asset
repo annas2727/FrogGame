@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Water
-  - SpecialZone
+  - BreedingSpot
   layers:
   - Default
   - TransparentFX
