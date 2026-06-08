@@ -6,10 +6,19 @@ public class CameraMovement : MonoBehaviour
 
     [Header("Camera Movement Settings")]
     public float moveSpeed = 5f; 
-    public float rotationSpeed = 100f;
+    public float rotationSpeed = 50f;
     public float mouseSensitivity = 100f;
     public float scrollSensitivity = 10f;
 
+    private float horizontalAxis;
+    private float verticalAxis;
+
+    void Start()
+    {
+        // initialise from whatever rotation the camera starts at
+        horizontalAxis = transform.eulerAngles.y;
+        verticalAxis = transform.eulerAngles.x;
+    }
     void Update () 
     {
         HandleMovement();
@@ -49,12 +58,13 @@ public class CameraMovement : MonoBehaviour
 
         if (mouse.rightButton.isPressed)
         {
-                Vector2 mouseDelta = mouse.delta.ReadValue();
-                float rotationX = mouseDelta.x * mouseSensitivity * Time.deltaTime;
-                float rotationY = mouseDelta.y * mouseSensitivity * Time.deltaTime;
-    
-                transform.Rotate(Vector3.up, rotationX);
-                transform.Rotate(Vector3.right, -rotationY);
+            Vector2 mouseDelta = mouse.delta.ReadValue();
+
+            horizontalAxis   += mouseDelta.x * mouseSensitivity * Time.deltaTime;
+            verticalAxis -= mouseDelta.y * mouseSensitivity * Time.deltaTime;  
+            verticalAxis  = Mathf.Clamp(verticalAxis, -80f, 80f);                 
+
+            transform.rotation = Quaternion.Euler(verticalAxis, horizontalAxis, 0f);
         }
     }
 }
