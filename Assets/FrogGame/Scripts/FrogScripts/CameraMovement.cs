@@ -34,11 +34,11 @@ public class CameraMovement : MonoBehaviour
         Vector3 direction = Vector3.zero;
 
         if (keyboard.wKey.isPressed) direction += Vector3.forward;
-        if (keyboard.sKey.isPressed) direction -= Vector3.back;
+        if (keyboard.sKey.isPressed) direction -= Vector3.forward;
         if (keyboard.aKey.isPressed) direction += Vector3.left;
         if (keyboard.dKey.isPressed) direction += Vector3.right;
         if (keyboard.spaceKey.isPressed) direction += Vector3.up;
-        if (keyboard.leftShiftKey.isPressed) direction += Vector3.down;
+        if (keyboard.leftShiftKey.isPressed) direction -= Vector3.up;
 
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }

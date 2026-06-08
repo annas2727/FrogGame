@@ -117,6 +117,7 @@ public class DragFrogManager : MonoBehaviour
         switch (floorTag)
         {
             case "Water":
+                Debug.Log("Frog entered water");
                 frog.GetComponent<FrogSwim>().StartSwimming(); //Start swimming in water
                 break;
 
@@ -126,6 +127,7 @@ public class DragFrogManager : MonoBehaviour
 
             default:
                 frog.GetComponent<FrogChooseJump>().isOccupied = false; //Let them get back to jumping
+                frog.GetComponent<AnimateFrog>().LandPickup(); //Play land animation
                 break;
         }
     }
