@@ -84,7 +84,6 @@ public class DragFrogManager : MonoBehaviour
             return;
 
         draggedFrog.EndDrag();
-        draggedFrog.GetComponent<AnimateFrog>().LandPickup();
         StartCoroutine(DropToFloor(draggedFrog.transform));
 
         draggedFrog = null;
