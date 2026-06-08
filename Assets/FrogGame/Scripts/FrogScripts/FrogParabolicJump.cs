@@ -53,6 +53,8 @@ public class ParabolicJump : MonoBehaviour
 
     public void JumpToPad(GameObject pad)
     {
+        if (GetComponent<FrogChooseJump>().isOccupied)
+            return;
         startRotation = transform.rotation;
 
         // Rotate so the frog's up matches the pad's up
