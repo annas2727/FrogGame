@@ -93,12 +93,23 @@ public class DragFrogManager : MonoBehaviour
     {
         Vector3 start = frog.position;
         Vector3 origin = frog.position + Vector3.up * 5f;
+        Vector3 target;
 
         if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, 20f, floorLayer))
             yield break;
         string floorTag = hit.collider.tag;
 
-        Vector3 target = hit.point + Vector3.down * 0.05f;
+        target = hit.point + Vector3.down * 0.05f;
+
+        //Fall into breedspot
+        if (floorTag == "BreedingSpot") {
+            BreedSpot targetBreedSpot = hit.collider.transform.GetComponent<BreedSpot>(); //Get the breedspot we hit
+            if (targetBreedSpot != null){ //If it exists
+                if (!targetBreedSpot.isReserved){ //If it is not reserved
+                    target = targetBreedSpot.transform.position; //Make the frog fall into the breedspot
+                }
+            }
+        }
 
         float t = 0f;
         float duration = 0.25f;
@@ -120,9 +131,9 @@ public class DragFrogManager : MonoBehaviour
                 frog.GetComponent<FrogSwim>().StartSwimming(); //Start swimming in water
                 break;
 
-            case "SpecialZone":
-                Debug.Log("Frog entered breeding rock");
-                frog.GetComponent<FrogBreed>().StartTryBreeding(hit.collider.gameObject);
+            case "BreedingSpot":
+                Debug.Log("Frog entered breeding spot");
+                frog.GetComponent<FrogBreed>().StartTryBreeding();
                 break;
 
             default:
