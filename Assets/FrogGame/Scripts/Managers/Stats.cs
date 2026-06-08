@@ -30,6 +30,8 @@ public class Stats : ScriptableObject
     [SerializeField] private float maxEggScale = 0.25f; //Max scale of egg
     [SerializeField] private float minEggScale = 0.1f; //Min scale of egg
 
+    [Header("Breeding Settings")]
+    [SerializeField] private float breedCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
 
 
     public float BaseLilypadScale => baseLilypadScale;
@@ -51,4 +53,6 @@ public class Stats : ScriptableObject
 
     public float MaxEggScale => maxEggScale;
     public float MinEggScale => minEggScale;
+
+    public float BreedCooldown => breedCooldown;
 }

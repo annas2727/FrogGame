@@ -1,16 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FrogBreed : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Stats statsConfig;
 
-    // Update is called once per frame
-    void Update()
+    public bool IsBeingDragged { get; private set; }
+    public bool HasBeenDragged = false;
+
+    public bool CanBeDragged = true;
+
+    IEnumerator BreedCooldown()
     {
-        
+        yield return new WaitForSeconds(statsConfig.BreedCooldown);
+        CanBeDragged = true;
     }
 }
