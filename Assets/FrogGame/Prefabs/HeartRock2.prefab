@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2334284822795458376}
   m_Layer: 8
   m_Name: HeartRock2
-  m_TagString: BreedingSpot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -263,19 +263,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.464
+      value: -0.591
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -283,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.117
+      value: -0.038
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -337,19 +337,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.346
+      value: 0.564
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11
+      value: -0.094
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: aaea1d18bfd822d43af369af705fd04e, type: 3}
       propertyPath: m_LocalRotation.w

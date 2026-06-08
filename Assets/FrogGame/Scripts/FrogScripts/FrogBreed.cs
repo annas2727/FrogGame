@@ -12,10 +12,10 @@ public class FrogBreed : MonoBehaviour
     {
         yield return new WaitForSeconds(statsConfig.BreedCooldown);
     }
-    
-    public void StartTryBreeding(GameObject HeartRock)
+
+    public void StartTryBreeding()
     {
-        //FindBreedingSpot();
+        //FindBreedingSpot(HeartRock);
     }
 
     /*
@@ -32,7 +32,7 @@ public class FrogBreed : MonoBehaviour
 
         if (!closestBreedSpot.isReserved)
         {
-            //Go to that spot
+            
             return null;
         }
         if (!furthestBreedSpot.isReserved)
@@ -40,7 +40,7 @@ public class FrogBreed : MonoBehaviour
             //Go to that spot
             return null;
         }
-        //To do, make them jump away quickly
+        frog.GetComponent<FrogChooseJump>().isOccupied = false;
         return null;
     }
     */
