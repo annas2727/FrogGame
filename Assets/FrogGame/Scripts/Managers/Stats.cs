@@ -35,10 +35,12 @@ public class Stats : ScriptableObject
 
     [SerializeField] private float maxTadpoleScale = 20f; //Max scale of tadpole
     [SerializeField] private float minTadpoleScale = 10f; //Min scale of tadpole
+    [SerializeField] private float tadpoleGrowthTime = 140f;
 
     //Unknown
     [SerializeField] private float maxEggScale = 0.25f; //Max scale of egg
     [SerializeField] private float minEggScale = 0.1f; //Min scale of egg
+    [SerializeField] private float eggGrowthTime = 80f;
 
     [Header("Breeding Settings")]
     [Tooltip("Time before frog can breed again")]
@@ -62,12 +64,15 @@ public class Stats : ScriptableObject
 
     public float MaxFrogScale => maxFrogScale;
     public float MinFrogScale => minFrogScale;
-
+    public float FrogGrowthTime => frogGrowthTime;
+    
     public float MaxTadpoleScale => maxTadpoleScale;
     public float MinTadpoleScale => minTadpoleScale;
+    public float TadpoleGrowthTime => tadpoleGrowthTime;
 
     public float MaxEggScale => maxEggScale;
     public float MinEggScale => minEggScale;
+    public float EggGrowthTime => eggGrowthTime;
 
     public float BreedCooldown => breedCooldown;
     public float BreedAnnoyance => breedAnnoyance;
