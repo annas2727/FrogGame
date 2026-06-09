@@ -14,7 +14,7 @@ public class Breeding : MonoBehaviour
     public void ConnectFrog(GameObject Frog, bool isL)
     {
         if(isL)
-            ForgL = Frog;
+            FrogL = Frog;
         else
             FrogR = Frog;
         if (FrogL != null && FrogR != null)
