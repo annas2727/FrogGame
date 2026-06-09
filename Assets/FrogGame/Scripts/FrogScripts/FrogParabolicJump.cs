@@ -73,12 +73,16 @@ public class ParabolicJump : MonoBehaviour
     {
         if (GetComponent<FrogDrag>().IsBeingDragged)
         {
+            elapsedTime = 0f;
             GetComponent<AnimateFrog>().PickupMidair();
             isJumping = false;
             startRotation = transform.rotation;
         }
         if (!isJumping)
+        {
+            elapsedTime = 0f;
             return;
+        }
 
         elapsedTime += Time.deltaTime;
 
