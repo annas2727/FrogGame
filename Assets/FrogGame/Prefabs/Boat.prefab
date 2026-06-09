@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Name
-      value: JumpSpot (1)
+      value: JumpSpot (Bot)
       objectReference: {fileID: 0}
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Layer
@@ -196,7 +196,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Name
-      value: JumpSpot
+      value: JumpSpot (Top)
       objectReference: {fileID: 0}
     - target: {fileID: 1789241015352097091, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_Layer
