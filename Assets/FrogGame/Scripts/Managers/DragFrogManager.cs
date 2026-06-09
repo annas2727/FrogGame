@@ -105,7 +105,7 @@ public class DragFrogManager : MonoBehaviour
 
         //Fall into breedspot
         bool canBreed = false;
-        if (floorTag == "BreedingSpot" && frog.GetComponent<>().isAdult) {
+        if (floorTag == "BreedingSpot" && frog.GetComponent<FrogBreed>().isAdult) {
             BreedSpot targetBreedSpot = hit.collider.transform.GetComponent<BreedSpot>(); //Get the breedspot we hit
             if (targetBreedSpot != null){ //If it exists
                 if (!targetBreedSpot.isReserved){ //If it is not reserved
