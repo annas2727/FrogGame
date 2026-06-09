@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4870128332040850372
+--- !u!1001 &771719300611381724
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,67 +8,71 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.358
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.284
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -12.958256
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: m_Name
       value: Tadpole
       objectReference: {fileID: 0}
-    - target: {fileID: 6004015456411132440, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - target: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
+      propertyPath: m_TagString
+      value: Tadpole
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845558138933113103, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c68069d688ee143439d0eb265d9224b4, type: 2}
@@ -76,34 +80,32 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3393176595062038316}
-  m_SourcePrefab: {fileID: 100100000, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
---- !u!1 &5717111076862129813 stripped
+      addedObject: {fileID: -3429453191399632062}
+  m_SourcePrefab: {fileID: 100100000, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
+--- !u!1 &465237783662568589 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
-  m_PrefabInstance: {fileID: 4870128332040850372}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
+  m_PrefabInstance: {fileID: 771719300611381724}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &3393176595062038316
-Animator:
-  serializedVersion: 7
+--- !u!114 &-3429453191399632062
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5717111076862129813}
+  m_GameObject: {fileID: 465237783662568589}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
-  m_Controller: {fileID: 9100000, guid: e2597f8a021eba44997df14e606cca14, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f83281ab73fa54c99f17f7b192d7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TadpoleSwimmer
+  center: {x: 0, y: 0, z: 0}
+  boxSize: {x: 20, y: 10, z: 20}
+  waterSurfaceY: 5
+  groundY: -5
+  maxSpeed: 3
+  maxForce: 5
+  arriveDistance: 1.5
+  targetSwitchTime: 3
