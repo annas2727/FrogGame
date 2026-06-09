@@ -30,6 +30,10 @@ public class FrogChooseJump : MonoBehaviour
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
             yield return new WaitUntil(() => !isOccupied); //Wait until not being dragged or not stuck somewhere
+            if(isOccupied)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
             GameObject targetPad = GetRandomNearbyPad();
 
             if (targetPad != null)

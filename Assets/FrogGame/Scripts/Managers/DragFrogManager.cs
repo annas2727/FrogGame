@@ -55,7 +55,9 @@ public class DragFrogManager : MonoBehaviour
             return;
 
         draggedFrog = frog;
+        Debug.Log("In drag manager1: " + frog.GetComponent<FrogChooseJump>().isOccupied);
         draggedFrog.BeginDrag();
+        Debug.Log("In drag manager2: " + frog.GetComponent<FrogChooseJump>().isOccupied);
 
         // Calculate offset so the frog doesn't snap
         if (Physics.Raycast(ray, out RaycastHit floorHit, 1000f, floorLayer))

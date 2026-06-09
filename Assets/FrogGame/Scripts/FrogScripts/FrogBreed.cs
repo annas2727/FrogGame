@@ -46,7 +46,6 @@ public class FrogBreed : MonoBehaviour
         if (phase == 0)
         {
             LeaveBreedSpot();
-            GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
         }
         else if (phase == 1)
         {
@@ -77,6 +76,7 @@ public class FrogBreed : MonoBehaviour
             }
             if (breedingPhaseTime >= statsConfig.BreedAnnoyance)
             {
+                GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
                 ChangeBreedPhase(0);
             }
         }
@@ -94,6 +94,7 @@ public class FrogBreed : MonoBehaviour
             {
                 GetComponent<FrogDrag>().CanBeDragged = true; //We done
                 //Breed make egg
+                GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
                 ChangeBreedPhase(0);
             }
         }

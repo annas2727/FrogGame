@@ -31,12 +31,14 @@ public class FrogDrag : MonoBehaviour
         Vector3 euler = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);
 
+        GetComponent<AnimateFrog>().ResetTriggers();
         GetComponent<AnimateFrog>().Pickup();
-        
+        Debug.Log("In frog drag: " + GetComponent<FrogChooseJump>().isOccupied);
     }
 
     public void EndDrag()
     {
         IsBeingDragged = false;
+        GetComponent<AnimateFrog>().ResetTriggers();
     }
 }
