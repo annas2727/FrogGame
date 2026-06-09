@@ -55,16 +55,22 @@ public class FrogLife : MonoBehaviour
 
     void Update()
     {
-        ageInStage += Time.deltaTime;
-        float t = Mathf.Clamp01(ageInStage / growthTime);
+        if (LifeStage < 3)
+        {
+            ageInStage += Time.deltaTime;
+            float t = Mathf.Clamp01(ageInStage / growthTime);
 
-        float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
-        transform.localScale = Vector3.one * scale;
+            float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
+            transform.localScale = Vector3.one * scale;
 
-        if (ageInStage > growthTime)
-            UpdateLifeStage(LifeStage + 1);
-        if (skipLifeStage)
-            UpdateLifeStage(LifeStage + 1);
+            if (ageInStage > growthTime)
+                UpdateLifeStage(LifeStage + 1);
+            if (skipLifeStage)
+            {
+                skipLifeStage = false;
+                UpdateLifeStage(LifeStage + 1);
+            }
+        }
     }
 
     private void UpdateLifeStage(int stage)
@@ -105,6 +111,7 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(false);
                 tadpole.SetActive(false);
                 frog.SetActive(true);
+                frog.GetComponent<FrogBreed>().isAdult = true; //Makes the frog an adult
                 break;
         }
     }
