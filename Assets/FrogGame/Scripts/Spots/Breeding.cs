@@ -28,22 +28,23 @@ public class Breeding : MonoBehaviour
         }
     }
 
-
-
-    private OffspringColor(FrogColor a, FrogColor b)
+    private string OffspringColor(string FrogAColor, string FrogBColor)
     {
+        Enum.TryParse(FrogAColor, true, out FrogColor FrogColorA);
+        Enum.TryParse(FrogBColor, true, out FrogColor FrogColorB);
+
         int roll = Random.Range(0, 100); // 0-99
 
-        if (roll < 1)          // 1% White
-            return 1;
-        else if (roll < 25)    // 24% Color1
-            return 2;
-        else if (roll < 75)    // 50% Color2
-            return 3;
-        else if (roll < 99)    // 24% Color3
-            return 4;
-        else                   // 1% Color4
-            return 5;
+        if (roll < 1) return FrogColor.white.ToString(); // 1% White
+        else if (roll < 25) return FrogAColor; // 24% ColorA
+        else if (roll < 75)
+        {    // 50% Mix
+            FrogColor Mixed = Mix(FrogA, FrogB);
+            if (Mixed)
+                return 3;
+        }
+        else if (roll < 99) return FrogBColor; //24% ColorB
+        else return FrogColor.black.ToString(); // 1% Black
     }
 
     private Dictionary<(FrogColor, FrogColor), FrogColor> Recipes = new()
@@ -54,11 +55,11 @@ public class Breeding : MonoBehaviour
         { (FrogColor.yellow, FrogColor.blue), FrogColor.green },
     };
 
-    public FrogColor Mix(FrogColor a, FrogColor b)
+    public string Mix(FrogColor a, FrogColor b)
     {
         // Same color
         if (a == b)
-            return a;
+            return a.ToString();
 
         // Sort so I don't have to define all this shit twice
         if ((int)a > (int)b)
@@ -66,25 +67,25 @@ public class Breeding : MonoBehaviour
 
         // The Rare Grey Frog
         if (a == FrogColor.white && b == FrogColor.black)
-            return FrogColor.grey;
+            return FrogColor.grey.ToString();
 
         //Grey rules
         if (a == FrogColor.white && b == FrogColor.grey)
-            return FrogColor.white;
+            return FrogColor.white.ToString();
         if (a == FrogColor.black && b == FrogColor.grey)
-            return FrogColor.black;
+            return FrogColor.black.ToString();
 
         // White or Black are recessive
         if (b == FrogColor.white || b == FrogColor.black || b == FrogColor.grey)
-            return a;
+            return a.ToString();
 
         // Brown contamination
         if (a == FrogColor.brown || b == FrogColor.brown)
-            return FrogColor.brown;
+            return FrogColor.brown.ToString();
 
         // Primary combinations
         if (Recipes.TryGetValue((a, b), out FrogColor result))
-            return result;
+            return result.ToString();
 
         // Adjacent on color wheel = 50/50
         if (IsAdjacent(a, b))
