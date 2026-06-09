@@ -102,11 +102,14 @@ public class DragFrogManager : MonoBehaviour
         target = hit.point + Vector3.down * 0.05f;
 
         //Fall into breedspot
-        if (floorTag == "BreedingSpot") {
+        bool canBreed = false;
+        if (floorTag == "BreedingSpot") { //&& frog.GetComponent<>().isAdult
             BreedSpot targetBreedSpot = hit.collider.transform.GetComponent<BreedSpot>(); //Get the breedspot we hit
             if (targetBreedSpot != null){ //If it exists
                 if (!targetBreedSpot.isReserved){ //If it is not reserved
                     target = targetBreedSpot.transform.position; //Make the frog fall into the breedspot
+                    frog.GetComponent<FrogBreed>().ConnectBreedSpot(targetBreedSpot);
+                    canBreed = true;
                 }
             }
         }
@@ -133,7 +136,11 @@ public class DragFrogManager : MonoBehaviour
 
             case "BreedingSpot":
                 Debug.Log("Frog entered breeding spot");
-                frog.GetComponent<FrogBreed>().StartTryBreeding();
+                frog.GetComponent<AnimateFrog>().LandPickup(); //Play land animation
+                if (canBreed)
+                    frog.GetComponent<FrogBreed>().StartTryBreeding();
+                else
+                    frog.GetComponent<FrogChooseJump>().isOccupied = false; //Let them get back to jumping
                 break;
 
             default:
