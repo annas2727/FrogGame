@@ -7,9 +7,14 @@ public class Breeding : MonoBehaviour
 {
     GameObject FrogL;
     GameObject FrogR;
+
+    public GameObject NewFrogPrefab; 
+
     public enum FrogColor { red, orange, yellow, green, blue, purple, brown, white, black, grey }
 
     public bool breedTogether = false;
+
+
 
     public void ConnectFrog(GameObject Frog, bool isL)
     {
@@ -28,7 +33,18 @@ public class Breeding : MonoBehaviour
         }
     }
 
-    private string OffspringColor(string FrogAColor, string FrogBColor)
+    private void DNAMix()
+    {
+        FrogProperties frogPropertiesL = FrogL.GetComponent<FrogProperties>();
+        FrogProperties frogPropertiesR = FrogR.GetComponent<FrogProperties>();
+    
+        string bodyColor = OffspringColor(frogPropertiesL.bodyColorName, frogPropertiesL.bodyColorName);
+        string patternColor = OffspringColor(frogPropertiesR.bodyColorName, frogPropertiesR.bodyColorName);
+
+    }
+
+    private string OffspringColor(string a, string b)
+
     {
         Enum.TryParse(FrogAColor, true, out FrogColor FrogColorA);
         Enum.TryParse(FrogBColor, true, out FrogColor FrogColorB);

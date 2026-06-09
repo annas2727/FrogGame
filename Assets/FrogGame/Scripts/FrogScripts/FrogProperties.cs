@@ -10,9 +10,13 @@ public class FrogProperties : MonoBehaviour
     [SerializeField] PatternColorOption currentPatternColor;
     [SerializeField] PatternType currentPatternType;
 
+    public string bodyColorName; 
+    public string patternColorName;
+    public string patternType;
+
     private string bodyColor;
     private string patternColor;
-    private string patternType;
+
     private Material frogMaterial;
 
     private Renderer frogRenderer;
@@ -23,8 +27,8 @@ public class FrogProperties : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
 
-        string bodyColorName = currentBodyColor.ToString();
-        string patternColorName = currentPatternColor.ToString();
+        bodyColorName = currentBodyColor.ToString();
+        patternColorName = currentPatternColor.ToString();
         patternType = currentPatternType.ToString();
 
         bodyColor = gameManager.bodyColors.ContainsKey(bodyColorName) ? gameManager.bodyColors[bodyColorName] : "#ffffff";
