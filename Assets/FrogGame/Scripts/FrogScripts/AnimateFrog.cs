@@ -68,30 +68,37 @@ public class AnimateFrog : MonoBehaviour
         {
             StopCoroutine(swimCoroutine);
             swimCoroutine = null;
-            Debug.Log("Stopped swimming");
-            Idle();
+            ResetTriggers();
+            animator.SetTrigger("Idle");
         }
     }
+
     IEnumerator SwimLoop()
     {
-        Swim(); // triggers Idle → S_Sym via your existing transition
+        ResetTriggers();
+        Swim();
         yield return null;
         yield return new WaitUntil(() =>
             animator.GetCurrentAnimatorStateInfo(0).IsName("S_Sym"));
 
         while (true)
         {
-            // wait for S_Sym to nearly finish, then kick
+            // wait for normalizedTime to reset first, then wait for near finish
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.85f);
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.85f);
+            
             SwimLegKick();
             yield return null;
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("S_LegKick"));
 
-            // wait for S_LegKick to nearly finish, then sym
+            yield return new WaitUntil(() =>
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.85f);
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.85f);
+
             SwimSym();
             yield return null;
             yield return new WaitUntil(() =>
