@@ -5,6 +5,7 @@ public class AnimateFrog : MonoBehaviour
 {
     private Animator animator;
     private Transform armature;
+
     private Coroutine swimCoroutine;
 
     void Start()
@@ -13,14 +14,30 @@ public class AnimateFrog : MonoBehaviour
         animator.SetTrigger("Idle");
     }
 
+    void Update()
+    {
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+        
+        if ((state.IsName("Idle") || state.IsName("Croak")) && state.normalizedTime >= 1f)
+        {
+            Idle();
+        }
+    }
+
+    public void Idle() {
+        int randomIdle = Random.Range(0, 4); 
+
+        if (randomIdle > 1)
+            animator.SetTrigger("Idle");
+        else
+            animator.SetTrigger("Croak");
+    }
 
     public void Jump() => animator.SetTrigger("Jump");
     public void LandJump() => animator.SetTrigger("J_Land");
     public void Pickup() => animator.SetTrigger("Pickup");
     public void PickupMidair() => animator.SetTrigger("P_Midair");
     public void LandPickup() => animator.SetTrigger("P_Land");
-    public void Idle() => animator.SetTrigger("Idle");
-    public void Croak() => animator.SetTrigger("Croak");
     public void Swim() => animator.SetTrigger("Swim");
     public void SwimLegKick() => animator.SetTrigger("S_LegKick");
     public void SwimSym() => animator.SetTrigger("S_Sym");
@@ -73,9 +90,5 @@ public class AnimateFrog : MonoBehaviour
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("S_Sym"));
         }
-    }
-    void Update()
-    {
-        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
     }
 }
