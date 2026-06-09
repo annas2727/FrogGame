@@ -8,9 +8,8 @@ public class FrogBreed : MonoBehaviour
 
     public BreedSpot connectedBreedSpot;
 
-    private float breedingAnnoyanceTime = 0f; //Leave the spot time
-
-    public bool tryBreeding = false; //Is trying to breed
+    public int breedingPhase = 0; //0=Not breeding, 1=Is trying to breed, 2=Moments before 3=Breed
+    private float breedingPhaseTime = 0f; //How long in each phase
 
     public bool canBreedAgain = true; //For breed cooldown
 
@@ -19,11 +18,6 @@ public class FrogBreed : MonoBehaviour
         canBreedAgain = false;
         yield return new WaitForSeconds(statsConfig.BreedCooldown);
         canBreedAgain = true;
-    }
-
-    IEnumerator BreedAnnoyanceTimer()
-    {
-        yield return new WaitForSeconds(1f);
     }
 
     public void ConnectBreedSpot(BreedSpot myBreedSpot)
@@ -39,35 +33,75 @@ public class FrogBreed : MonoBehaviour
         {
             connectedBreedSpot.myFrog = null;
             connectedBreedSpot.Leave();
+            Debug.Log("Frog leave breeding spot");
         }
         connectedBreedSpot = null;
     }
 
+    public void ChangeBreedPhase(int phase)
+    {
+        Debug.Log("Phase change to " +  phase);
+        breedingPhase = phase;
+        breedingPhaseTime = 0f;
+        if (phase == 0)
+        {
+            LeaveBreedSpot();
+            GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
+        }
+        else if (phase == 1)
+        {
+            StartCoroutine(TurnToPartner());
+        }
+        else if (phase == 2)
+        {
+
+        }
+        else if (phase == 3)
+        {
+            GetComponent<AnimateFrog>().Kiss();
+        }
+    }
+
     private void Update()
     {
-        if (tryBreeding)
+        if (breedingPhase != 0)
         {
-            breedingAnnoyanceTime += Time.deltaTime;
+            GetComponent<FrogChooseJump>().isOccupied = true;
+            breedingPhaseTime += Time.deltaTime;
+        }
+        if (breedingPhase == 1)
+        {
             if (connectedBreedSpot.Partner.myFrog != null) //Found a partner
             {
-                //BREED
-                breedingAnnoyanceTime = 0f;
+                ChangeBreedPhase(2);
             }
-            if (breedingAnnoyanceTime >= statsConfig.BreedAnnoyance)
+            if (breedingPhaseTime >= statsConfig.BreedAnnoyance)
             {
-                Debug.Log("Leave Breed Spot");
-                LeaveBreedSpot();
-                GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
-                breedingAnnoyanceTime = 0f;
-                tryBreeding = false;
+                ChangeBreedPhase(0);
+            }
+        }
+        else if (breedingPhase == 2)
+        {
+            if (breedingPhaseTime >= statsConfig.BreedChickenOut)
+            {
+                GetComponent<FrogDrag>().CanBeDragged = false; //No interuptions now
+                ChangeBreedPhase(3);
+            }
+        }
+        else if (breedingPhase == 3)
+        {
+            if (breedingPhaseTime >= 2.5f)
+            {
+                GetComponent<FrogDrag>().CanBeDragged = true; //We done
+                //Breed make egg
+                ChangeBreedPhase(0);
             }
         }
     }
 
     public void StartTryBreeding()
     {
-        StartCoroutine(TurnToPartner());
-        tryBreeding = true;
+        ChangeBreedPhase(1);//Start trying
     }
 
     IEnumerator TurnToPartner()

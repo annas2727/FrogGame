@@ -44,7 +44,9 @@ public class Stats : ScriptableObject
     [Tooltip("Time before frog can breed again")]
     [SerializeField] private float breedCooldown = 1f;
     [Tooltip("Time before frog jumps off breeding spot due to no partner")]
-    [SerializeField] private float breedAnnoyance = 8f; 
+    [SerializeField] private float breedAnnoyance = 8f;
+    [Tooltip("Time after frog gets partner and can still be dragged out to cancel")]
+    [SerializeField] private float breedChickenOut = 1.5f;
 
 
     public float BaseLilypadScale => baseLilypadScale;
@@ -69,4 +71,5 @@ public class Stats : ScriptableObject
 
     public float BreedCooldown => breedCooldown;
     public float BreedAnnoyance => breedAnnoyance;
+    public float BreedChickenOut => breedChickenOut;
 }
