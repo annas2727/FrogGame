@@ -19,6 +19,20 @@ public class GameManager : MonoBehaviour
         { "grey", "#808080" }
     };
 
+    public Dictionary<string, string> tadpoleBodyColors = new Dictionary<string, string>
+    {
+        { "red", "#ff7272" },
+        { "orange", "rgb(255, 176, 59)" },
+        { "yellow", "#ffea80" },
+        { "green", "#93ff93" },
+        { "blue", "#7693fc" },
+        { "purple", "rgb(195, 149, 255)" }, 
+        { "brown", "#ffb27a" },
+        { "white", "#ffffff" },
+        { "black", "#8d8d8d" }, 
+        { "grey", "#d1d1d1" }
+    };
+
     public Dictionary<string, string> patternColors = new Dictionary<string, string>
     {
         { "red", "#b50000" },

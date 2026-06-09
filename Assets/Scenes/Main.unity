@@ -269,6 +269,128 @@ Transform:
   - {fileID: 1938917673}
   m_Father: {fileID: 2072701923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &85861030
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tadpole (Instance)
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 2419f077fa1652e41b3dd3dfee8bceb9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2419f077fa1652e41b3dd3dfee8bceb9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddPrecomputedVelocity: 0
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.005
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _XRMotionVectorsPass: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0.44705883, b: 0.44705883, a: 1}
+    - _Color: {r: 1, g: 0.4470588, b: 0.4470588, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &87641487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,6 +818,11 @@ Transform:
   - {fileID: 1936545357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &238709274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5605175585832727937, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+  m_PrefabInstance: {fileID: 888729262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249100786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1738,10 +1865,100 @@ PrefabInstance:
       value: Tadpole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1939358984635186006, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5717111076862129813, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904372620}
+    - targetCorrespondingSourceObject: {fileID: 5717111076862129813, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904372619}
   m_SourcePrefab: {fileID: 100100000, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+--- !u!1 &904372616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5717111076862129813, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+  m_PrefabInstance: {fileID: 888729262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &904372619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904372616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4d9eb9264253e43a49318cb00423d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tadpole
+  currentBodyColor: 1
+  gameManager: {fileID: 1065683212}
+--- !u!137 &904372620
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904372616}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 85861030}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 22030998376305223, guid: 486b024a9a122a44a98346e4d4f095b4, type: 3}
+  m_Bones:
+  - {fileID: 1517430264}
+  - {fileID: 1771101911}
+  - {fileID: 1634977938}
+  - {fileID: 238709274}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1517430264}
+  m_AABB:
+    m_Center: {x: 0.00022256048, y: 0.00017908216, z: -0.0051129363}
+    m_Extent: {x: 0.0049026087, y: 0.0031318963, z: 0.010393266}
+  m_DirtyAABB: 0
 --- !u!4 &910761298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
@@ -3004,6 +3221,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9201218017685433863, guid: aa224299edb2e6b40b2389eebad3c9b7, type: 3}
   m_PrefabInstance: {fileID: 1499094562}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1517430264 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1054182839518334436, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+  m_PrefabInstance: {fileID: 888729262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1527041893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3361,6 +3583,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 995b21478f45b30499633b57aa889d8e, type: 3}
   m_PrefabInstance: {fileID: 1621338006}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1634977938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6428946921382818266, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+  m_PrefabInstance: {fileID: 888729262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1669018988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3515,6 +3742,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 33938178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1771101911 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7632242150764765124, guid: d4febeac259bd2b4181ea6a31643bbea, type: 3}
+  m_PrefabInstance: {fileID: 888729262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1780093419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3238844431110083698, guid: 2e4d7ef2743a629458f9b1db8484861c, type: 3}
