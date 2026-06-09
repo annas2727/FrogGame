@@ -10,6 +10,7 @@ public class FrogLife : MonoBehaviour
     private float growthTime; //Time to fully grow
     private float maxScale;
     private float minScale;
+    public bool skipLifeStage = false; //For testing
     
     public enum BodyColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
     public enum PatternColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
@@ -62,10 +63,13 @@ public class FrogLife : MonoBehaviour
 
         if (ageInStage > growthTime)
             UpdateLifeStage(LifeStage + 1);
+        if (skipLifeStage)
+            UpdateLifeStage(LifeStage + 1);
     }
 
     private void UpdateLifeStage(int stage)
     {
+        ageInStage = 0f;
         LifeStage = stage;
         switch (stage)
         {
