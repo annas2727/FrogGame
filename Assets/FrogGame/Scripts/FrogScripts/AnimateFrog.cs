@@ -45,16 +45,23 @@ public class AnimateFrog : MonoBehaviour
 
     public void StartSwimming()
     {
-        //reset all triggers
-        
-        animator.ResetTrigger("P_Midair");
-        animator.ResetTrigger("P_Land");
-        animator.ResetTrigger("Pickup");
-        animator.ResetTrigger("Idle");
-        animator.SetTrigger("Swim");
+        ResetTriggers();
         swimCoroutine = StartCoroutine(SwimLoop());
     }
     
+    public void ResetTriggers()
+    {
+        animator.ResetTrigger("Jump");
+        animator.ResetTrigger("J_Land");
+        animator.ResetTrigger("Pickup");
+        animator.ResetTrigger("P_Midair");
+        animator.ResetTrigger("P_Land");
+        animator.ResetTrigger("Swim");
+        animator.ResetTrigger("S_Sym");
+        animator.ResetTrigger("S_LegKick");
+        animator.ResetTrigger("Idle");
+        animator.ResetTrigger("Kiss");
+    }
     public void StopSwimming()
     {
         if (swimCoroutine != null)
