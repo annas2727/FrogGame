@@ -10,18 +10,28 @@ public class Stats : ScriptableObject
     [SerializeField] private float baseLilypadyOffset = 0.05f; //y-offset of frog above lilypad (so that frog doesn't clip into lilypad
 
     [Header("Search Settings")]
+    [Tooltip("Starting radius frog will search for jump spot")]
     [SerializeField] private float jumpSpotSearchRadius = 10f; //Starting radius frog will search for jump spot
+    [Tooltip("How much larger the search radius becomes each search")]
     [SerializeField] private float jumpSpotSearchRadiusAddition = 5f; //How much larger the search radius becomes each search
+    [Tooltip("How many times a frog will search for a jump spot till it gives up")]
     [SerializeField] private int jumpSpotSearchNumber = 3; //How many times a frog will search for a jump spot till it gives up
 
     [Header("Jump Timing Settings")]
+    [Tooltip("Max time frog idles before jumping")]
     [SerializeField] private float maxIdleJumpTime = 10f; //Max time frog idles before jumping
+    [Tooltip("Min time frog idles before jumping")]
     [SerializeField] private float minIdleJumpTime = 4f; //Min time frog idles before jumping
+    [Tooltip("Time when can be picked up again (should be atleast half a sec to not allow double clicks)")]
     [SerializeField] private float pickUpCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
 
     [Header("Frog Scale Settings")]
+    [Tooltip("Max scale of frog (when the frog is an adult")]
     [SerializeField] private float maxFrogScale = 0.25f; //Max scale of frog
+    [Tooltip("Min scale of frog (when the frog is a baby)")]
     [SerializeField] private float minFrogScale = 0.1f; //Min scale of frog
+    [Tooltip("Time it takes for frog to go from baby to adult")]
+    [SerializeField] private float frogGrowthTime = 300f;
 
     [SerializeField] private float maxTadpoleScale = 20f; //Max scale of tadpole
     [SerializeField] private float minTadpoleScale = 10f; //Min scale of tadpole
@@ -31,7 +41,10 @@ public class Stats : ScriptableObject
     [SerializeField] private float minEggScale = 0.1f; //Min scale of egg
 
     [Header("Breeding Settings")]
-    [SerializeField] private float breedCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
+    [Tooltip("Time before frog can breed again")]
+    [SerializeField] private float breedCooldown = 1f;
+    [Tooltip("Time before frog jumps off breeding spot due to no partner")]
+    [SerializeField] private float breedAnnoyance = 8f; 
 
 
     public float BaseLilypadScale => baseLilypadScale;
@@ -55,4 +68,5 @@ public class Stats : ScriptableObject
     public float MinEggScale => minEggScale;
 
     public float BreedCooldown => breedCooldown;
+    public float BreedAnnoyance => breedAnnoyance;
 }

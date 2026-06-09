@@ -9,29 +9,59 @@ public class FrogBreed : MonoBehaviour
     public LayerMask breedingPadLayer;
     public BreedSpot connectedBreedSpot;
 
+    private float breedingAnnoyanceTime = 0f;
+    public bool canBreedAgain = true;
+
     IEnumerator BreedCooldown()
     {
+        canBreedAgain = false;
         yield return new WaitForSeconds(statsConfig.BreedCooldown);
+        canBreedAgain = true;
+    }
+
+    IEnumerator BreedAnnoyanceTimer()
+    {
+        yield return new WaitForSeconds(1f);
     }
 
     public void ConnectBreedSpot(BreedSpot myBreedSpot)
     {
         connectedBreedSpot = myBreedSpot;
+        connectedBreedSpot.myFrog = this.gameObject;
         connectedBreedSpot.Reserve();
 
     }
     public void LeaveBreedSpot()
     {
-        if(connectedBreedSpot != null)
+        if (connectedBreedSpot != null)
+        {
+            connectedBreedSpot.myFrog = null;
             connectedBreedSpot.Leave();
+        }
         connectedBreedSpot = null;
     }
 
     public void StartTryBreeding()
     {
         StartCoroutine(TurnToPartner());
-        //myBreedSpot.GetComponent<BreedSpot>().Reserve();
-        //FindBreedingSpot(HeartRock);
+        while(breedingAnnoyanceTime < statsConfig.BreedAnnoyance)
+        {
+            breedingAnnoyanceTime += Time.deltaTime;
+            if(connectedBreedSpot.Partner.myFrog != null)
+            {
+                break;
+            }
+        }
+        if(breedingAnnoyanceTime >= statsConfig.BreedAnnoyance)
+        {
+            LeaveBreedSpot();
+            GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
+        }
+        else //Found a partner
+        {
+            //BREED
+        }
+        breedingAnnoyanceTime = 0f;
     }
 
     IEnumerator TurnToPartner()
@@ -62,31 +92,4 @@ public class FrogBreed : MonoBehaviour
 
         transform.rotation = targetRotation;
     }
-
-    /*
-    GameObject FindBreedingSpot(GameObject HeartRock)
-    {
-        BreedSpot BreedSpotL = HeartRock.transform.Find("BreedSpot (L)").GetComponent<BreedSpot>();
-        BreedSpot BreedSpotR = HeartRock.transform.Find("BreedSpot (R)").GetComponent<BreedSpot>();
-
-        float distL = Vector3.Distance(transform.position, BreedSpotL.transform.position);
-        float distR = Vector3.Distance(transform.position, BreedSpotR.transform.position);
-
-        BreedSpot closestBreedSpot = distL < distR ? BreedSpotL : BreedSpotR;
-        BreedSpot furthestBreedSpot = distL >= distR ? BreedSpotR : BreedSpotL;
-
-        if (!closestBreedSpot.isReserved)
-        {
-            
-            return null;
-        }
-        if (!furthestBreedSpot.isReserved)
-        {
-            //Go to that spot
-            return null;
-        }
-        frog.GetComponent<FrogChooseJump>().isOccupied = false;
-        return null;
-    }
-    */
 }
