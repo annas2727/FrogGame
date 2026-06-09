@@ -12,6 +12,7 @@ public class FrogBreed : MonoBehaviour
     private float breedingPhaseTime = 0f; //How long in each phase
 
     public bool canBreedAgain = true; //For breed cooldown
+    public bool isAdult = false;
 
     IEnumerator BreedCooldown()
     {

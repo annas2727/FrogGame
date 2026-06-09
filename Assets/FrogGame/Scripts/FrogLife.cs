@@ -10,6 +10,7 @@ public class FrogLife : MonoBehaviour
     private float growthTime; //Time to fully grow
     private float maxScale;
     private float minScale;
+    public bool skipLifeStage = false; //For testing
     
     public enum BodyColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
     public enum PatternColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
@@ -54,18 +55,27 @@ public class FrogLife : MonoBehaviour
 
     void Update()
     {
-        ageInStage += Time.deltaTime;
-        float t = Mathf.Clamp01(ageInStage / growthTime);
+        if (LifeStage < 3)
+        {
+            ageInStage += Time.deltaTime;
+            float t = Mathf.Clamp01(ageInStage / growthTime);
 
-        float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
-        transform.localScale = Vector3.one * scale;
+            float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
+            transform.localScale = Vector3.one * scale;
 
-        if (ageInStage > growthTime)
-            UpdateLifeStage(LifeStage + 1);
+            if (ageInStage > growthTime)
+                UpdateLifeStage(LifeStage + 1);
+            if (skipLifeStage)
+            {
+                skipLifeStage = false;
+                UpdateLifeStage(LifeStage + 1);
+            }
+        }
     }
 
     private void UpdateLifeStage(int stage)
     {
+        ageInStage = 0f;
         LifeStage = stage;
         switch (stage)
         {
@@ -101,6 +111,7 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(false);
                 tadpole.SetActive(false);
                 frog.SetActive(true);
+                frog.GetComponent<FrogBreed>().isAdult = true; //Makes the frog an adult
                 break;
         }
     }
