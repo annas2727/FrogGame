@@ -6,11 +6,13 @@ public class FrogBreed : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
 
-    public LayerMask breedingPadLayer;
     public BreedSpot connectedBreedSpot;
 
-    private float breedingAnnoyanceTime = 0f;
-    public bool canBreedAgain = true;
+    private float breedingAnnoyanceTime = 0f; //Leave the spot time
+
+    public bool tryBreeding = false; //Is trying to breed
+
+    public bool canBreedAgain = true; //For breed cooldown
 
     IEnumerator BreedCooldown()
     {
@@ -41,27 +43,31 @@ public class FrogBreed : MonoBehaviour
         connectedBreedSpot = null;
     }
 
+    private void Update()
+    {
+        if (tryBreeding)
+        {
+            breedingAnnoyanceTime += Time.deltaTime;
+            if (connectedBreedSpot.Partner.myFrog != null) //Found a partner
+            {
+                //BREED
+                breedingAnnoyanceTime = 0f;
+            }
+            if (breedingAnnoyanceTime >= statsConfig.BreedAnnoyance)
+            {
+                Debug.Log("Leave Breed Spot");
+                LeaveBreedSpot();
+                GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
+                breedingAnnoyanceTime = 0f;
+                tryBreeding = false;
+            }
+        }
+    }
+
     public void StartTryBreeding()
     {
         StartCoroutine(TurnToPartner());
-        while(breedingAnnoyanceTime < statsConfig.BreedAnnoyance)
-        {
-            breedingAnnoyanceTime += Time.deltaTime;
-            if(connectedBreedSpot.Partner.myFrog != null)
-            {
-                break;
-            }
-        }
-        if(breedingAnnoyanceTime >= statsConfig.BreedAnnoyance)
-        {
-            LeaveBreedSpot();
-            GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
-        }
-        else //Found a partner
-        {
-            //BREED
-        }
-        breedingAnnoyanceTime = 0f;
+        tryBreeding = true;
     }
 
     IEnumerator TurnToPartner()

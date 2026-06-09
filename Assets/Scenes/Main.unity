@@ -3262,7 +3262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607890894211025178, guid: 3a6c175acfd61484fafd4867486bdca1, type: 3}
       propertyPath: m_Name
-      value: HeartRock2
+      value: HeartRock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

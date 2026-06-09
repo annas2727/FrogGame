@@ -8,6 +8,7 @@ public class HeartAnimation : MonoBehaviour
 
     public void Start() //pulse
     {
+        this.gameObject.SetActive(false);
         StartCoroutine(PulseRoutine());
     }
 
