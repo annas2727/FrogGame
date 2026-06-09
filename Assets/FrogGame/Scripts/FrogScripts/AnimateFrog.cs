@@ -24,6 +24,7 @@ public class AnimateFrog : MonoBehaviour
     public void Swim() => animator.SetTrigger("Swim");
     public void SwimLegKick() => animator.SetTrigger("S_LegKick");
     public void SwimSym() => animator.SetTrigger("S_Sym");
+    public void Kiss() => animator.SetTrigger("Kiss");
 
     public void StartSwimming()
     {
