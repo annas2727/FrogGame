@@ -5,9 +5,28 @@ using System.Collections.Generic;
 
 public class Breeding : MonoBehaviour
 {
-    GameObject Frog1; 
-    GameObject Frog2;
+    GameObject FrogL;
+    GameObject FrogR;
     public enum FrogColor { red, orange, yellow, green, blue, purple, brown, white, black, grey }
+
+    public bool breedTogether = false;
+
+    public void ConnectFrog(GameObject Frog, bool isL)
+    {
+        if(isL)
+            ForgL = Frog;
+        else
+            FrogR = Frog;
+        if (FrogL != null && FrogR != null)
+        {
+            breedTogether = true;
+            Debug.Log("Here is where they breed");
+
+            //Reset
+            FrogL = null;
+            FrogR = null;
+        }
+    }
 
     private Dictionary<(FrogColor, FrogColor), FrogColor> Recipes = new()
     {

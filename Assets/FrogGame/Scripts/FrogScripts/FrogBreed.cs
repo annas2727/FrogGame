@@ -93,7 +93,7 @@ public class FrogBreed : MonoBehaviour
             if (breedingPhaseTime >= 2.5f)
             {
                 GetComponent<FrogDrag>().CanBeDragged = true; //We done
-                //Breed make egg
+                connectedBreedSpot.MakeEgg(); //Make the egg
                 GetComponent<FrogChooseJump>().isOccupied = false; //Make frog leave
                 ChangeBreedPhase(0);
             }

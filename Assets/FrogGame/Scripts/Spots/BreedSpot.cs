@@ -17,4 +17,10 @@ public class BreedSpot : MonoBehaviour
     {
         isReserved = false;
     }
+    public void MakeEgg()
+    {
+        //ugh this is so ugly, so basically:
+        //Get the parent (the unsplit BreedSpot) component <Breeding> and give it our frog and if we are the left BreedSpot
+        transform.parent.GetComponent<Breeding>().ConnectFrog(myFrog, gameObject.name == "BreedSpot (L)");
+    }
 }
