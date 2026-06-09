@@ -28,6 +28,24 @@ public class Breeding : MonoBehaviour
         }
     }
 
+
+
+    private OffspringColor(FrogColor a, FrogColor b)
+    {
+        int roll = Random.Range(0, 100); // 0-99
+
+        if (roll < 1)          // 1% White
+            return 1;
+        else if (roll < 25)    // 24% Color1
+            return 2;
+        else if (roll < 75)    // 50% Color2
+            return 3;
+        else if (roll < 99)    // 24% Color3
+            return 4;
+        else                   // 1% Color4
+            return 5;
+    }
+
     private Dictionary<(FrogColor, FrogColor), FrogColor> Recipes = new()
     {
         // Primary -> Secondary
@@ -36,11 +54,11 @@ public class Breeding : MonoBehaviour
         { (FrogColor.yellow, FrogColor.blue), FrogColor.green },
     };
 
-    public string Mix(FrogColor a, FrogColor b)
+    public FrogColor Mix(FrogColor a, FrogColor b)
     {
         // Same color
         if (a == b)
-            return a.ToString();
+            return a;
 
         // Sort so I don't have to define all this shit twice
         if ((int)a > (int)b)
@@ -48,25 +66,25 @@ public class Breeding : MonoBehaviour
 
         // The Rare Grey Frog
         if (a == FrogColor.white && b == FrogColor.black)
-            return FrogColor.grey.ToString();
+            return FrogColor.grey;
 
         //Grey rules
         if (a == FrogColor.white && b == FrogColor.grey)
-            return FrogColor.white.ToString();
+            return FrogColor.white;
         if (a == FrogColor.black && b == FrogColor.grey)
-            return FrogColor.black.ToString();
+            return FrogColor.black;
 
         // White or Black are recessive
         if (b == FrogColor.white || b == FrogColor.black || b == FrogColor.grey)
-            return a.ToString();
+            return a;
 
         // Brown contamination
         if (a == FrogColor.brown || b == FrogColor.brown)
-            return FrogColor.brown.ToString();
+            return FrogColor.brown;
 
         // Primary combinations
         if (Recipes.TryGetValue((a, b), out FrogColor result))
-            return result.ToString();
+            return result;
 
         // Adjacent on color wheel = 50/50
         if (IsAdjacent(a, b))
