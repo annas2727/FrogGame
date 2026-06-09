@@ -36,11 +36,13 @@ public class Breeding : MonoBehaviour
 
     private void DNAMix()
     {
-        FrogSkin FrogSkinL = FrogL.GetComponent<FrogSkin>();
-        FrogSkin FrogSkinR = FrogR.GetComponent<FrogSkin>();
+        FrogLife FrogSkinL = FrogL.GetComponent<FrogLife>();
+        FrogLife FrogSkinR = FrogR.GetComponent<FrogLife>();
     
         string bodyColor = OffspringColor(FrogSkinL.bodyColorName, FrogSkinL.bodyColorName);
         string patternColor = OffspringColor(FrogSkinR.bodyColorName, FrogSkinR.bodyColorName);
+
+        
 
     }
 

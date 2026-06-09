@@ -2,49 +2,30 @@ using UnityEngine;
 
 public class FrogSkin : MonoBehaviour
 {
-    public enum BodyColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
-    public enum PatternColorOption { red, orange, yellow, green, blue, purple, brown, white, black }
-    public enum PatternType { spots, stripes, none }
-
-    [SerializeField] BodyColorOption currentBodyColor;
-    [SerializeField] PatternColorOption currentPatternColor;
-    [SerializeField] PatternType currentPatternType;
-
-    public string bodyColorName; 
-    public string patternColorName;
-    public string patternType;
-
-    private string bodyColor;
-    private string patternColor;
-
     private Material frogMaterial;
 
     private Renderer frogRenderer;
     private SkinnedMeshRenderer frogSkinnedRenderer;
     GameManager gameManager;
 
+    private FrogLife frogLife; 
+
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
+        frogLife = GetComponentInParent<FrogLife>();
 
-        bodyColorName = currentBodyColor.ToString();
-        patternColorName = currentPatternColor.ToString();
-        patternType = currentPatternType.ToString();
-
-        bodyColor = gameManager.bodyColors.ContainsKey(bodyColorName) ? gameManager.bodyColors[bodyColorName] : "#ffffff";
-        patternColor = gameManager.patternColors.ContainsKey(patternColorName) ? gameManager.patternColors[patternColorName] : "#ffffff";
-    
         frogRenderer = GetComponent<Renderer>();
         frogSkinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     
-        Material sharedMaterial = gameManager.GetPatternMaterial(patternType);
+        Material sharedMaterial = gameManager.GetPatternMaterial(frogLife.patternType);
         if (sharedMaterial != null)
         {
             frogMaterial = new Material(sharedMaterial);
         }
         else
         {
-            Debug.LogWarning($"No material found for pattern type: {patternType}. Using default material.");
+            Debug.LogWarning($"No material found for pattern type: {frogLife.patternType}. Using default material.");
             frogMaterial = new Material(Shader.Find("Standard"));
         }
 
@@ -63,9 +44,9 @@ public class FrogSkin : MonoBehaviour
     {
         if (frogMaterial == null) return;
 
-        SetColor("_Body", bodyColor);
-        SetColor("_Spots", patternColor);
-        SetColor("_Stripes", patternColor); 
+        SetColor("_Body", frogLife.bodyColor);
+        SetColor("_Spots", frogLife.patternColor);
+        SetColor("_Stripes", frogLife.patternColor); 
         //SetPatternType(patternType);
     }
 

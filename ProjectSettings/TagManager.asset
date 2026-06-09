@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Water
   - SpecialZone
+  - BreedingSpot
+  - Egg
+  - Tadpole
+  - Frog
   layers:
   - Default
   - TransparentFX

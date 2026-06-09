@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f32190bddd55ea4e9089775d1428290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Breeding
+  NewFrogPrefab: {fileID: 2452982617038607932, guid: a6fbc9903efef934ea4f71927cfebd1b, type: 3}
   breedTogether: 0
 --- !u!1 &3430124972029292656
 GameObject:
