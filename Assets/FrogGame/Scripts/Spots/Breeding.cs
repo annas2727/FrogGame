@@ -1,10 +1,11 @@
-
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Breeding : MonoBehaviour
 {
+    
     GameObject FrogL;
     GameObject FrogR;
 
@@ -46,18 +47,18 @@ public class Breeding : MonoBehaviour
     private string OffspringColor(string FrogAColor, string FrogBColor)
 
     {
-        int roll = Random.Range(0, 100); // 0-99
+        int roll = UnityEngine.Random.Range(0, 100); // 0-99
 
         if (roll < 1) return FrogColor.white.ToString(); // 1% White
         else if (roll < 25) return FrogAColor; // 24% ColorA
         else if (roll < 75)
         {    // 50% Mix
-            Enum.TryParse(FrogAColor, true, out FrogColor FrogColorA);
-            Enum.TryParse(FrogBColor, true, out FrogColor FrogColorB);
+            Enum.TryParse<FrogColor>(FrogAColor, true, out FrogColor FrogColorA);
+            Enum.TryParse<FrogColor>(FrogBColor, true, out FrogColor FrogColorB);
             string Mixed = Mix(FrogColorA, FrogColorB);
             if (Mixed == "5050")
             {
-                roll = Random.Range(0, 100);
+                roll = UnityEngine.Random.Range(0, 100);
                 if (roll < 50) return FrogAColor;
                 else return FrogBColor;
             }
