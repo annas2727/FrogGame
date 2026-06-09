@@ -43,21 +43,25 @@ public class Breeding : MonoBehaviour
 
     }
 
-    private string OffspringColor(string a, string b)
+    private string OffspringColor(string FrogAColor, string FrogBColor)
 
     {
-        Enum.TryParse(FrogAColor, true, out FrogColor FrogColorA);
-        Enum.TryParse(FrogBColor, true, out FrogColor FrogColorB);
-
         int roll = Random.Range(0, 100); // 0-99
 
         if (roll < 1) return FrogColor.white.ToString(); // 1% White
         else if (roll < 25) return FrogAColor; // 24% ColorA
         else if (roll < 75)
         {    // 50% Mix
-            FrogColor Mixed = Mix(FrogA, FrogB);
-            if (Mixed)
-                return 3;
+            Enum.TryParse(FrogAColor, true, out FrogColor FrogColorA);
+            Enum.TryParse(FrogBColor, true, out FrogColor FrogColorB);
+            string Mixed = Mix(FrogColorA, FrogColorB);
+            if (Mixed == "5050")
+            {
+                roll = Random.Range(0, 100);
+                if (roll < 50) return FrogAColor;
+                else return FrogBColor;
+            }
+            else return Mixed;
         }
         else if (roll < 99) return FrogBColor; //24% ColorB
         else return FrogColor.black.ToString(); // 1% Black
