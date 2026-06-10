@@ -18,7 +18,6 @@ public class EggColor : MonoBehaviour
 
     void ChangeColor()
     {
-        Debug.Log(frogLife.bodyColorName);
         if (ColorUtility.TryParseHtmlString(gameManager.bodyColors[frogLife.bodyColorName], out Color color))
         {
             meshRenderer.materials[0].color = color;
