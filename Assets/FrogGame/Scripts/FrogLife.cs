@@ -32,7 +32,6 @@ public class FrogLife : MonoBehaviour
     GameObject egg;
     GameObject tadpole;
     GameObject frog;
-    GameObject activated;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -62,7 +61,7 @@ public class FrogLife : MonoBehaviour
             float t = Mathf.Clamp01(ageInStage / growthTime);
 
             float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
-            activated.transform.localScale = Vector3.one * scale;
+            transform.localScale = Vector3.one * scale;
 
             if (ageInStage > growthTime)
                 UpdateLifeStage(LifeStage + 1);
@@ -87,7 +86,6 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(true);
                 tadpole.SetActive(false);
                 frog.SetActive(false);
-                activated = egg;
                 break;
             case 1:
                 growthTime = statsConfig.TadpoleGrowthTime;
@@ -96,7 +94,6 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(false);
                 tadpole.SetActive(true);
                 frog.SetActive(false);
-                activated = tadpole;
                 break;
             case 2:
                 growthTime = statsConfig.FrogGrowthTime;
@@ -105,7 +102,6 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(false);
                 tadpole.SetActive(false);
                 frog.SetActive(true);
-                activated = frog;
                 break;
             default:
                 LifeStage = 3;
@@ -115,7 +111,6 @@ public class FrogLife : MonoBehaviour
                 egg.SetActive(false);
                 tadpole.SetActive(false);
                 frog.SetActive(true);
-                activated = frog;
                 frog.GetComponent<FrogBreed>().isAdult = true; //Makes the frog an adult
                 break;
         }

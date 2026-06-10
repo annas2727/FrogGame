@@ -23,8 +23,8 @@ MonoBehaviour:
   maxFrogScale: 0.0025
   minFrogScale: 0.001
   frogGrowthTime: 300
-  maxTadpoleScale: 0.6
-  minTadpoleScale: 0.4
+  maxTadpoleScale: 20
+  minTadpoleScale: 10
   tadpoleGrowthTime: 140
   maxEggScale: 0.16
   minEggScale: 0.13
