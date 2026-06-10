@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.923177
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.737792
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_Name
-      value: tadpole2
+      value: Tadpole
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       propertyPath: m_TagString
@@ -61,7 +61,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8dbbe4cfe2587fe42b512246eaa760c6, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2715456237268531401, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
@@ -70,7 +71,25 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4155438496280154132}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6415339731147867509}
   m_SourcePrefab: {fileID: 100100000, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+--- !u!4 &2240825930896651457 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1874152942786762936, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+  m_PrefabInstance: {fileID: 8855388154361090953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3021128688261828934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3239886852497112369, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+  m_PrefabInstance: {fileID: 8855388154361090953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4261016060836146396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4483752257737031851, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+  m_PrefabInstance: {fileID: 8855388154361090953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8513423194938945240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
@@ -108,3 +127,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4d9eb9264253e43a49318cb00423d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TadpoleColor
+--- !u!137 &6415339731147867509
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513423194938945240}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8dbbe4cfe2587fe42b512246eaa760c6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -6006895443496978735, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+  m_Bones:
+  - {fileID: 9055143198882418016}
+  - {fileID: 3021128688261828934}
+  - {fileID: 2240825930896651457}
+  - {fileID: 4261016060836146396}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 9055143198882418016}
+  m_AABB:
+    m_Center: {x: 0.0000012177043, y: 0.00008362805, z: -0.0025804646}
+    m_Extent: {x: 0.001212799, y: 0.0014412806, z: 0.0048427135}
+  m_DirtyAABB: 0
+--- !u!4 &9055143198882418016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8696736372980228375, guid: bdd24292cf9ce484087655f94ff95ddd, type: 3}
+  m_PrefabInstance: {fileID: 8855388154361090953}
+  m_PrefabAsset: {fileID: 0}

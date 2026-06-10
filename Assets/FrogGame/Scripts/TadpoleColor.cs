@@ -19,7 +19,7 @@ public class TadpoleColor : MonoBehaviour
 
     void ChangeColor()
     {
-        if (ColorUtility.TryParseHtmlString(gameManager.tadpoleBodyColors[frogLife.bodyColor], out Color color))
+        if (ColorUtility.TryParseHtmlString(gameManager.tadpoleBodyColors[frogLife.bodyColorName], out Color color))
         {
             skinnedMeshRenderer.material.color = color;
         }
