@@ -41,9 +41,17 @@ public class Breeding : MonoBehaviour
     
         string bodyColor = OffspringColor(FrogSkinL.bodyColorName, FrogSkinL.bodyColorName);
         string patternColor = OffspringColor(FrogSkinR.bodyColorName, FrogSkinR.bodyColorName);
+        //string patternType = OffspringPattern(FrogSkinR.bodyColorName, FrogSkinR.bodyColorName);
 
-        
 
+    }
+
+    private string OffspringPattern(string FrogAPattern, string FrogBPattern)
+    {
+        int roll = UnityEngine.Random.Range(0, 100);
+
+        if (roll < 50) return FrogAPattern;
+        else return FrogBPattern;
     }
 
     private string OffspringColor(string FrogAColor, string FrogBColor)
