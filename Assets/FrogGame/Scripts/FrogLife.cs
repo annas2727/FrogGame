@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//[ExecuteAlways]
 public class FrogLife : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
@@ -59,8 +60,12 @@ public class FrogLife : MonoBehaviour
             ageInStage += Time.deltaTime;
             float t = Mathf.Clamp01(ageInStage / growthTime);
             float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
+<<<<<<< Updated upstream
             activated.transform.localScale = Vector3.one * scale;
+=======
+>>>>>>> Stashed changes
 
+            activated.transform.localScale = Vector3.one * scale;
             if (ageInStage > growthTime)
                 UpdateLifeStage(LifeStage + 1);
             if (skipLifeStage)
