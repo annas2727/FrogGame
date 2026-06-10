@@ -6,8 +6,8 @@ public class FrogLife : MonoBehaviour
     [SerializeField] private Stats statsConfig;
 
     public int LifeStage = 0; //0=egg, 1=tadpole, 2=froglet, 3=frog
-    private float ageInStage = 0f; //age in that lifestage
-    private float growthTime = 0f; //Time to fully grow
+    private float ageInStage; //age in that lifestage
+    private float growthTime; //Time to fully grow
     private float maxScale;
     private float minScale;
     public bool skipLifeStage = false; //For testing
@@ -41,6 +41,8 @@ public class FrogLife : MonoBehaviour
         tadpole = GetChildWithTag("Tadpole");
         frog = GetChildWithTag("Frog");
 
+        UpdateLifeStage(0);
+
         gameManager = FindAnyObjectByType<GameManager>();
 
         bodyColorName = currentBodyColor.ToString();
@@ -49,23 +51,19 @@ public class FrogLife : MonoBehaviour
 
         bodyColor = gameManager.bodyColors.ContainsKey(bodyColorName) ? gameManager.bodyColors[bodyColorName] : "#ffffff";
         patternColor = gameManager.patternColors.ContainsKey(patternColorName) ? gameManager.patternColors[patternColorName] : "#ffffff";
-
-        UpdateLifeStage(0);
+    
     }
 
-    private void Update()
+    void Update()
     {
         if (LifeStage < 3)
         {
             ageInStage += Time.deltaTime;
             float t = Mathf.Clamp01(ageInStage / growthTime);
-            float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
-<<<<<<< Updated upstream
-            activated.transform.localScale = Vector3.one * scale;
-=======
->>>>>>> Stashed changes
 
+            float scale = Mathf.Lerp(minScale, maxScale, ageInStage / growthTime);
             activated.transform.localScale = Vector3.one * scale;
+
             if (ageInStage > growthTime)
                 UpdateLifeStage(LifeStage + 1);
             if (skipLifeStage)
