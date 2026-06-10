@@ -90,6 +90,7 @@ public class FrogLife : MonoBehaviour
                 activated = egg;
                 break;
             case 1:
+                tadpole.transform.position = egg.transform.position;
                 growthTime = statsConfig.TadpoleGrowthTime;
                 maxScale = statsConfig.MaxTadpoleScale;
                 minScale = statsConfig.MinTadpoleScale;
@@ -99,6 +100,7 @@ public class FrogLife : MonoBehaviour
                 activated = tadpole;
                 break;
             case 2:
+                frog.transform.position = tadpole.transform.position;
                 growthTime = statsConfig.FrogGrowthTime;
                 maxScale = statsConfig.MaxFrogScale;
                 minScale = statsConfig.MinFrogScale;
