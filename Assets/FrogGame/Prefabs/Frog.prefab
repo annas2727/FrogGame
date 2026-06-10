@@ -166,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Name
-      value: Frog3
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Layer
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c94a6cda4e750aa4c846f48f38d3f961, type: 2}
+      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
     - target: {fileID: 6417230970763982321, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -354,9 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762fbf86b4f9f714a9e0000efb5d1072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogProperties
-  currentBodyColor: 0
-  currentPatternColor: 0
-  currentPatternType: 0
 --- !u!114 &8720910179195773415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,10 +384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogBreed
   statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
-  breedingPadLayer:
-    serializedVersion: 2
-    m_Bits: 0
   connectedBreedSpot: {fileID: 0}
+  breedingPhase: 0
+  canBreedAgain: 1
+  isAdult: 0
 --- !u!23 &4256065342356565610
 MeshRenderer:
   m_ObjectHideFlags: 0
