@@ -22,13 +22,13 @@ MonoBehaviour:
   pickUpCooldown: 1
   maxFrogScale: 0.0025
   minFrogScale: 0.001
-  frogGrowthTime: 15
+  frogGrowthTime: 300
   maxTadpoleScale: 1.1
   minTadpoleScale: 0.8
-  tadpoleGrowthTime: 15
+  tadpoleGrowthTime: 140
   maxEggScale: 0.25
   minEggScale: 0.2
-  eggGrowthTime: 15
+  eggGrowthTime: 60
   breedCooldown: 1
   breedAnnoyance: 8
   breedChickenOut: 1.5

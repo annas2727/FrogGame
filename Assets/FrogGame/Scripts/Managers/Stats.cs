@@ -27,20 +27,20 @@ public class Stats : ScriptableObject
 
     [Header("Frog Scale Settings")]
     [Tooltip("Max scale of frog (when the frog is an adult")]
-    [SerializeField] private float maxFrogScale = 0.25f; //Max scale of frog
+    [SerializeField] private float maxFrogScale = 0.0025f; //Max scale of frog
     [Tooltip("Min scale of frog (when the frog is a baby)")]
-    [SerializeField] private float minFrogScale = 0.1f; //Min scale of frog
+    [SerializeField] private float minFrogScale = 0.0010f; //Min scale of frog
     [Tooltip("Time it takes for frog to go from baby to adult")]
     [SerializeField] private float frogGrowthTime = 300f;
 
-    [SerializeField] private float maxTadpoleScale = 20f; //Max scale of tadpole
-    [SerializeField] private float minTadpoleScale = 10f; //Min scale of tadpole
+    [SerializeField] private float maxTadpoleScale = 1.1f; //Max scale of tadpole
+    [SerializeField] private float minTadpoleScale = 0.8f; //Min scale of tadpole
     [SerializeField] private float tadpoleGrowthTime = 140f;
 
     //Unknown
     [SerializeField] private float maxEggScale = 0.25f; //Max scale of egg
-    [SerializeField] private float minEggScale = 0.1f; //Min scale of egg
-    [SerializeField] private float eggGrowthTime = 80f;
+    [SerializeField] private float minEggScale = 0.20f; //Min scale of egg
+    [SerializeField] private float eggGrowthTime = 60f;
 
     [Header("Breeding Settings")]
     [Tooltip("Time before frog can breed again")]
@@ -49,7 +49,6 @@ public class Stats : ScriptableObject
     [SerializeField] private float breedAnnoyance = 8f;
     [Tooltip("Time after frog gets partner and can still be dragged out to cancel")]
     [SerializeField] private float breedChickenOut = 1.5f;
-
 
     public float BaseLilypadScale => baseLilypadScale;
     public float BaseLilypadyOffset => baseLilypadyOffset;
