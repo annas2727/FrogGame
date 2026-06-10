@@ -3977,9 +3977,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457787066761601881, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
+    - target: {fileID: 1700455925943880761, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2255465465080734770, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Name
       value: FrogLifeCycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254057674460816392, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: HasBeenDragged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5886760766195998504, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Controller

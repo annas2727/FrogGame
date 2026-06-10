@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
+      propertyPath: m_TagString
+      value: Frog
+      objectReference: {fileID: 0}
     - target: {fileID: 1362676888194990436, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -215,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
+      objectReference: {fileID: 9100000, guid: 82a4e5c411f854746b5a56e97781c1ae, type: 2}
     - target: {fileID: 6417230970763982321, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       propertyPath: m_Layer
       value: 7
