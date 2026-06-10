@@ -25,7 +25,6 @@ public class FrogSkin : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"No material found for pattern type: {frogLife.patternType}. Using default material.");
             frogMaterial = new Material(Shader.Find("Standard"));
         }
 
