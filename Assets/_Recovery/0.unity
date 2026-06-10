@@ -3981,14 +3981,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogLifeCycle
       objectReference: {fileID: 0}
-    - target: {fileID: 5886760766195998504, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2597f8a021eba44997df14e606cca14, type: 2}
-    - target: {fileID: 6444443281547235607, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7675980110556520033, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.358
