@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 3086036324655005962, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
+      objectReference: {fileID: 9100000, guid: c94a6cda4e750aa4c846f48f38d3f961, type: 2}
     - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
       propertyPath: m_Name
       value: Frog
