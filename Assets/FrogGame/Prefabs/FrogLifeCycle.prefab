@@ -172,6 +172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7675980110556520033}
     m_Modifications:
+    - target: {fileID: 3086036324655005962, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
     - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
       propertyPath: m_Name
       value: Frog
@@ -242,6 +246,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7675980110556520033}
     m_Modifications:
+    - target: {fileID: 3138513276139580952, guid: f7ed3d2a4deaf814595efc1ea33b3534, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2597f8a021eba44997df14e606cca14, type: 2}
     - target: {fileID: 8513423194938945240, guid: f7ed3d2a4deaf814595efc1ea33b3534, type: 3}
       propertyPath: m_Name
       value: Tadpole
