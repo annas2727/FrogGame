@@ -83,6 +83,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3429453191399632062}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1527791420116167433}
   m_SourcePrefab: {fileID: 100100000, guid: 25e4ecb261f9bf1419b1189bd138a72f, type: 3}
 --- !u!1 &465237783662568589 stripped
 GameObject:
@@ -109,3 +112,17 @@ MonoBehaviour:
   maxForce: 5
   arriveDistance: 1.5
   targetSwitchTime: 3
+--- !u!114 &-1527791420116167433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465237783662568589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4d9eb9264253e43a49318cb00423d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TadpoleColor
+  currentBodyColor: 0
+  gameManager: {fileID: 0}
