@@ -2045,7 +2045,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a627f60a42321474ea35525a0908c41e, type: 2}
   - {fileID: 2100000, guid: 27bd33dbbc7645c46a2f82eaf31a2757, type: 2}
   - {fileID: 2100000, guid: 15f752a28596dc84bba90458340f11e8, type: 2}
-  eyeMaterial: {fileID: 2100000, guid: e28ed7d0a7956f845a6b91379a4e7467, type: 2}
+  eyeMaterial: {fileID: -3846018093981099296, guid: db579975282df1e46a392f6e49ebbb98, type: 3}
 --- !u!4 &1065683213
 Transform:
   m_ObjectHideFlags: 0
