@@ -27,6 +27,7 @@ public class FrogDrag : MonoBehaviour
         GetComponent<ParabolicJump>().isJumping = false; //To catch midair (Stop midair jump)
         GetComponent<FrogSwim>().isSwimming = false; //To catch midswim (Stop midwater swim)
         GetComponent<FrogBreed>().ChangeBreedPhase(0); //Cancel Breeding
+        GetComponent<FrogTop>().disconnectFrogFromTop();
 
         Vector3 euler = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);

@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7683758757317913908}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.034899585, y: 0, z: 0, w: 0.99939084}
   m_LocalPosition: {x: 0, y: 154.1, z: 0}
   m_LocalScale: {x: 400, y: 400, z: 400}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8949744804162329456}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4, y: 0, z: 0}
 --- !u!65 &6783229038935731749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b775f22816ef154cac5d40e91d86b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogTop
+  FrogOnTop: {fileID: 0}
+  FrogOnBottom: {fileID: 0}
   backSpot: {fileID: 0}
 --- !u!23 &4256065342356565610
 MeshRenderer:

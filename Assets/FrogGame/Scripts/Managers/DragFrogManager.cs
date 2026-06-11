@@ -53,8 +53,17 @@ public class DragFrogManager : MonoBehaviour
 
         if (frog == null || !frog.CanBeDragged)
             return;
-        //Get Frog on top of if there is a frog on top of
         draggedFrog = frog;
+
+        //Get Frog on top of if there is a frog on top of
+        if (frog.gameObject.GetComponent<FrogTop>().FrogOnTop != null)
+        {
+            //Set draggedFrog to the frog on top
+            Transform FrogOnTop = frog.gameObject.GetComponent<FrogTop>().FrogOnTop;
+            draggedFrog = FrogOnTop.GetComponent<FrogDrag>();
+            frog.gameObject.GetComponent<FrogTop>().disconnectFrogFromTop();
+        }
+
         draggedFrog.BeginDrag();
 
         // Calculate offset so the frog doesn't snap
@@ -99,20 +108,36 @@ public class DragFrogManager : MonoBehaviour
             yield break;
 
         string floorTag = hit.collider.tag;
-
         target = hit.point + Vector3.down * 0.05f;
+
+        //Hitting a frog
         Transform hitFrog = null;
-        if (Physics.Raycast(origin, Vector3.down, out RaycastHit hitFrogRay, 20f, frogLayer))
+        RaycastHit[] frogsHit = Physics.RaycastAll(origin, Vector3.down, 20f, frogLayer);
+        if (frogsHit.Length > 0)
         {
-            hitFrog = hitFrogRay.transform;
+            RaycastHit furthestHit = frogsHit[0];
+
+            foreach (RaycastHit frogHitinfrogsHit in frogsHit)
+            {
+                if (frogHitinfrogsHit.distance > furthestHit.distance)
+                {
+                    furthestHit = frogHitinfrogsHit;
+                }
+            }
+            hitFrog = furthestHit.transform;
+
             Debug.Log("Hit a frog");
             //If we hit an adult and we are holding a child
             if (hitFrog.GetComponent<FrogBreed>().isAdult && !frog.GetComponent<FrogBreed>().isAdult)
             {
-                //Fall onto frog
-                Debug.Log("Target the frog's back");
-                target = hitFrog.GetComponent<FrogTop>().backSpot.position;
-                floorTag = "Frog";
+                //Check if the spot is empty
+                if(hitFrog.GetComponent<FrogTop>().FrogOnTop == null)
+                {
+                    //Fall onto frog
+                    Debug.Log("Target the frog's back");
+                    target = hitFrog.GetComponent<FrogTop>().backSpot.position;
+                    floorTag = "Frog";
+                }
             }
             else
             {
@@ -163,7 +188,8 @@ public class DragFrogManager : MonoBehaviour
                 break;
 
             case "Frog": //When landing on a frog
-                Debug.Log("Mr. President, A second tadpole has hit the frog");
+                Debug.Log("Frog land on frog yay");
+                frog.GetComponent<AnimateFrog>().LandPickup();
                 hitFrog.GetComponent<FrogTop>().connectFrog(frog);
                 break;
 

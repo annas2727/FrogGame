@@ -109,7 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpSpot
   isReserved: 0
   isTilted: 0
-  nextPad: {fileID: 0}
 --- !u!64 &2028026870232803213
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6562014208601360652, guid: 0384536141abd8c46a4c5e5793503544, type: 3}
       propertyPath: m_LocalPosition.z
