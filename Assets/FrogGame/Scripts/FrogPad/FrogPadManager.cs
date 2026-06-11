@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FrogPadManager : MonoBehaviour
 {
@@ -9,8 +11,16 @@ public class FrogPadManager : MonoBehaviour
     public float spacingZ = 2.5f;
     public Transform pad;
     public int columns = 3; 
-    public float zOffset = -0.4f;
+    public float zOffset = -1f;
     public float squareScale = 0.19f;
+
+    public float scrollSpeed = 2f;
+    public CameraMovement cameraMovement;
+
+    private float scrollOffset = 0f;
+    private List<GameObject> squares = new List<GameObject>();
+    private Vector3 offset;
+    private float padHalfHeight;
 
     void Start()
     {
@@ -23,6 +33,23 @@ public class FrogPadManager : MonoBehaviour
         GenerateGrid();
     }
 
+    void Update()
+    {
+        if (cameraMovement.frogPadOpen)
+        {
+            Mouse mouse = Mouse.current;
+            if (mouse == null) return;
+
+            float scroll = mouse.scroll.ReadValue().y;
+            if (scroll != 0)
+            {
+                scrollOffset += scroll * scrollSpeed * Time.deltaTime;
+                UpdateSquarePositions();
+                Debug.Log("Scrolling");
+            }
+        }
+    }
+
     void GenerateGrid()
     {
         FrogFrogPad[] frogs = frogsParent.GetComponentsInChildren<FrogFrogPad>();
@@ -30,7 +57,9 @@ public class FrogPadManager : MonoBehaviour
 
         float totalWidth = (Mathf.Min(frogs.Length, columns) - 1) * spacingX;
         float totalDepth = (rows - 1) * spacingZ;
-        Vector3 offset = new Vector3(-totalWidth / 2f, 0, totalDepth / 2f);
+        offset = new Vector3(-totalWidth / 2f, 0, totalDepth / 2f);
+
+        padHalfHeight = pad.localScale.z * 0.5f;
 
         for (int i = 0; i < frogs.Length; i++)
         {
@@ -39,16 +68,36 @@ public class FrogPadManager : MonoBehaviour
 
             GameObject square = Instantiate(frogPadSquare, transform);
             square.transform.localScale = Vector3.one * squareScale;
-            square.transform.position = new Vector3(
-                pad.position.x + col * spacingX,
-                pad.position.y + 0.1f,
-                pad.position.z + (-row * spacingZ + zOffset)
-            ) + offset;
+            squares.Add(square);
+            square.layer = LayerMask.NameToLayer("FrogPad");
 
             Renderer r = square.GetComponent<Renderer>();
             Material mat = new Material(r.material);
             mat.SetTexture("_BaseMap", frogs[i].renderTexture);
             r.material = mat;
+        }
+
+        UpdateSquarePositions();
+    }
+
+    void UpdateSquarePositions()
+    {
+        for (int i = 0; i < squares.Count; i++)
+        {
+            int col = i % columns;
+            int row = i / columns;
+
+            float zPos = pad.position.z + (-row * spacingZ + zOffset + scrollOffset);
+
+            squares[i].transform.position = new Vector3(
+                pad.position.x + col * spacingX,
+                pad.position.y + 0.1f,
+                zPos
+            ) + offset;
+
+            bool inBounds = zPos > pad.position.z - padHalfHeight && 
+                            zPos < pad.position.z + padHalfHeight;
+            //squares[i].SetActive(inBounds);
         }
     }
 }

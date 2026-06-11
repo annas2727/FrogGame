@@ -13,6 +13,8 @@ public class CameraMovement : MonoBehaviour
     private float horizontalAxis;
     private float verticalAxis;
 
+    public bool frogPadOpen = false;
+
     void Start()
     {
         // initialise from whatever rotation the camera starts at
@@ -33,13 +35,17 @@ public class CameraMovement : MonoBehaviour
 
         Vector3 direction = Vector3.zero;
 
-        if (keyboard.wKey.isPressed) direction += Vector3.forward;
-        if (keyboard.sKey.isPressed) direction -= Vector3.forward;
-        if (keyboard.aKey.isPressed) direction += Vector3.left;
-        if (keyboard.dKey.isPressed) direction += Vector3.right;
-        if (keyboard.spaceKey.isPressed) direction += Vector3.up;
-        if (keyboard.leftShiftKey.isPressed) direction -= Vector3.up;
+        if (!frogPadOpen)
+        {
+            if (keyboard.wKey.isPressed) direction += Vector3.forward;
+            if (keyboard.sKey.isPressed) direction -= Vector3.forward;
+            if (keyboard.aKey.isPressed) direction += Vector3.left;
+            if (keyboard.dKey.isPressed) direction += Vector3.right;
+            if (keyboard.spaceKey.isPressed) direction += Vector3.up;
+            if (keyboard.leftShiftKey.isPressed) direction -= Vector3.up;
 
+        }
+        
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
 
@@ -49,7 +55,11 @@ public class CameraMovement : MonoBehaviour
             if (mouse == null) return;
     
             float scrollValue = mouse.scroll.ReadValue().y;
-            transform.Translate(Vector3.forward * scrollValue * scrollSensitivity * Time.deltaTime);
+            
+            if (!frogPadOpen)
+            {
+                transform.Translate(Vector3.forward * scrollValue * scrollSensitivity * Time.deltaTime);
+            }
     }
 
     void HandleRotation()
