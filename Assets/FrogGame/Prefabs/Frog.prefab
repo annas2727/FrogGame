@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7683758757317913908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4226175610702996621}
+  - component: {fileID: 6783229038935731749}
+  m_Layer: 0
+  m_Name: BackSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4226175610702996621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683758757317913908}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 154.1, z: 0}
+  m_LocalScale: {x: 400, y: 400, z: 400}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8949744804162329456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6783229038935731749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683758757317913908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8915253721034865819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,7 +299,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4226175610702996621}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       insertIndex: -1
@@ -269,6 +325,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6151914085257829169}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7670729005404572866}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4256065342356565610}
@@ -392,6 +451,19 @@ MonoBehaviour:
   breedingPhase: 0
   canBreedAgain: 1
   isAdult: 0
+--- !u!114 &7670729005404572866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608685490709594570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b775f22816ef154cac5d40e91d86b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogTop
+  backSpot: {fileID: 0}
 --- !u!23 &4256065342356565610
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -464,3 +536,8 @@ CapsuleCollider:
   m_Height: 385
   m_Direction: 2
   m_Center: {x: 0.16551602, y: 50, z: 50}
+--- !u!4 &8949744804162329456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 336f268e4ded0eb4588d5ae4223e5814, type: 3}
+  m_PrefabInstance: {fileID: 8915253721034865819}
+  m_PrefabAsset: {fileID: 0}

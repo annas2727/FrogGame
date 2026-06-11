@@ -11,15 +11,12 @@ public class FrogChooseJump : MonoBehaviour
     public LayerMask lilyPadLayer;
     public LayerMask frogLayer;
 
-    private ParabolicJump jumpScript;
-
     private GameObject currentPad;
 
     public bool isOccupied = false;
 
     private void Start()
     {
-        jumpScript = GetComponent<ParabolicJump>();
         StartCoroutine(ChoosePadsRoutine());
     }
 
@@ -30,23 +27,29 @@ public class FrogChooseJump : MonoBehaviour
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
             yield return new WaitForSeconds(waitTime);
             yield return new WaitUntil(() => !isOccupied); //Wait until not being dragged or not stuck somewhere
-            if(isOccupied)
-            {
-                yield return new WaitForSeconds(0.5f);
-            }
-            GameObject targetPad = GetRandomNearbyPad();
-
-            if (targetPad != null)
-            {
-                targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
-                yield return StartCoroutine(TurnToPad(targetPad.transform));
-                //yield return new WaitForSeconds(0.5f);
-                jumpScript.JumpToPad(targetPad);
-                if (currentPad != null)
-                    currentPad.GetComponent<JumpSpot>().Leave(); //Unreserve Current Pad
-                currentPad = targetPad; //Save New Pad
-            }
+            JumpToNearbyPad();
         }
+    }
+
+    public void JumpToNearbyPad()
+    {
+        isOccupied = false;
+        GameObject targetPad = GetRandomNearbyPad();
+
+        if (targetPad != null)
+        {
+            StartCoroutine(JumpToPad(targetPad));
+        }
+    }
+
+    public IEnumerator JumpToPad(GameObject targetPad)
+    {
+        targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
+        yield return StartCoroutine(TurnToPad(targetPad.transform));
+        GetComponent<ParabolicJump>().JumpToPad(targetPad);
+        if (currentPad != null)
+            currentPad.GetComponent<JumpSpot>().Leave(); //Unreserve Current Pad
+        currentPad = targetPad; //Save New Pad
     }
 
     GameObject GetRandomNearbyPad()

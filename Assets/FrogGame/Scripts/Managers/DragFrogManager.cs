@@ -53,11 +53,9 @@ public class DragFrogManager : MonoBehaviour
 
         if (frog == null || !frog.CanBeDragged)
             return;
-
+        //Get Frog on top of if there is a frog on top of
         draggedFrog = frog;
-        Debug.Log("In drag manager1: " + frog.GetComponent<FrogChooseJump>().isOccupied);
         draggedFrog.BeginDrag();
-        Debug.Log("In drag manager2: " + frog.GetComponent<FrogChooseJump>().isOccupied);
 
         // Calculate offset so the frog doesn't snap
         if (Physics.Raycast(ray, out RaycastHit floorHit, 1000f, floorLayer))
@@ -99,9 +97,28 @@ public class DragFrogManager : MonoBehaviour
 
         if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, 20f, floorLayer))
             yield break;
+
         string floorTag = hit.collider.tag;
 
         target = hit.point + Vector3.down * 0.05f;
+        Transform hitFrog = null;
+        if (Physics.Raycast(origin, Vector3.down, out RaycastHit hitFrogRay, 20f, frogLayer))
+        {
+            hitFrog = hitFrogRay.transform;
+            Debug.Log("Hit a frog");
+            //If we hit an adult and we are holding a child
+            if (hitFrog.GetComponent<FrogBreed>().isAdult && !frog.GetComponent<FrogBreed>().isAdult)
+            {
+                //Fall onto frog
+                Debug.Log("Target the frog's back");
+                target = hitFrog.GetComponent<FrogTop>().backSpot.position;
+                floorTag = "Frog";
+            }
+            else
+            {
+                Debug.Log("Frog not adult or dragged frog not kid");
+            }
+        }
 
         //Fall into breedspot
         bool canBreed = false;
@@ -143,6 +160,11 @@ public class DragFrogManager : MonoBehaviour
                     frog.GetComponent<FrogBreed>().StartTryBreeding();
                 else
                     frog.GetComponent<FrogChooseJump>().isOccupied = false; //Let them get back to jumping
+                break;
+
+            case "Frog": //When landing on a frog
+                Debug.Log("Mr. President, A second tadpole has hit the frog");
+                hitFrog.GetComponent<FrogTop>().connectFrog(frog);
                 break;
 
             default:

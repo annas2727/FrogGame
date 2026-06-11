@@ -118,6 +118,7 @@ public class FrogLife : MonoBehaviour
                 tadpole.SetActive(false);
                 frog.SetActive(true);
                 activated = frog;
+                activated.transform.localScale = Vector3.one * maxScale;
                 frog.GetComponent<FrogBreed>().isAdult = true; //Makes the frog an adult
                 break;
         }

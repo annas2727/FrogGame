@@ -47,7 +47,7 @@ public class FrogSwim : MonoBehaviour
             isSwimming = false;
             GetComponent<AnimateFrog>().ResetTriggers();
             GetComponent<AnimateFrog>().StopSwimming();
-            GetComponent<FrogChooseJump>().isOccupied = false;
+            GetComponent<FrogChooseJump>().JumpToNearbyPad();
             return;
         }
 

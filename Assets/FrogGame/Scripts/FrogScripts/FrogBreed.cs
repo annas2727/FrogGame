@@ -41,7 +41,6 @@ public class FrogBreed : MonoBehaviour
 
     public void ChangeBreedPhase(int phase)
     {
-        Debug.Log("Phase change to " +  phase);
         breedingPhase = phase;
         breedingPhaseTime = 0f;
         if (phase == 0)
