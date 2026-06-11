@@ -13,6 +13,8 @@ public class FrogSkin : MonoBehaviour
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
+
+
         frogLife = GetComponentInParent<FrogLife>();
 
         frogRenderer = GetComponent<Renderer>();
