@@ -7,16 +7,16 @@ public class FrogFrogPad : MonoBehaviour
 
     void Awake()
     {
-        renderTexture = new RenderTexture(256, 256, 16);
-        renderTexture.name = "FrogRT_" + gameObject.name;
-        renderTexture.filterMode = FilterMode.Bilinear;
-        renderTexture.format = RenderTextureFormat.ARGB32;
+        renderTexture = new RenderTexture(256, 256, 16)
+        {
+            name = "FrogRT_" + gameObject.name,
+            filterMode = FilterMode.Bilinear,
+            format = RenderTextureFormat.ARGB32
+        };
         renderTexture.Create();
 
         frogCam = transform.Find("Camera").GetComponent<Camera>();
         frogCam.targetTexture = renderTexture;
         frogCam.enabled = true;
-        
-        Debug.Log("Assigned " + renderTexture.name + " to " + frogCam.name);
     }
 }

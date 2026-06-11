@@ -5,9 +5,12 @@ public class FrogPadManager : MonoBehaviour
 {
     public GameObject frogPadSquare; 
     public Transform frogsParent;
-    public float spacingX = 0.5f;
-    public float spacingZ = 0.5f;
+    public float spacingX = 2.5f;
+    public float spacingZ = 2.5f;
     public Transform pad;
+    public int columns = 3; 
+    public float zOffset = -0.4f;
+    public float squareScale = 0.19f;
 
     void Start()
     {
@@ -16,14 +19,12 @@ public class FrogPadManager : MonoBehaviour
 
     IEnumerator GenerateGridDelayed()
     {
-        yield return null; // wait one frame for frogs to initialize
-
+        yield return null;
         GenerateGrid();
     }
 
     void GenerateGrid()
     {
-        int columns = 4;
         FrogFrogPad[] frogs = frogsParent.GetComponentsInChildren<FrogFrogPad>();
         int rows = Mathf.CeilToInt((float)frogs.Length / columns);
 
@@ -36,8 +37,13 @@ public class FrogPadManager : MonoBehaviour
             int col = i % columns;
             int row = i / columns;
 
-            Vector3 position = pad.position + new Vector3(col * spacingX, 1, -row * spacingZ) + offset;
-            GameObject square = Instantiate(frogPadSquare, position, Quaternion.identity, transform);
+            GameObject square = Instantiate(frogPadSquare, transform);
+            square.transform.localScale = Vector3.one * squareScale;
+            square.transform.position = new Vector3(
+                pad.position.x + col * spacingX,
+                pad.position.y + 0.1f,
+                pad.position.z + (-row * spacingZ + zOffset)
+            ) + offset;
 
             Renderer r = square.GetComponent<Renderer>();
             Material mat = new Material(r.material);
