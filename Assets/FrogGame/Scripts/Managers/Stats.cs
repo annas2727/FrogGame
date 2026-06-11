@@ -28,12 +28,14 @@ public class Stats : ScriptableObject
     [SerializeField] private float jumpSpeed = 1f;
     [Tooltip("Frog's gravity when jumping")]
     [SerializeField] private float jumpGravity = -20f;
+
+    [Header("Drag Control Settings")]
     [Tooltip("Time when can be picked up again (should be atleast half a sec to not allow double clicks)")]
     [SerializeField] private float dragCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
-    
+    [Tooltip("Max time dragging a frog can be locked to perform some action (Like Breeding)")]
+    [SerializeField] private float dragLockMaxTime = 8f;
 
-
-    [Header("Frog Scale Settings")]
+    [Header("Frog Scale and Growth Settings")]
     [Tooltip("Max scale of frog (when the frog is an adult")]
     [SerializeField] private float maxFrogScale = 0.0025f; //Max scale of frog
     [Tooltip("Min scale of frog (when the frog is a baby)")]
@@ -70,7 +72,9 @@ public class Stats : ScriptableObject
     public float MinIdleJumpTime => minIdleJumpTime;
     public float JumpSpeed => jumpSpeed;
     public float JumpGravity => jumpGravity;
+
     public float DragCooldown => dragCooldown;
+    public float DragLockMaxTime => dragLockMaxTime;
 
     public float MaxFrogScale => maxFrogScale;
     public float MinFrogScale => minFrogScale;

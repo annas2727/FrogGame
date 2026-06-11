@@ -4,9 +4,30 @@ using UnityEngine;
 
 public partial class FrogBehavior : MonoBehaviour
 {
-    #region === Frog Drag ===
+    #region === Drag Control ===
 
     public bool InDragCooldown = true;
+    public bool DraggingLocked = false;
+    private int DraggingLockCount = 0; //0 is unlocked, any other 
+    private float DraggingLockTimer = 0f;
+
+    private void LockDrag()
+    {
+        DraggingLocked = true;
+        DraggingLockCount += 1;
+        DraggingLockTimer = 0f;
+    }
+
+    private void UnLockDrag()
+    {
+        DraggingLockCount -= 1;
+        DraggingLockTimer = 0f;
+        if(DraggingLockCount <= 0)
+        {
+            DraggingLocked = false;
+            DraggingLockCount = 0;
+        }
+    }
 
     IEnumerator StartDragCooldown()
     {
@@ -19,6 +40,7 @@ public partial class FrogBehavior : MonoBehaviour
         StartCoroutine(StartDragCooldown()); //Start DragCooldown
 
         currentBehavior = BehaviorState.Dragging;
+        ReleaseAllPads();
 
         //GetComponent<FrogBreed>().ChangeBreedPhase(0); //Cancel Breeding
         //GetComponent<FrogTop>().disconnectFrogFromTop();

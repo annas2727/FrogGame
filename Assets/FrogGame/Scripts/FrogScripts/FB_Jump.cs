@@ -12,6 +12,9 @@ public partial class FrogBehavior : MonoBehaviour
     #region=== Jump Control ===
     private GameObject JC_CurrentJumpPad;
     private GameObject JC_CurrentReservedJumpPad;
+
+    private float JC_JumpWaitTime = 0f;
+    private float JC_ElapsedTime = 0f;
     #endregion
 
     #region === Parabolic Jump ===
@@ -29,18 +32,61 @@ public partial class FrogBehavior : MonoBehaviour
 
     //Methods
 
+    #region === Jump Pad Control ===
+
+    private void ReleaseAllPads()
+    {
+        ReleaseClaimedPad();
+        ReleaseReservedPad();
+    }
+
+    private void ReleaseClaimedPad()
+    {
+        if (JC_CurrentJumpPad != null)
+            JC_CurrentJumpPad.GetComponent<JumpSpot>().Leave();
+    }
+
+    private void ReleaseReservedPad()
+    {
+        if (JC_CurrentReservedJumpPad != null)
+            JC_CurrentReservedJumpPad.GetComponent<JumpSpot>().Leave();
+    }
+
+    private void ClaimPad(GameObject pad)
+    {
+        if (pad != null)
+        {
+            pad.GetComponent<JumpSpot>().Reserve();
+            JC_CurrentJumpPad = pad;
+        }
+    }
+
+    private void ReservePad(GameObject pad)
+    {
+        if (pad != null)
+        {
+            pad.GetComponent<JumpSpot>().Reserve();
+            JC_CurrentReservedJumpPad = pad;
+        }
+    }
+
+    private void ClaimReservedPad()
+    {
+        if (JC_CurrentReservedJumpPad != null)
+        {
+            JC_CurrentReservedJumpPad.GetComponent<JumpSpot>().Reserve();
+            JC_CurrentJumpPad = JC_CurrentReservedJumpPad;
+        }
+    }
+
+    #endregion
+
     #region === Routine ===
     private IEnumerator JumpToRandomPadRoutine()
     {
         while (true)
         {
-            float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
-            Debug.Log("WaitTime: " + waitTime);
-            yield return new WaitForSeconds(waitTime);
-            Debug.Log("Behavior: " + currentBehavior);
-            yield return new WaitUntil(() => currentBehavior == BehaviorState.CanJump);
-            Debug.Log("Jump To Random Pad");
-            JumpToRandomPad();
+
         }
     }
     #endregion
@@ -48,6 +94,7 @@ public partial class FrogBehavior : MonoBehaviour
     #region === Jump Control ===
     public void JumpToRandomPad() //Can be called from outside to force frog to jump away
     {
+        JC_ElapsedTime = 0f;
         currentBehavior = BehaviorState.CanJump; //If called from outside routine
         GameObject targetPad = ChooseRandomPad();
 
@@ -64,7 +111,6 @@ public partial class FrogBehavior : MonoBehaviour
         yield return StartCoroutine(TurnToPad(targetPad.transform));
         ParabolicJumpToPad(targetPad);
         ReleaseClaimedPad(); //Unreserve Current Pad
-        //ClaimPad(targetPad); //Save New Pad //TO DO MOVE THIS TO WHEN THE JUMP FINISHES
     }
 
     public IEnumerator TurnToPad(Transform target)
