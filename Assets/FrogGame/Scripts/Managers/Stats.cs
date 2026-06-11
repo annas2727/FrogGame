@@ -29,7 +29,7 @@ public class Stats : ScriptableObject
     [Tooltip("Frog's gravity when jumping")]
     [SerializeField] private float jumpGravity = -20f;
     [Tooltip("Time when can be picked up again (should be atleast half a sec to not allow double clicks)")]
-    [SerializeField] private float pickUpCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
+    [SerializeField] private float dragCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
     
 
 
@@ -70,7 +70,7 @@ public class Stats : ScriptableObject
     public float MinIdleJumpTime => minIdleJumpTime;
     public float JumpSpeed => jumpSpeed;
     public float JumpGravity => jumpGravity;
-    public float PickUpCooldown => pickUpCooldown;
+    public float DragCooldown => dragCooldown;
 
     public float MaxFrogScale => maxFrogScale;
     public float MinFrogScale => minFrogScale;

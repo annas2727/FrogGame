@@ -4,6 +4,10 @@ using UnityEngine;
 
 public partial class FrogBehavior : MonoBehaviour
 {
+
+
+    //Methods
+
     #region === Pad Control ===
 
     private void ReleaseClaimedPad()
