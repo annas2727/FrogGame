@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FrogTop : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     public Transform FrogOnTop; //Held by the frog on bottom
     public Transform FrogOnBottom; //Held by the frog on top
     public Transform backSpot; //Target on frog on bottom

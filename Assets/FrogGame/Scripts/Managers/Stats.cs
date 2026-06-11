@@ -16,14 +16,22 @@ public class Stats : ScriptableObject
     [SerializeField] private float jumpSpotSearchRadiusAddition = 5f; //How much larger the search radius becomes each search
     [Tooltip("How many times a frog will search for a jump spot till it gives up")]
     [SerializeField] private int jumpSpotSearchNumber = 3; //How many times a frog will search for a jump spot till it gives up
+    [Tooltip("Decreased size of search for tilted pads so that jumping off them doesn't look ridiculous")]
+    [SerializeField] private float tiltedPadMulti = 0.5f;
 
     [Header("Jump Timing Settings")]
     [Tooltip("Max time frog idles before jumping")]
     [SerializeField] private float maxIdleJumpTime = 10f; //Max time frog idles before jumping
     [Tooltip("Min time frog idles before jumping")]
     [SerializeField] private float minIdleJumpTime = 4f; //Min time frog idles before jumping
+    [Tooltip("Speed of frog jump")]
+    [SerializeField] private float jumpSpeed = 1f;
+    [Tooltip("Frog's gravity when jumping")]
+    [SerializeField] private float jumpGravity = -20f;
     [Tooltip("Time when can be picked up again (should be atleast half a sec to not allow double clicks)")]
     [SerializeField] private float pickUpCooldown = 1f; //Time when can be picked up again (should be atleast half a sec to not allow double clicks)
+    
+
 
     [Header("Frog Scale Settings")]
     [Tooltip("Max scale of frog (when the frog is an adult")]
@@ -56,9 +64,12 @@ public class Stats : ScriptableObject
     public float JumpSpotSearchRadius => jumpSpotSearchRadius;
     public float JumpSpotSearchRadiusAddition => jumpSpotSearchRadiusAddition;
     public int JumpSpotSearchNumber => jumpSpotSearchNumber;
+    public float TiltedPadMulti => tiltedPadMulti;
 
     public float MaxIdleJumpTime => maxIdleJumpTime;
     public float MinIdleJumpTime => minIdleJumpTime;
+    public float JumpSpeed => jumpSpeed;
+    public float JumpGravity => jumpGravity;
     public float PickUpCooldown => pickUpCooldown;
 
     public float MaxFrogScale => maxFrogScale;
