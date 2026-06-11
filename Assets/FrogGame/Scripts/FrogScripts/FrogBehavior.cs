@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrogBehavior : MonoBehaviour
+public partial class FrogBehavior : MonoBehaviour
 {
     [SerializeField] private Stats statsConfig;
     public enum BehaviorState { CanJump, Jumping, Swimming, Dragging, Riding }
     public BehaviorState currentBehavior;
 
     #region === Layer masks ===
-    private LayerMask FrogsLayer;
-    private LayerMask JumpPadLayer;
+    [SerializeField] private LayerMask FrogLayer;
+    [SerializeField] private LayerMask JumpPadLayer;
     #endregion
 
     #region=== Jump Control ===
@@ -33,11 +33,10 @@ public class FrogBehavior : MonoBehaviour
 
     private void Start()
     {
-        //Get Layer Masks
-        LayerMask FrogsLayer = LayerMask.GetMask("Frogs");
-        LayerMask JumpPadLayer = LayerMask.GetMask("JumpPad");
+        Debug.Log("JumpPadLayer: " + JumpPadLayer);
 
         currentBehavior = BehaviorState.CanJump;
+        StartCoroutine(JumpToRandomPadRoutine());
     }
 
     private void Update()
@@ -80,9 +79,10 @@ public class FrogBehavior : MonoBehaviour
             }
             if (PJ_elapsedTime >= statsConfig.JumpSpeed)
             {
+                //Got to the end
                 transform.position = PJ_targetPos;
                 transform.rotation = PJ_targetRotation;
-
+                ClaimReservedPad();
                 currentBehavior = BehaviorState.CanJump;
             }
             
@@ -97,45 +97,14 @@ public class FrogBehavior : MonoBehaviour
         while (true)
         {
             float waitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
+            Debug.Log("WaitTime: " +  waitTime);
             yield return new WaitForSeconds(waitTime);
+            Debug.Log("Behavior: " + currentBehavior);
             yield return new WaitUntil(() => currentBehavior == BehaviorState.CanJump);
+            Debug.Log("Jump To Random Pad");
             JumpToRandomPad();
         }
     }
-    #endregion
-
-    #region === Pad Control ===
-
-    private void ReleasePadOn()
-    {
-        if (JC_CurrentJumpPad != null)
-            JC_CurrentJumpPad.GetComponent<JumpSpot>().Leave();
-    }
-
-    private void ReleasePadReserved()
-    {
-        if (JC_CurrentReservedJumpPad != null)
-            JC_CurrentReservedJumpPad.GetComponent<JumpSpot>().Leave();
-    }
-
-    private void ClaimPad(GameObject pad)
-    {
-        if (pad != null)
-        {
-            pad.GetComponent<JumpSpot>().Reserve();
-            JC_CurrentJumpPad = pad;
-        }
-    }
-
-    private void ReservePad(GameObject pad)
-    {
-        if (pad != null)
-        {
-            pad.GetComponent<JumpSpot>().Reserve();
-            JC_CurrentReservedJumpPad = pad;
-        }
-    }
-
     #endregion
 
     #region === Jump Control ===
@@ -146,6 +115,7 @@ public class FrogBehavior : MonoBehaviour
 
         if (targetPad != null)
         {
+            Debug.Log("Target pad found, trying to jump to");
             StartCoroutine(JumpToPad(targetPad));
         }
     }
@@ -154,8 +124,8 @@ public class FrogBehavior : MonoBehaviour
     {
         ReservePad(targetPad); //Reserve New Pad
         yield return StartCoroutine(TurnToPad(targetPad.transform));
-        GetComponent<ParabolicJump>().JumpToPad(targetPad);
-        ReleasePadOn(); //Unreserve Current Pad
+        ParabolicJumpToPad(targetPad);
+        ReleaseClaimedPad(); //Unreserve Current Pad
         //ClaimPad(targetPad); //Save New Pad //TO DO MOVE THIS TO WHEN THE JUMP FINISHES
     }
 
@@ -191,6 +161,7 @@ public class FrogBehavior : MonoBehaviour
 
     private GameObject ChooseRandomPad()
     {
+        Debug.Log("Choose Random Pad Runs");
         List<GameObject> validPads = new List<GameObject>();
         int searchCount = 0;
 
@@ -214,12 +185,13 @@ public class FrogBehavior : MonoBehaviour
 
             foreach (Collider hit in hits)
             {
+                Debug.Log("Pad hit");
                 GameObject pad = hit.gameObject;
 
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
                 bool isLargeEnough = (pad.transform.lossyScale.x / statsConfig.BaseLilypadScale) >= (transform.lossyScale.x / statsConfig.MaxFrogScale);
-
+                Debug.Log("Pad big enough: " + isLargeEnough);
                 if (isLargeEnough && !jumpSpotData.isReserved)
                 {
                     validPads.Add(pad);
@@ -235,7 +207,7 @@ public class FrogBehavior : MonoBehaviour
 
         if (validPads.Count == 0)
             return null;
-
+        Debug.Log("Random pad gotten");
         int randomIndex = Random.Range(0, validPads.Count);
         return validPads[randomIndex];
     }
@@ -243,7 +215,10 @@ public class FrogBehavior : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, statsConfig.JumpSpotSearchRadius);
+        if (statsConfig != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, statsConfig.JumpSpotSearchRadius);
+        }
     }
 
     #endregion
@@ -251,7 +226,7 @@ public class FrogBehavior : MonoBehaviour
     #region === Parabolic Jump ===
     private void ParabolicJumpToPad(GameObject pad)
     {
-        if (GetComponent<FrogChooseJump>().isOccupied)
+        if (currentBehavior != BehaviorState.CanJump)
             return;
         PJ_startRotation = transform.rotation;
 
@@ -262,10 +237,12 @@ public class FrogBehavior : MonoBehaviour
         ) * transform.rotation;
 
         ParabolicJumpToVector3(pad.transform.position); // + Vector3.up * statsConfig.BaseLilypadyOffset
+
     }
 
     private void ParabolicJumpToVector3(Vector3 target)
     {
+        currentBehavior = BehaviorState.Jumping;
         GetComponent<AnimateFrog>().Jump();
 
         PJ_startPos = transform.position;
@@ -287,8 +264,6 @@ public class FrogBehavior : MonoBehaviour
         PJ_verticalVelocity =
             (displacement.y - 0.5f * statsConfig.JumpGravity * statsConfig.JumpSpeed * statsConfig.JumpSpeed)
             / statsConfig.JumpSpeed;
-
-        currentBehavior = BehaviorState.Jumping;
     }
     #endregion
 }
