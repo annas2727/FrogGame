@@ -7,11 +7,12 @@ public class FrogPadManager : MonoBehaviour
 {
     public GameObject frogPadSquare; 
     public Transform frogsParent;
-    public float spacingX = 2.5f;
-    public float spacingZ = 2.5f;
+    public float spacingX = 2.3f;
+    public float spacingZ = 2.3f;
     public Transform pad;
     public int columns = 3; 
-    public float zOffset = -1f;
+    public float zOffset = -3.5f;
+    public float xOffset = 3.1f;
     public float squareScale = 0.19f;
 
     public float scrollSpeed = 2f;
@@ -57,7 +58,6 @@ public class FrogPadManager : MonoBehaviour
 
         float totalWidth = (Mathf.Min(frogs.Length, columns) - 1) * spacingX;
         float totalDepth = (rows - 1) * spacingZ;
-        offset = new Vector3(-totalWidth / 2f, 0, totalDepth / 2f);
 
         padHalfHeight = pad.localScale.z * 0.5f;
 
@@ -87,13 +87,13 @@ public class FrogPadManager : MonoBehaviour
             int col = i % columns;
             int row = i / columns;
 
-            float zPos = pad.position.z + (-row * spacingZ + zOffset + scrollOffset);
+            float zPos = pad.position.z + (row * spacingZ + zOffset + scrollOffset);
 
-            squares[i].transform.position = new Vector3(
-                pad.position.x + col * spacingX,
-                pad.position.y + 0.1f,
-                zPos
-            ) + offset;
+            squares[i].transform.localPosition = new Vector3(
+                -col * spacingX + xOffset,
+                0.1f,
+                row * spacingZ + zOffset + scrollOffset
+            );
 
             bool inBounds = zPos > pad.position.z - padHalfHeight && 
                             zPos < pad.position.z + padHalfHeight;

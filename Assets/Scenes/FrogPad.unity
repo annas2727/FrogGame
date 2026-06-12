@@ -355,11 +355,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FrogPad
   frogPadSquare: {fileID: 1623261962406318861, guid: 2acb5b843bcc6144098c384283cb3b6a, type: 3}
   frogsParent: {fileID: 950061782}
-  spacingX: 2.5
-  spacingZ: 2.5
+  spacingX: 2.3
+  spacingZ: 2.3
   pad: {fileID: 768570368}
   columns: 3
-  zOffset: -2
+  zOffset: -3.5
+  xOffset: 3.1
   squareScale: 0.19
   scrollSpeed: 2
   cameraMovement: {fileID: 1914919645}

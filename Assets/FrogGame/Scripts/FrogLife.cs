@@ -32,7 +32,7 @@ public class FrogLife : MonoBehaviour
     GameObject egg;
     GameObject tadpole;
     GameObject frog;
-    GameObject activated;
+    public GameObject activated;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

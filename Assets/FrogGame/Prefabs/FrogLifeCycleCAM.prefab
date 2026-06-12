@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 866133197107502470}
+  - component: {fileID: -2885292871439975386}
   - component: {fileID: 2365470307153946356}
   - component: {fileID: 898658456762165566}
   m_Layer: 0
@@ -37,6 +38,18 @@ Transform:
   - {fileID: 1298142064028860088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2885292871439975386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215605717478939346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccde4075e0216f4e930f98bd54972a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveFrogCam
 --- !u!114 &2365470307153946356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +73,7 @@ MonoBehaviour:
   patternType: 
   bodyColor: 
   patternColor: 
+  activated: {fileID: 0}
 --- !u!114 &898658456762165566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 3086036324655005962, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
+      objectReference: {fileID: 9100000, guid: c94a6cda4e750aa4c846f48f38d3f961, type: 2}
     - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
       propertyPath: m_Name
       value: Frog
