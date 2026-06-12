@@ -17,7 +17,7 @@ public class FrogTop : MonoBehaviour
         if (FrogOnTop != null)
         {
             FrogOnTop.position = backSpot.position;
-            FrogOnTop.rotation = transform.rotation * Quaternion.Euler(-8f, 0f, 0f); ;
+            FrogOnTop.rotation = transform.rotation * Quaternion.Euler(-8f, 0f, 0f);
         }
     }
 

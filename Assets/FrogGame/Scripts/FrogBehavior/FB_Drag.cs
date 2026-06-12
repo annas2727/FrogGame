@@ -40,16 +40,27 @@ public partial class FrogBehavior : MonoBehaviour
         StartCoroutine(StartDragCooldown()); //Start DragCooldown
 
         currentBehavior = BehaviorState.Dragging;
-        ReleaseAllPads();
 
-        //GetComponent<FrogBreed>().ChangeBreedPhase(0); //Cancel Breeding
+        ReleaseAllPads(); //Unreserve all pads
+        ChangeBreedPhase(0); //Cancel Breeding
         //GetComponent<FrogTop>().disconnectFrogFromTop();
 
         Vector3 euler = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);
 
+        PJ_elapsedTime = 0f; //For Parabolic Jump
+        JC_ElapsedTime = 0f; //For Jump Control
+        PJ_startRotation = transform.rotation;
+
         GetComponent<AnimateFrog>().ResetTriggers();
-        GetComponent<AnimateFrog>().Pickup();
+
+        if(currentBehavior == BehaviorState.Jumping)
+            GetComponent<AnimateFrog>().PickupMidair();
+        else if(currentBehavior == BehaviorState.Swimming)
+            GetComponent<AnimateFrog>().PickupMidair();
+        else
+            GetComponent<AnimateFrog>().Pickup();
+
         Debug.Log("In frog drag mode");
     }
 

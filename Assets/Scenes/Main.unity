@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogLifeCycle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254057674460816392, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788177901442205548, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1225,8 +1229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30ca9b178baf514c8562d04cc0e74ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogBehavior
-  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
-  currentBehavior: 0
+  BC_CurrentBreedPad: {fileID: 0}
+  breedingPhase: 0
+  InBreedCooldown: 1
+  isAdult: 0
+  InDragCooldown: 1
+  DraggingLocked: 0
   FrogLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1234,6 +1242,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   PJ_targetPos: {x: 0, y: 0, z: 0}
+  FrogOnTop: {fileID: 0}
+  FrogOnBottom: {fileID: 0}
+  myBackSpot: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
+  currentBehavior: 0
 --- !u!1 &434474398
 GameObject:
   m_ObjectHideFlags: 0

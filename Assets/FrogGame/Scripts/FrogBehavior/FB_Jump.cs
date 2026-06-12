@@ -81,16 +81,6 @@ public partial class FrogBehavior : MonoBehaviour
 
     #endregion
 
-    #region === Routine ===
-    private IEnumerator JumpToRandomPadRoutine()
-    {
-        while (true)
-        {
-
-        }
-    }
-    #endregion
-
     #region === Jump Control ===
     public void JumpToRandomPad() //Can be called from outside to force frog to jump away
     {

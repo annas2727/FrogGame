@@ -8,25 +8,24 @@ public partial class FrogBehavior : MonoBehaviour
     public enum BehaviorState { CanJump, Jumping, Swimming, Dragging, Riding, Breeding }
     public BehaviorState currentBehavior;
 
-    #region === Breed Control ===
-    public BreedSpot BC_CurrentBreedPad;
-
-    public int breedingPhase = 0; //0=Not breeding, 1=Is trying to breed, 2=Moments before 3=Breed
-    private float breedingPhaseTime = 0f; //How long in each phase
-
-    public bool InBreedCooldown = true; //For breed cooldown
-    public bool isAdult = false;
-    #endregion
-
     private void Start()
     {
-        Debug.Log("JumpPadLayer: " + JumpPadLayer);
-
+        #region ===Jump Control===
         currentBehavior = BehaviorState.CanJump;
-        StartCoroutine(JumpToRandomPadRoutine());
+        #endregion
+
+        #region ===Swim Control===
+        shorePointsContainer = GameObject.Find("ShoreSpots").transform;
+        foreach (Transform child in shorePointsContainer)
+        {
+            shorePoints.Add(child);
+        }
+        #endregion
+
+        #region ===Ride Control===
+        myBackSpot = transform.Find("BackSpot");
+        #endregion
     }
-
-
 
     private void Update()
     {
@@ -74,7 +73,28 @@ public partial class FrogBehavior : MonoBehaviour
         }
         #endregion
 
-        #region ===Jump Randomly btw Pads===
+        #region ===Swim Control===
+        if (currentBehavior == BehaviorState.Swimming)
+        {
+            Vector3 dir = (SC_targetPos - transform.position);
+            //dir.y = 0f;
+
+            if (dir.sqrMagnitude < 0.1f)
+            {
+                currentBehavior = BehaviorState.CanJump;
+                GetComponent<AnimateFrog>().ResetTriggers();
+                GetComponent<AnimateFrog>().StopSwimming();
+                JumpToRandomPad();
+                return;
+            }
+
+            transform.position += dir.normalized * statsConfig.SwimSpeed * Time.deltaTime;
+
+            transform.forward = dir.normalized;
+        }
+        #endregion
+
+        #region ===Jump Control===
         if (currentBehavior == BehaviorState.CanJump)
         {
             JC_ElapsedTime += Time.deltaTime;
@@ -87,13 +107,7 @@ public partial class FrogBehavior : MonoBehaviour
         }
         #endregion
 
-        #region Parabolic Jump
-        if (currentBehavior == BehaviorState.Dragging)
-        {
-            PJ_elapsedTime = 0f;
-            GetComponent<AnimateFrog>().PickupMidair();
-            PJ_startRotation = transform.rotation;
-        }
+        #region ===Parabolic Jump===
         if (currentBehavior == BehaviorState.Jumping)
         {
             PJ_elapsedTime += Time.deltaTime;
@@ -129,92 +143,19 @@ public partial class FrogBehavior : MonoBehaviour
                 ClaimReservedPad(); //Claim the pad
                 currentBehavior = BehaviorState.CanJump;
             }
-            
+
         }
         else PJ_elapsedTime = 0f;
         #endregion
-    }
 
-    #region === Breed Control ===
-    IEnumerator BreedCooldown()
-    {
-        InBreedCooldown = false;
-        yield return new WaitForSeconds(statsConfig.BreedCooldown);
-        InBreedCooldown = true;
-    }
-
-    public void ConnectBreedSpot(BreedSpot myBreedSpot)
-    {
-        connectedBreedSpot = myBreedSpot;
-        connectedBreedSpot.myFrog = this.gameObject;
-        connectedBreedSpot.Reserve();
-
-    }
-    public void LeaveBreedSpot()
-    {
-        if (connectedBreedSpot != null)
+        #region ===Ride Control===
+        if (currentBehavior == BehaviorState.Riding)
         {
-            connectedBreedSpot.myFrog = null;
-            connectedBreedSpot.Leave();
-            Debug.Log("Frog leave breeding spot");
+            //Put us on the frog's back
+            transform.position = FrogOnBottom.GetComponent<FrogBehavior>().myBackSpot.position;
+            //Rotated to be flush against back
+            transform.rotation = FrogOnBottom.rotation * Quaternion.Euler(-8f, 0f, 0f);
         }
-        connectedBreedSpot = null;
+        #endregion
     }
-
-    private void ChangeBreedPhase(int phase)
-    {
-        breedingPhase = phase;
-        breedingPhaseTime = 0f;
-        switch (phase)
-        {
-            case 0:
-                LeaveBreedSpot();
-                break;
-            case 1:
-                StartCoroutine(TurnToPartner());
-                break;
-            case 2:
-                break;
-            case 3:
-                GetComponent<AnimateFrog>().Kiss();
-                break;
-
-        }
-    }
-
-    public void StartTryBreeding()
-    {
-        ChangeBreedPhase(1);//Start trying
-    }
-
-    IEnumerator TurnToPartner()
-    {
-        Transform target = connectedBreedSpot.Partner.transform;
-        Vector3 padNormal = connectedBreedSpot.transform.up;
-        Vector3 direction = Vector3.ProjectOnPlane(
-            target.position - transform.position,
-            padNormal
-        ).normalized;
-
-        if (direction.sqrMagnitude < 0.001f)
-            yield break;
-        Quaternion targetRotation = Quaternion.LookRotation(direction, padNormal);
-
-        float turnSpeed = 8f;
-
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 1f)
-        {
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                Time.deltaTime * turnSpeed
-            );
-
-            yield return null;
-        }
-
-        transform.rotation = targetRotation;
-    }
-    #endregion
-
 }
