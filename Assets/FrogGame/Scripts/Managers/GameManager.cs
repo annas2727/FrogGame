@@ -15,22 +15,20 @@ public class GameManager : MonoBehaviour
         { "purple", "#6f00ff" }, 
         { "brown", "#93430a" },
         { "white", "#ffffff" },
-        { "black", "#000000" }, 
-        { "grey", "#808080" }
+        { "black", "#000000" }
     };
 
     public Dictionary<string, string> tadpoleBodyColors = new Dictionary<string, string>
     {
         { "red", "#ff7272" },
-        { "orange", "rgb(255, 176, 59)" },
+        { "orange", "#ffb13b" },
         { "yellow", "#ffea80" },
         { "green", "#93ff93" },
         { "blue", "#7693fc" },
-        { "purple", "rgb(195, 149, 255)" }, 
+        { "purple", "#c395ff" }, 
         { "brown", "#ffb27a" },
         { "white", "#ffffff" },
-        { "black", "#8d8d8d" }, 
-        { "grey", "#d1d1d1" }
+        { "black", "#8d8d8d" }
     };
 
     public Dictionary<string, string> patternColors = new Dictionary<string, string>
@@ -43,8 +41,7 @@ public class GameManager : MonoBehaviour
         { "purple", "#5900ce" },
         { "brown", "#5a2907" },
         { "white", "#ffffff" },
-        { "black", "#000000" },
-        { "grey", "#5d5d5d" }
+        { "black", "#000000" }
     };
 
     public List<string> patternTypes = new List<string>
