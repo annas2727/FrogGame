@@ -11,12 +11,39 @@ public partial class FrogBehavior : MonoBehaviour
     #endregion
 
     //Methods
+    #region =Getters=
+    public bool isBeingRidden()
+    {
+        return FrogOnTop != null;
+    }
+
+    public bool isRiding()
+    {
+        return FrogOnBottom != null;
+    }
+
+    public FrogBehavior GetFrogOnTop()
+    {
+        return FrogOnTop.GetComponent<FrogBehavior>();
+    }
+
+    public FrogBehavior GetFrogOnBottom()
+    {
+        return FrogOnBottom.GetComponent<FrogBehavior>();
+    }
+
+    public Transform GetBackspot()
+    {
+        return myBackSpot;
+    }
+    #endregion
 
     #region ===Ride Control===
     public void connectFrog(Transform frogOnTop)
     {
         FrogOnTop = frogOnTop;
         FrogOnTop.GetComponent<FrogBehavior>().FrogOnBottom = transform; //Give Frog on top ourselves so it knows its on a frog
+        FrogOnTop.GetComponent<FrogBehavior>().currentBehavior = BehaviorState.Riding;
 
         FrogOnTop.GetComponent<AnimateFrog>().ResetTriggers();
         FrogOnTop.GetComponent<AnimateFrog>().LandPickup();
@@ -27,7 +54,7 @@ public partial class FrogBehavior : MonoBehaviour
     {
         if (FrogOnTop != null)
         {
-            FrogOnTop.GetComponent<FrogTop>().FrogOnBottom = null;
+            FrogOnTop.GetComponent<FrogBehavior>().FrogOnBottom = null;
             FrogOnTop = null;
         }
     }
@@ -36,20 +63,20 @@ public partial class FrogBehavior : MonoBehaviour
     {
         if (FrogOnBottom != null)
         {
-            FrogOnBottom.GetComponent<FrogTop>().FrogOnTop = null;
+            FrogOnBottom.GetComponent<FrogBehavior>().FrogOnTop = null;
             FrogOnBottom = null;
         }
     }
 
     public void jumpOffFrogFromBottom()
     {
-        FrogOnTop.GetComponent<FrogChooseJump>().JumpToNearbyPad();
+        FrogOnTop.GetComponent<FrogBehavior>().JumpToRandomPad();
         disconnectFrogFromBottom();
     }
 
     public void jumpOffFrogFromTop()
     {
-        GetComponent<FrogChooseJump>().JumpToNearbyPad();
+        GetComponent<FrogBehavior>().JumpToRandomPad();
         disconnectFrogFromTop();
     }
 

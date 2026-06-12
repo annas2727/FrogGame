@@ -17,6 +17,12 @@ public partial class FrogBehavior : MonoBehaviour
     //Methods
 
     #region === Breed Control ===
+    public void StartTryBreeding()
+    {
+        ChangeBreedPhase(1);//Start trying
+        currentBehavior = BehaviorState.Breeding;
+    }
+
     IEnumerator BreedCooldown()
     {
         InBreedCooldown = false;
@@ -40,6 +46,7 @@ public partial class FrogBehavior : MonoBehaviour
             Debug.Log("Frog leave breeding spot");
         }
         BC_CurrentBreedPad = null;
+        currentBehavior = BehaviorState.CanJump;
     }
 
     private void ChangeBreedPhase(int phase)
@@ -61,11 +68,6 @@ public partial class FrogBehavior : MonoBehaviour
                 break;
 
         }
-    }
-
-    public void StartTryBreeding()
-    {
-        ChangeBreedPhase(1);//Start trying
     }
 
     IEnumerator TurnToPartner()

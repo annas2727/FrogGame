@@ -925,19 +925,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203173851}
     m_Modifications:
+    - target: {fileID: 444077342380803740, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2255465465080734770, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Name
       value: FrogLifeCycle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2826637183204304555, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: skipLifeStage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4254057674460816392, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4788177901442205548, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5114479651547819665, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5874251235489944514, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165228727456826292, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -985,12 +1001,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8447266188626796293, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6625250874440180633, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 432508086}
   m_SourcePrefab: {fileID: 100100000, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
 --- !u!4 &336114668 stripped
@@ -1233,8 +1253,6 @@ MonoBehaviour:
   breedingPhase: 0
   InBreedCooldown: 1
   isAdult: 0
-  InDragCooldown: 1
-  DraggingLocked: 0
   FrogLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1947,11 +1965,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203173851}
     m_Modifications:
+    - target: {fileID: 444077342380803740, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2255465465080734770, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Name
       value: FrogLifeCycle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254057674460816392, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788177901442205548, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114479651547819665, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5874251235489944514, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165228727456826292, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -1995,9 +2033,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8035903634400036861, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447266188626796293, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6625250874440180633, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7675980110556520033, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557421725}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
 --- !u!4 &815646615 stripped
@@ -2485,6 +2535,7 @@ GameObject:
   - component: {fileID: 1065683213}
   - component: {fileID: 1065683212}
   - component: {fileID: 1065683211}
+  - component: {fileID: 1065683214}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: MainCamera
@@ -2499,7 +2550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065683210}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2221729b9350294ba4408f45c49048e, type: 3}
   m_Name: 
@@ -2546,6 +2597,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065683214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065683210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bca543ae1294b468a84ecf01230866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogManager
+  frogLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1072876896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3588,140 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 269418655906195475, guid: 728c2607817d48b4fb3ec7c79844b1d4, type: 3}
   m_PrefabInstance: {fileID: 1544423040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1557421724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 815646615}
+    m_Modifications:
+    - target: {fileID: -6151914085257829169, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693597194358523483, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086036324655005962, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 79274a82417057447a755fa2482ac1f4, type: 2}
+    - target: {fileID: 4831496539857429934, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670729005404572866, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996890078129612095, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Name
+      value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_TagString
+      value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8720910179195773415, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0499997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.9099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1557421727}
+  m_SourcePrefab: {fileID: 100100000, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+--- !u!4 &1557421725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8949744804162329456, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+  m_PrefabInstance: {fileID: 1557421724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1557421726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8608685490709594570, guid: fcd1e5cc7355ae14a884642951ee5de3, type: 3}
+  m_PrefabInstance: {fileID: 1557421724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557421727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557421726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30ca9b178baf514c8562d04cc0e74ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogBehavior
+  BC_CurrentBreedPad: {fileID: 0}
+  breedingPhase: 0
+  InBreedCooldown: 1
+  isAdult: 0
+  FrogLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  JumpPadLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  PJ_targetPos: {x: 0, y: 0, z: 0}
+  FrogOnTop: {fileID: 0}
+  FrogOnBottom: {fileID: 0}
+  myBackSpot: {fileID: 0}
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
+  currentBehavior: 0
 --- !u!1001 &1621338006
 PrefabInstance:
   m_ObjectHideFlags: 0

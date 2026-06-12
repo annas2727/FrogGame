@@ -202,6 +202,8 @@ public partial class FrogBehavior : MonoBehaviour
     {
         if (currentBehavior != BehaviorState.CanJump)
             return;
+        currentBehavior = BehaviorState.Jumping;
+        GetComponent<AnimateFrog>().Jump();
         PJ_startRotation = transform.rotation;
 
         // Rotate so the frog's up matches the pad's up

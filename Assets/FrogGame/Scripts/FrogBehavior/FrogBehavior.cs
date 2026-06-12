@@ -103,6 +103,7 @@ public partial class FrogBehavior : MonoBehaviour
                 JC_ElapsedTime = 0f;
                 JC_JumpWaitTime = Random.Range(statsConfig.MinIdleJumpTime, statsConfig.MaxIdleJumpTime);
                 JumpToRandomPad();
+                currentBehavior = BehaviorState.CanJump;
             }
         }
         #endregion
@@ -131,7 +132,7 @@ public partial class FrogBehavior : MonoBehaviour
                 PJ_targetRotation,
                 rotationT
             );
-            if (PJ_elapsedTime >= statsConfig.JumpSpeed / 2f)
+            if (PJ_elapsedTime >= statsConfig.JumpSpeed / 3f)
             {
                 GetComponent<AnimateFrog>().LandJump();
             }
