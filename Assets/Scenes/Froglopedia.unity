@@ -177,10 +177,10 @@ MonoBehaviour:
   back: {fileID: 21300000, guid: 03c50102fd1d7d44b976fce2f8d57f70, type: 3}
   backgroundRenderer: {fileID: 3830188397852394466}
   templateBackgrounds:
-  - {fileID: 2800000, guid: c28acec85dc69e3408a7ca9a47f1997a, type: 3}
-  - {fileID: 2800000, guid: b3bcab6a54137164f8b4aa08026acba4, type: 3}
-  - {fileID: 2800000, guid: bb679acd75e098247b4b1f55db171c60, type: 3}
-  - {fileID: 2800000, guid: b478fa209a5a32a4c91bc52b889eb619, type: 3}
+  - {fileID: 2800000, guid: e717286c373d5f948bcb77bf85b175c7, type: 3}
+  - {fileID: 2800000, guid: 5b04e33ee9cf0104cba1c7d03e77d6b7, type: 3}
+  - {fileID: 2800000, guid: 92ea5ac892febd641ae54666e2db1662, type: 3}
+  - {fileID: 2800000, guid: 51dcacc9865a3d84aa843330d78eacc1, type: 3}
 --- !u!4 &68086839
 Transform:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ Transform:
   m_GameObject: {fileID: 2085532839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: 0.22, z: -21.75}
+  m_LocalPosition: {x: 1.84, y: 0.22, z: -21.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
