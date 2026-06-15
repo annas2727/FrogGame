@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEditor;
+using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewFrogStats", menuName = "Frog Stats")]
 public class Stats : ScriptableObject
 {
+    #region ===Math===
     [Header("Lilypad Settings")]
     [Tooltip("Min scale of lilypad that a grown frog can jump on")]
     [SerializeField] private float baseLilypadScale = 0.8f; //Min scale of lilypad that a grown frog can jump on
@@ -63,7 +67,9 @@ public class Stats : ScriptableObject
     [SerializeField] private float maxEggScale = 0.25f; //Max scale of egg
     [SerializeField] private float minEggScale = 0.20f; //Min scale of egg
     [SerializeField] private float eggGrowthTime = 60f;
+    #endregion
 
+    #region ===Getters===
     //Lilypad Settings
     public float BaseLilypadScale => baseLilypadScale;
     public float BaseLilypadyOffset => baseLilypadyOffset;
@@ -104,4 +110,75 @@ public class Stats : ScriptableObject
     public float BreedCooldown => breedCooldown;
     public float BreedAnnoyance => breedAnnoyance;
     public float BreedChickenOut => breedChickenOut;
+    #endregion
+
+    #region ===Colors===
+    
+    public Dictionary<string, string> bodyColors = new Dictionary<string, string>
+    {
+        { "red", "#ff0000" },
+        { "orange", "#ff9900" },
+        { "yellow", "#ffd500" },
+        { "green", "#00ff00" },
+        { "blue", "#0000ff" },
+        { "purple", "#6f00ff" },
+        { "brown", "#93430a" },
+        { "white", "#ffffff" },
+        { "black", "#000000" },
+        { "grey", "#808080" }
+    };
+
+    public Dictionary<string, string> tadpoleBodyColors = new Dictionary<string, string>
+    {
+        { "red", "#ff7272" },
+        { "orange", "rgb(255, 176, 59)" },
+        { "yellow", "#ffea80" },
+        { "green", "#93ff93" },
+        { "blue", "#7693fc" },
+        { "purple", "rgb(195, 149, 255)" },
+        { "brown", "#ffb27a" },
+        { "white", "#ffffff" },
+        { "black", "#8d8d8d" },
+        { "grey", "#d1d1d1" }
+    };
+
+    public Dictionary<string, string> patternColors = new Dictionary<string, string>
+    {
+        { "red", "#b50000" },
+        { "orange", "#b86f00" },
+        { "yellow", "#b99b02" },
+        { "green", "#00d000" },
+        { "blue", "#0000cc" },
+        { "purple", "#5900ce" },
+        { "brown", "#5a2907" },
+        { "white", "#ffffff" },
+        { "black", "#000000" },
+        { "grey", "#5d5d5d" }
+    };
+
+    [Header("Colors and Patterns")]
+    [SerializeField]
+    public List<string> patternTypes = new List<string>
+    {
+        "none",
+        "spots",
+        "stripes"
+    };
+
+    [SerializeField] public List<Material> patternMaterials;
+    [SerializeField] public Material eyeMaterial;
+
+    public Material GetPatternMaterial(string patternType)
+    {
+        int index = patternType switch
+        {
+            "none" => 0,
+            "spots" => 1,
+            "stripes" => 2,
+            _ => 3
+        };
+
+        return patternMaterials.Count > index ? patternMaterials[index] : null;
+    }
+    #endregion
 }

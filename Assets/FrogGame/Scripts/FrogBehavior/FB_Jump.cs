@@ -164,6 +164,8 @@ public partial class FrogBehavior : MonoBehaviour
 
                 // Don't choose pads too small
                 JumpSpot jumpSpotData = pad.GetComponent<JumpSpot>();
+                if( jumpSpotData == null)
+                    Debug.Log("Jumpspotnull: " +  hit.name);
                 bool isLargeEnough = (pad.transform.lossyScale.x / statsConfig.BaseLilypadScale) >= (transform.lossyScale.x / statsConfig.MaxFrogScale);
                 Debug.Log("Pad big enough: " + isLargeEnough);
                 if (isLargeEnough && !jumpSpotData.isReserved)
