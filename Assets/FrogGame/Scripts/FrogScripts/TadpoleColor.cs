@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class TadpoleColor : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     SkinnedMeshRenderer skinnedMeshRenderer;
     FrogLife frogLife;
-    
-    GameManager gameManager; 
 
     void Start()
     {
         skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         frogLife = GetComponentInParent<FrogLife>();
-        gameManager = FindAnyObjectByType<GameManager>();
 
         ChangeColor();
     }
@@ -19,7 +18,7 @@ public class TadpoleColor : MonoBehaviour
 
     void ChangeColor()
     {
-        if (ColorUtility.TryParseHtmlString(gameManager.tadpoleBodyColors[frogLife.bodyColorName], out Color color))
+        if (ColorUtility.TryParseHtmlString(statsConfig.tadpoleBodyColors[frogLife.bodyColorName], out Color color))
         {
             skinnedMeshRenderer.material.color = color;
         }

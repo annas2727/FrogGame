@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class EggColor : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     MeshRenderer meshRenderer;
     FrogLife frogLife;
     
-    GameManager gameManager; 
 
     void Start()
     {   
         meshRenderer = GetComponent<MeshRenderer>();
         frogLife = GetComponentInParent<FrogLife>();
-        gameManager = FindAnyObjectByType<GameManager>();
 
         ChangeColor();
     }
 
     void ChangeColor()
     {
-        if (ColorUtility.TryParseHtmlString(gameManager.bodyColors[frogLife.bodyColorName], out Color color))
+        if (ColorUtility.TryParseHtmlString(statsConfig.bodyColors[frogLife.bodyColorName], out Color color))
         {
             meshRenderer.materials[0].color = color;
         }
