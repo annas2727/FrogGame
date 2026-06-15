@@ -26,8 +26,6 @@ public class FrogLife : MonoBehaviour
 
     public string bodyColor;
     public string patternColor;
-    
-    GameManager gameManager;
 
     GameObject egg;
     GameObject tadpole;
@@ -43,14 +41,12 @@ public class FrogLife : MonoBehaviour
 
         UpdateLifeStage(0);
 
-        gameManager = FindAnyObjectByType<GameManager>();
-
         bodyColorName = currentBodyColor.ToString();
         patternColorName = currentPatternColor.ToString();
         patternType = currentPatternType.ToString();
 
-        bodyColor = gameManager.bodyColors.ContainsKey(bodyColorName) ? gameManager.bodyColors[bodyColorName] : "#ffffff";
-        patternColor = gameManager.patternColors.ContainsKey(patternColorName) ? gameManager.patternColors[patternColorName] : "#ffffff";
+        bodyColor = statsConfig.bodyColors.ContainsKey(bodyColorName) ? statsConfig.bodyColors[bodyColorName] : "#ffffff";
+        patternColor = statsConfig.patternColors.ContainsKey(patternColorName) ? statsConfig.patternColors[patternColorName] : "#ffffff";
     
     }
 
