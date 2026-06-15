@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class FroglopediaGenerator : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class FroglopediaGenerator : MonoBehaviour
     private List<Sprite> generatedPages = new List<Sprite>();
     public Renderer backgroundRenderer; // the plane behind the quads
     public Texture2D[] templateBackgrounds; // your 4 template textures
+
+    public Camera statsPageCamera;
+    public TextMeshPro statsTitleText;
+    public TextMeshPro statsDiscoveredText;
+    public Renderer[] bodyColorSwatches;  // 9 small quads
+    public Renderer[] patternColorSwatches;
     
     GameManager gm; 
     void Awake()
