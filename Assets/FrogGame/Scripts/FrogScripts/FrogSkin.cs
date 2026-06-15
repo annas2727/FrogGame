@@ -2,25 +2,23 @@ using UnityEngine;
 
 public class FrogSkin : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     private Material frogMaterial;
 
     private Renderer frogRenderer;
     private SkinnedMeshRenderer frogSkinnedRenderer;
-    GameManager gameManager;
 
     private FrogLife frogLife; 
 
     void Start()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
-
-
         frogLife = GetComponentInParent<FrogLife>();
 
         frogRenderer = GetComponent<Renderer>();
         frogSkinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     
-        Material sharedMaterial = gameManager.GetPatternMaterial(frogLife.patternType);
+        Material sharedMaterial = statsConfig.GetPatternMaterial(frogLife.patternType);
         if (sharedMaterial != null)
         {
             frogMaterial = new Material(sharedMaterial);
@@ -34,7 +32,7 @@ public class FrogSkin : MonoBehaviour
 
         //Replace the original skin with the one that has the pattern shader
         Material[] mats = frogSkinnedRenderer.materials;
-        mats[1] = gameManager.eyeMaterial;
+        mats[1] = statsConfig.eyeMaterial;
         mats[0] = frogMaterial; 
         frogSkinnedRenderer.materials = mats;
 

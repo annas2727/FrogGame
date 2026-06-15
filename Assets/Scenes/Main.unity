@@ -2239,7 +2239,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065683213}
-  - component: {fileID: 1065683212}
   - component: {fileID: 1065683214}
   m_Layer: 0
   m_Name: GameManager
@@ -2248,27 +2247,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1065683212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065683210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4cc3d246789b8b429748aa28ed24cfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  patternTypes:
-  - none
-  - spots
-  - stripes
-  patternMaterials:
-  - {fileID: 2100000, guid: a627f60a42321474ea35525a0908c41e, type: 2}
-  - {fileID: 2100000, guid: 27bd33dbbc7645c46a2f82eaf31a2757, type: 2}
-  - {fileID: 2100000, guid: 15f752a28596dc84bba90458340f11e8, type: 2}
-  eyeMaterial: {fileID: 2100000, guid: e28ed7d0a7956f845a6b91379a4e7467, type: 2}
 --- !u!4 &1065683213
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,6 +2472,14 @@ PrefabInstance:
     - target: {fileID: 2255465465080734770, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_Name
       value: FrogLifeCycle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826637183204304555, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: currentBodyColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826637183204304555, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
+      propertyPath: currentPatternColor
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7675980110556520033, guid: 727b673467e9bd5469d26a36a3c4f4d9, type: 3}
       propertyPath: m_LocalPosition.x

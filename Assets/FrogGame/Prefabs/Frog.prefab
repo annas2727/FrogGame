@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762fbf86b4f9f714a9e0000efb5d1072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogProperties
+  statsConfig: {fileID: 11400000, guid: d96f2315872f263479cae5500aa7fc23, type: 2}
 --- !u!23 &4256065342356565610
 MeshRenderer:
   m_ObjectHideFlags: 0
