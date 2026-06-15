@@ -13,7 +13,7 @@ public class FrogDrag : MonoBehaviour
 
     IEnumerator PickupCooldown()
     {
-        yield return new WaitForSeconds(statsConfig.PickUpCooldown);
+        yield return new WaitForSeconds(statsConfig.DragCooldown);
         CanBeDragged = true;
     }
 

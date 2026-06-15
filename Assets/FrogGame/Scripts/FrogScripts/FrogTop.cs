@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FrogTop : MonoBehaviour
 {
+    [SerializeField] private Stats statsConfig;
+
     public Transform FrogOnTop; //Held by the frog on bottom
     public Transform FrogOnBottom; //Held by the frog on top
     public Transform backSpot; //Target on frog on bottom
@@ -15,7 +17,7 @@ public class FrogTop : MonoBehaviour
         if (FrogOnTop != null)
         {
             FrogOnTop.position = backSpot.position;
-            FrogOnTop.rotation = transform.rotation * Quaternion.Euler(-8f, 0f, 0f); ;
+            FrogOnTop.rotation = transform.rotation * Quaternion.Euler(-8f, 0f, 0f);
         }
     }
 

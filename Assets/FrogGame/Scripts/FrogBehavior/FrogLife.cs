@@ -119,7 +119,7 @@ public class FrogLife : MonoBehaviour
                 frog.SetActive(true);
                 activated = frog;
                 activated.transform.localScale = Vector3.one * maxScale;
-                frog.GetComponent<FrogBreed>().isAdult = true; //Makes the frog an adult
+                frog.GetComponent<FrogBehavior>().isAdult = true; //Makes the frog an adult
                 break;
         }
     }

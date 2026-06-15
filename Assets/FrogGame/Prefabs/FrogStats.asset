@@ -17,9 +17,17 @@ MonoBehaviour:
   jumpSpotSearchRadius: 4
   jumpSpotSearchRadiusAddition: 2
   jumpSpotSearchNumber: 3
+  tiltedPadMulti: 0.5
   maxIdleJumpTime: 10
   minIdleJumpTime: 4
-  pickUpCooldown: 1
+  jumpSpeed: 1
+  jumpGravity: -20
+  dragCooldown: 1
+  dragLockMaxTime: 8
+  swimSpeed: 2
+  breedCooldown: 1
+  breedAnnoyance: 8
+  breedChickenOut: 1.5
   maxFrogScale: 0.0025
   minFrogScale: 0.001
   frogGrowthTime: 300
@@ -29,6 +37,12 @@ MonoBehaviour:
   maxEggScale: 0.25
   minEggScale: 0.2
   eggGrowthTime: 60
-  breedCooldown: 1
-  breedAnnoyance: 8
-  breedChickenOut: 1.5
+  patternTypes:
+  - none
+  - spots
+  - stripes
+  patternMaterials:
+  - {fileID: 2100000, guid: a627f60a42321474ea35525a0908c41e, type: 2}
+  - {fileID: 2100000, guid: 27bd33dbbc7645c46a2f82eaf31a2757, type: 2}
+  - {fileID: 2100000, guid: 15f752a28596dc84bba90458340f11e8, type: 2}
+  eyeMaterial: {fileID: 2100000, guid: e28ed7d0a7956f845a6b91379a4e7467, type: 2}

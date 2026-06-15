@@ -7,7 +7,6 @@ public class FrogChooseJump : MonoBehaviour
     [SerializeField] private Stats statsConfig;
 
     [Header("Lily Pad Settings")]
-    public float searchRadius = 10f;
     public LayerMask lilyPadLayer;
     public LayerMask frogLayer;
 
@@ -15,11 +14,13 @@ public class FrogChooseJump : MonoBehaviour
 
     public bool isOccupied = false;
 
+    //
     private void Start()
     {
         StartCoroutine(ChoosePadsRoutine());
     }
 
+    //
     IEnumerator ChoosePadsRoutine()
     {
         while (true)
@@ -31,6 +32,7 @@ public class FrogChooseJump : MonoBehaviour
         }
     }
 
+    //
     public void JumpToNearbyPad()
     {
         isOccupied = false;
@@ -42,6 +44,7 @@ public class FrogChooseJump : MonoBehaviour
         }
     }
 
+    //
     public IEnumerator JumpToPad(GameObject targetPad)
     {
         targetPad.GetComponent<JumpSpot>().Reserve(); //Reserve New Pad
@@ -52,6 +55,7 @@ public class FrogChooseJump : MonoBehaviour
         currentPad = targetPad; //Save New Pad
     }
 
+    //
     GameObject GetRandomNearbyPad()
     {
         List<GameObject> validPads = new List<GameObject>();
@@ -111,6 +115,7 @@ public class FrogChooseJump : MonoBehaviour
         return validPads[randomIndex];
     }
 
+    //
     IEnumerator TurnToPad(Transform target)
     {
         Vector3 padNormal = currentPad != null ? currentPad.transform.up : transform.up;
@@ -145,9 +150,10 @@ public class FrogChooseJump : MonoBehaviour
         transform.rotation = targetRotation;
     }
 
+    //
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, searchRadius);
+        Gizmos.DrawWireSphere(transform.position, statsConfig.JumpSpotSearchRadius);
     }
 }
