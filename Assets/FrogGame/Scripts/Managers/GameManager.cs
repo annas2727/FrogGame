@@ -5,6 +5,15 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+
+    public HashSet<string> discoveredFrogs = new HashSet<string>();
+
+    public void DiscoverFrog(string bodyColor, string patternColor, string patternType)
+    {
+        string key = bodyColor + "_" + patternColor + "_" + patternType;
+        discoveredFrogs.Add(key);
+    }
+    
     public Dictionary<string, string> bodyColors = new Dictionary<string, string>
     {
         { "red", "#ff0000" },

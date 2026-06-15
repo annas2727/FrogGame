@@ -6,6 +6,7 @@ Shader "Custom/FrogImageRecolor"
         _BodyColor ("Body Color", Color) = (1,0,0,1)
         _PatternColor ("Pattern Color", Color) = (0,0,1,1)
         _Threshold ("Threshold", Float) = 0.5
+        _Greyscale ("Greyscale", Float) = 0  // add this
     }
     SubShader
     {
@@ -27,6 +28,7 @@ Shader "Custom/FrogImageRecolor"
             float4 _BodyColor;
             float4 _PatternColor;
             float _Threshold;
+            float _Greyscale;
 
             v2f vert(appdata v)
             {
@@ -61,6 +63,13 @@ Shader "Custom/FrogImageRecolor"
                 fixed4 result = col;
                 result = lerp(result, bodyResult, isRed);
                 result = lerp(result, patternResult, isBlue);
+
+
+                if (_Greyscale > 0.5)
+                {
+                    float grey = dot(result.rgb, float3(0.299, 0.587, 0.114));
+                    result.rgb = float3(grey, grey, grey);
+                }
 
                 return result;
             }

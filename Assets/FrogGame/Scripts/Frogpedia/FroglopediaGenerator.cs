@@ -25,9 +25,10 @@ public class FroglopediaGenerator : MonoBehaviour
     public Renderer backgroundRenderer; // the plane behind the quads
     public Texture2D[] templateBackgrounds; // your 4 template textures
     
-    void Start()
+    GameManager gm; 
+    void Awake()
     {
-        GameManager gm = FindObjectOfType<GameManager>();
+        gm = FindObjectOfType<GameManager>();
 
         foreach (var hex in gm.bodyColors.Values)
         {
@@ -52,10 +53,7 @@ public class FroglopediaGenerator : MonoBehaviour
         {
             List<Color> colorsToUse = pattern.name == "none" ? 
                 new List<Color> { bodyColorList[0] } : bodyColorList;
-foreach (Color col in bodyColorList)
-{
-    Debug.Log("Body color: " + ColorUtility.ToHtmlStringRGB(col));
-}
+
             foreach (Color body in colorsToUse)
             {
                 for (int i = 0; i < frogRenderers.Length; i++)
@@ -67,11 +65,14 @@ foreach (Color col in bodyColorList)
                     Color patCol = pattern.name == "none" ? quadBody :
                         i < patternColorList.Count ? patternColorList[i] : Color.white;
                     
+                    bool discovered = gm.discoveredFrogs.Contains(quadBody + "_" + patCol + "_" + pattern.name);
+
                     MaterialPropertyBlock block = new MaterialPropertyBlock();
                     frogRenderers[i].GetPropertyBlock(block);
                     block.SetTexture("_MainTex", pattern.texture);
                     block.SetColor("_BodyColor", quadBody);
                     block.SetColor("_PatternColor", patCol);
+                    block.SetFloat("_Greyscale", discovered ? 0f : 1f);
                     frogRenderers[i].SetPropertyBlock(block);
                 }
                                 
@@ -81,7 +82,7 @@ foreach (Color col in bodyColorList)
                 backgroundRenderer.GetPropertyBlock(bgBlock);
                 bgBlock.SetTexture("_BaseMap", templateBackgrounds[templateIndex]);
                 backgroundRenderer.SetPropertyBlock(bgBlock);
-                yield return null;
+                yield return new WaitForEndOfFrame();
 
                 generatedPages.Add(CapturePage());
             }
